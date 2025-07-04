@@ -40,8 +40,8 @@ check_wcs_version <- function(wcs) {
 
 # Checks if there is internet and performs an HTTP GET request
 perform_http_request <- function(service_url) {
-  cli::cli_alert_danger("WCS client creation failed.")
-  cli::cli_alert_warning("Service: {.val {service_url}}")
+  cli_alert_danger("WCS client creation failed.")
+  cli_alert_warning("Service: {.val {service_url}}")
 
   has_internet <- function() {
     if (nzchar(Sys.getenv("NO_INTERNET_TEST_EMODNET"))) {
@@ -51,7 +51,7 @@ perform_http_request <- function(service_url) {
   }
 
   if (!has_internet()) {
-    cli::cli_alert_info("Reason: There is no internet connection")
+    cli_alert_info("Reason: There is no internet connection")
     return(NULL)
   }
 
@@ -67,17 +67,16 @@ check_service <- function(request) {
   }
 
   if (httr::http_error(request)) {
-    cli::cli_alert_info(
+    cli_alert_info(
       "HTTP Status: {cli::col_red(httr::http_status(request)$message)}"
     )
-    cli::cli_text("")
 
     is_monitor_up <- !is.null(curl::nslookup(
       "monitor.emodnet.eu",
       error = FALSE
     ))
     if (interactive() && is_monitor_up) {
-      cli::cli_ul(c(
+      cli_alert_info(c(
         "Browse the EMODnet OGC monitor for more info on
                 the status of the services by visiting
                 {.url https://monitor.emodnet.eu/resources?lang=en&resource_type=OGC:WCS}"
@@ -88,7 +87,7 @@ check_service <- function(request) {
 
     # If no HTTP status, something else is wrong
   } else if (!httr::http_error(request)) {
-    cli::cli_alert_info(
+    cli_alert_info(
       "HTTP Status: {cli::col_green(httr::http_status(request)$message)}"
     )
     cli::cli_abort(
@@ -252,7 +251,7 @@ error_wrap <- function(expr) {
   out <- tryCatch(expr, error = function(e) NA)
 
   if (is.null(out)) {
-    cli::cli_alert_warning(
+    cli_alert_warning(
       c(
         "Output of {.code {cli::col_cyan(rlang::enexpr(expr))}} ",
         "is {.emph {cli::col_br_magenta('NULL')}}.",
@@ -262,7 +261,7 @@ error_wrap <- function(expr) {
     return(NA)
   }
   if (is.na(out)) {
-    cli::cli_alert_warning(
+    cli_alert_warning(
       c(
         "Error in {.code {cli::col_cyan(rlang::enexpr(expr))}}",
         " Returning {.emph {cli::col_br_magenta('NA')}}"

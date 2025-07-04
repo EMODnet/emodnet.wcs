@@ -133,7 +133,7 @@ emdn_get_coverage <- function(
     )
   }
   check_cov_contains_bbox(summary, bbox, crs)
-  cli::cli_rule(left = "Downloading coverage {.val {coverage_id}}")
+  cli_rule(left = "Downloading coverage {.val {coverage_id}}")
 
   coverage_id <- validate_namespace(coverage_id)
 
@@ -146,8 +146,8 @@ emdn_get_coverage <- function(
       rangesubset = rangesubset_encoded,
       filename = filename
     )
-    cli::cli_text()
-    cli::cli_alert_success(
+
+    cli_alert_success(
       "\n Coverage {.val {coverage_id}} downloaded succesfully as a
         {.pkg terra} {.cls SpatRaster} Stack"
     )
@@ -162,8 +162,7 @@ emdn_get_coverage <- function(
       filename = filename
     )
 
-    cli::cli_text()
-    cli::cli_alert_success(
+    cli_alert_success(
       "\n Coverage {.val {coverage_id}} downloaded succesfully as a
         {.pkg terra} {.cls SpatRaster}"
     )
@@ -194,7 +193,7 @@ conv_nil_to_na <- function(cov_raster, summary, rangesubset) {
         terra::values(cov_raster) >= uniq_nil_val
       ] <- NA
 
-      cli::cli_alert_success(
+      cli_alert_success(
         "nil values {.val {uniq_nil_val}} converted to {.field NA} on all bands."
       )
     } else {
@@ -216,7 +215,7 @@ conv_nil_to_na <- function(cov_raster, summary, rangesubset) {
     if (is.numeric(nil_value)) {
       cov_raster[[band_idx]][cov_raster[[band_idx]] >= nil_value] <- NA
 
-      cli::cli_alert_success(
+      cli_alert_success(
         "nil values {.val {nil_value}} converted to
         {.field NA} on band {.val {band_name}}"
       )

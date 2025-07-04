@@ -49,6 +49,13 @@ Load the library
 library(emodnet.wcs)
 ```
 
+If you want to avoid reading messages from emodnet.wcs such as "WCS client created successfully", 
+set the `"emodnet.wcs.quiet"` option to `TRUE`.
+
+```r
+options("emodnet.wcs.quiet" = TRUE)
+```
+
 ## Available services
 
 All available services are contained in the tibble returned by `emdn_wcs()`.

@@ -37,7 +37,6 @@
       check_service(req_fail)
     Message
       i HTTP Status: Server error: (500) Internal Server Error
-      
     Condition
       Error in `check_service()`:
       ! Service creation failed

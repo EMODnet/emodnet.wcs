@@ -102,6 +102,7 @@ test_that("check coverages works", {
 
 test_that("validate rangesubset works", {
   summary <- create_biology_summary()[[1]]
+  withr::local_options(emodnet.wcs.quiet = FALSE)
   with_mock_dir("biology-description", {
     coverage_id <- "Emodnetbio__ratio_large_to_small_19582016_L1_err"
 

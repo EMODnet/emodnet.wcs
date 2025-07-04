@@ -48,9 +48,9 @@ emdn_init_wcs_client <- function(
 
     check_wcs(wcs)
 
-    cli::cli_alert_success("WCS client created succesfully")
-    cli::cli_alert_info("Service: {.url {wcs$getUrl()}}")
-    cli::cli_alert_info("Service: {.val {wcs$getVersion()}}")
+    cli_alert_success("WCS client created succesfully")
+    cli_alert_info("Service: {.url {wcs$getUrl()}}")
+    cli_alert_info("Service: {.val {wcs$getVersion()}}")
 
     check_wcs_version(wcs)
 
