@@ -66,7 +66,7 @@ test_that("No internet challenge", {
   test_url <- "https://demo.geo-solutions.it/geoserver/ows?"
 
   expect_snapshot(
-    (req_no_internet <- perform_http_request(test_url))
+    (req_no_internet <- perform_http_request(test_url)) # nolint: implicit_assignment_linter
   )
   expect_snapshot(check_service(req_no_internet), error = TRUE)
 })
