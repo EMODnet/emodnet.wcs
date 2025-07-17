@@ -196,11 +196,9 @@ validate_rangesubset <- function(summary, rangesubset) {
   cov_range_descriptions <- emdn_get_band_descriptions(summary)
   purrr::walk(
     rangesubset,
-    ~ checkmate::assert_choice(
-      .x,
-      cov_range_descriptions,
-      .var.name = "rangesubset"
-    )
+    checkmate::assert_choice,
+    choices = cov_range_descriptions,
+    .var.name = "rangesubset"
   )
 }
 
@@ -225,21 +223,17 @@ validate_dimension_subset <- function(
     temporal = {
       purrr::walk(
         subset,
-        ~ checkmate::assert_choice(
-          .x,
-          coefs,
-          .var.name = "time"
-        )
+        checkmate::assert_choice,
+        choices = coefs,
+        .var.name = "time"
       )
     },
     vertical = {
       purrr::walk(
         subset,
-        ~ checkmate::assert_choice(
-          .x,
-          coefs,
-          .var.name = "elevation"
-        )
+        checkmate::assert_choice,
+        choices = coefs,
+        .var.name = "elevation"
       )
     }
   )

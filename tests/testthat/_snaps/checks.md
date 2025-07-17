@@ -47,6 +47,6 @@
     Condition
       Error in `map()`:
       i In index: 1.
-      Caused by error in `.f()`:
+      Caused by error in `call_with_cleanup()`:
       ! Assertion on 'rangesubset' failed: Must be element of set {'relative_abundance'}, but is 'erroneous_rangetype'.
 

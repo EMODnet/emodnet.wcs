@@ -41,10 +41,12 @@
 #' }
 emdn_get_coverage_summaries <- function(wcs, coverage_ids) {
   check_coverages(wcs, coverage_ids)
-  coverage_ids |>
-    purrr::map(
-      ~ get_capabilities(wcs)$findCoverageSummaryById(.x, exact = TRUE)
-    )
+
+  purrr::map(
+    coverage_ids,
+    get_capabilities(wcs)$findCoverageSummaryById,
+    exact = TRUE
+  )
 }
 
 #' @describeIn emdn_get_coverage_summaries Get summaries for all available
@@ -74,7 +76,7 @@ emdn_has_dimension <- function(
   type <- match.arg(type)
 
   dim_dfs <- emdn_get_coverage_summaries(wcs, coverage_ids) |>
-    purrr::map(~ emdn_get_dimensions_info(.x, format = "tibble"))
+    purrr::map(emdn_get_dimensions_info, format = "tibble")
 
   dim_dfs |>
     purrr::map_lgl(~ any(.x$type == type)) |>
@@ -139,7 +141,9 @@ emdn_get_coverage_dim_coefs <- function(
 
   purrr::map(
     coverage_ids,
-    ~ get_cov_coefs(.x, wcs = wcs, type = type)
+    get_cov_coefs,
+    wcs = wcs,
+    type = type
   ) |>
     stats::setNames(coverage_ids)
 }
@@ -362,7 +366,8 @@ emdn_get_resolution <- function(summary) {
 
   is_x_axis <- purrr::map_lgl(
     axis_order,
-    ~ grepl(.x, "x|2")
+    grepl,
+    "x|2"
   )
 
   if (sum(is_x_axis) != 1L) {
@@ -467,7 +472,7 @@ emdn_get_dimensions_info <- function(
     if (include_coeffs) {
       out <- x
     } else {
-      out <- purrr::map(x, ~ head(.x, 3L))
+      out <- purrr::map(x, head, 3L)
     }
 
     stats::setNames(out, glue::glue("dim_{seq_along(out)}"))
@@ -476,11 +481,11 @@ emdn_get_dimensions_info <- function(
   process_tibble <- function(x) {
     tibble::tibble(
       dimension = seq_along(x),
-      label = purrr::map_chr(x, ~ purrr::pluck(.x, "label")) |>
+      label = purrr::map_chr(x, "label") |>
         tolower(),
-      uom = purrr::map_chr(x, ~ purrr::pluck(.x, "uom")) |>
+      uom = purrr::map_chr(x, "uom") |>
         tolower(),
-      type = purrr::map_chr(x, ~ purrr::pluck(.x, "type")) |>
+      type = purrr::map_chr(x, "type") |>
         tolower(),
       range = purrr::map(
         x,
@@ -535,7 +540,7 @@ emdn_get_dimensions_n <- function(summary) {
 emdn_get_dimension_types <- function(summary) {
   dimensions <- summary$getDimensions()
 
-  purrr::map_chr(dimensions, ~ purrr::pluck(.x, "type"))
+  purrr::map_chr(dimensions, "type")
 }
 
 # ---- unexported-utils ----
@@ -598,7 +603,8 @@ conc_nil_value <- function(x) {
 conc_constraint <- function(x) {
   x <- purrr::map_chr(
     x,
-    ~ paste(.x, collapse = "-")
+    paste,
+    collapse = "-"
   )
 
   if (length(unique(x)) == 1L) {

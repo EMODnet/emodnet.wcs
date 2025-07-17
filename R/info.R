@@ -234,7 +234,7 @@ emdn_get_wcs_info_all <- memoise::memoise(.emdn_get_wcs_info_all)
 
   summaries <- purrr::map(
     validate_namespace(coverage_ids),
-    ~ capabilities$findCoverageSummaryById(.x)
+    capabilities$findCoverageSummaryById
   ) |>
     unlist(recursive = FALSE)
 
