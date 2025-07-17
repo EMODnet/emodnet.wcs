@@ -70,7 +70,7 @@ test_that("validate_bbox works", {
 
   expect_snapshot(error = TRUE, validate_bbox(NA))
 
-  expect_identical(validate_bbox(NULL), NULL)
+  expect_null(validate_bbox(NULL))
 })
 
 test_that("check bbox works", {
