@@ -74,14 +74,14 @@ test_that("validate_bbox works", {
 })
 
 test_that("check bbox works", {
-  expect_equal(error_wrap(stop()), NA)
+  expect_equal(error_wrap(stop(., call. = FALSE)), NA)
   expect_equal(error_wrap(NULL), NA)
   expect_equal(error_wrap("success"), "success")
 })
 
 
 test_that("error wrap works", {
-  expect_equal(error_wrap(stop()), NA)
+  expect_equal(error_wrap(stop(., call. = FALSE)), NA)
   expect_equal(error_wrap(NULL), NA)
   expect_equal(error_wrap("success"), "success")
 })
