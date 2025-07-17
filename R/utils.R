@@ -515,14 +515,13 @@ emdn_get_dimensions_info <- function(
 emdn_get_dimensions_names <- function(summary) {
   dimensions <- summary$getDescription()$boundedBy$attrs
 
-  paste(
+  toString(
     paste0(
       unlist(strsplit(dimensions$axisLabels, " ", fixed = TRUE)),
       " (",
       unlist(strsplit(dimensions$uomLabels, " ", fixed = TRUE)),
       ")"
-    ),
-    collapse = ", "
+    )
   )
 }
 
@@ -542,7 +541,7 @@ emdn_get_dimension_types <- function(summary) {
 
 # ---- unexported-utils ----
 conc_bbox <- function(bbox) {
-  paste(round(bbox, 2L), collapse = ", ")
+  toString(round(bbox, 2L))
 }
 
 extr_bbox_crs <- function(summary) {
@@ -585,7 +584,7 @@ conc_band_uom <- function(x) {
     return(unique(x))
   }
 
-  return(paste(x, collapse = ", "))
+  toString(x)
 }
 
 conc_nil_value <- function(x) {
@@ -593,7 +592,7 @@ conc_nil_value <- function(x) {
     return(unique(x))
   }
 
-  return(paste(x, collapse = ", "))
+  toString(x)
 }
 
 conc_constraint <- function(x) {
@@ -606,5 +605,5 @@ conc_constraint <- function(x) {
     return(unique(x))
   }
 
-  return(paste(x, collapse = ", "))
+  toString(x)
 }
