@@ -11,7 +11,7 @@ test_that("service urls & names crossreference correctly", {
 
 
 test_that("extent & crs processed correctly", {
-  summary <- create_biology_summary()[[1]]
+  summary <- create_biology_summary()[[1L]]
   with_mock_dir("bio-info", {
     bbox <- emdn_get_bbox(summary)
     expect_identical(conc_bbox(bbox), "-75.05, 34.95, 20.05, 75.05")
@@ -24,10 +24,10 @@ test_that("dimensions processed correctly", {
   with_mock_dir("biology-description2", {
     wcs <- emdn_init_wcs_client(service = "biology")
     summaries <- emdn_get_coverage_summaries_all(wcs)
-    summary <- summaries[[1]]
+    summary <- summaries[[1L]]
     expect_identical(
       emdn_get_grid_size(summary),
-      c(ncol = 951, nrow = 401)
+      c(ncol = 951.0, nrow = 401.0)
     )
     expect_identical(
       emdn_get_resolution(summary),
@@ -60,7 +60,7 @@ test_that("dimensions processed correctly", {
       "Lat (Deg), Long (Deg), time (s)"
     )
     expect_identical(emdn_get_vertical_extent(summary), NA)
-    expect_length(emdn_get_dimensions_info(summary, format = "list"), 3)
+    expect_length(emdn_get_dimensions_info(summary, format = "list"), 3L)
     expect_snapshot(emdn_get_dimensions_info(summary, format = "tibble"))
     expect_snapshot(
       emdn_get_coverage_dim_coefs(
@@ -72,7 +72,7 @@ test_that("dimensions processed correctly", {
 })
 
 test_that("rangeType processed correctly", {
-  summary <- create_biology_summary()[[1]]
+  summary <- create_biology_summary()[[1L]]
   with_mock_dir("biology-description3", {
     expect_equal(
       emdn_get_band_nil_values(summary),
@@ -100,7 +100,7 @@ test_that("rangeType processed correctly", {
       emdn_get_coverage_function(summary),
       list(
         sequence_rule = "Linear",
-        start_point = c(0, 0),
+        start_point = c(0.0, 0.0),
         axis_order = c("+2", "+1")
       )
     )

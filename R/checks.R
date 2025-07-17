@@ -134,7 +134,7 @@ check_cov_contains_bbox <- function(summary, bbox, crs = NULL) {
   )
 
   outlying_edges <- unique(names(test_bbox)[test_bbox])
-  if (length(outlying_edges) == 0) {
+  if (length(outlying_edges) == 0L) {
     outlying_edges <- ""
   }
 
@@ -167,7 +167,7 @@ validate_bbox <- function(bbox) {
   } else {
     checkmate::assert_numeric(
       bbox,
-      len = 4,
+      len = 4L,
       any.missing = FALSE,
       names = "named"
     )
@@ -219,7 +219,7 @@ validate_dimension_subset <- function(
     wcs,
     coverage_id,
     type
-  )[[1]]
+  )[[1L]]
 
   switch(
     type,

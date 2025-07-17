@@ -107,7 +107,7 @@ emdn_get_coverage_dim_coefs <- function(
       summary <- emdn_get_coverage_summaries(
         wcs,
         coverage_id
-      )[[1]]
+      )[[1L]]
       dim_type_id <- which(
         emdn_get_dimension_types(summary) == type
       )
@@ -243,10 +243,10 @@ emdn_get_bbox <- function(summary) {
 
   sf::st_bbox(
     c(
-      xmin = lower[2],
-      xmax = upper[2],
-      ymin = lower[1],
-      ymax = upper[1]
+      xmin = lower[2L],
+      xmax = upper[2L],
+      ymin = lower[1L],
+      ymax = upper[1L]
     ),
     crs = extr_bbox_crs(summary)
   )
@@ -267,7 +267,7 @@ emdn_get_band_nil_values <- function(summary) {
   fields <- summary$getDescription()$rangeType$field
   nil_val <- fields %>%
     purrr::map(
-      ~ .x$nilValues$nilValue[[1]]$value
+      ~ .x$nilValues$nilValue[[1L]]$value
     )
 
   nil_val <- nil_val %>%
@@ -402,7 +402,7 @@ emdn_get_resolution <- function(summary) {
 #' @describeIn emdn_get_bbox Get the grid function of a coverage.
 #' @export
 emdn_get_coverage_function <- function(summary) {
-  grid_function <- summary$getDescription()$coverageFunction[[1]]
+  grid_function <- summary$getDescription()$coverageFunction[[1L]]
 
   list(
     sequence_rule = grid_function[["sequenceRule"]]$value,
@@ -477,7 +477,7 @@ emdn_get_dimensions_info <- function(
     if (include_coeffs) {
       out <- x
     } else {
-      out <- purrr::map(x, ~ head(.x, 3))
+      out <- purrr::map(x, ~ head(.x, 3L))
     }
 
     stats::setNames(out, glue::glue("dim_{seq_along(out)}"))
@@ -551,7 +551,7 @@ emdn_get_dimension_types <- function(summary) {
 
 # ---- unexported-utils ----
 conc_bbox <- function(bbox) {
-  paste(round(bbox, 2), collapse = ", ")
+  paste(round(bbox, 2L), collapse = ", ")
 }
 
 extr_bbox_crs <- function(summary) {
@@ -559,14 +559,14 @@ extr_bbox_crs <- function(summary) {
 
   if (!is.null(bbox_crs)) {
     crs_parts <- unlist(strsplit(bbox_crs, "EPSG:", fixed = TRUE))
-    if (length(crs_parts) == 2) {
-      srid <- as.integer(crs_parts[2])
+    if (length(crs_parts) == 2L) {
+      srid <- as.integer(crs_parts[2L])
       if (!is.na(srid)) bbox_crs <- sf::st_crs(srid)
     } else {
-      bbox_crs <- sf::st_crs(4326)
+      bbox_crs <- sf::st_crs(4326L)
     }
   } else {
-    bbox_crs <- sf::st_crs(4326)
+    bbox_crs <- sf::st_crs(4326L)
   }
   return(bbox_crs)
 }

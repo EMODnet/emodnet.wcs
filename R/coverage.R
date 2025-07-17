@@ -100,11 +100,11 @@ emdn_get_coverage <- function(
   check_wcs(wcs)
   check_wcs_version(wcs)
 
-  checkmate::assert_character(coverage_id, len = 1)
+  checkmate::assert_character(coverage_id, len = 1L)
   check_coverages(wcs, coverage_id)
   ows_bbox <- validate_bbox(bbox)
 
-  summary <- emdn_get_coverage_summaries(wcs, coverage_id)[[1]]
+  summary <- emdn_get_coverage_summaries(wcs, coverage_id)[[1L]]
 
   # validate request arguments
   if (!is.null(rangesubset)) {
@@ -137,7 +137,7 @@ emdn_get_coverage <- function(
 
   coverage_id <- validate_namespace(coverage_id)
 
-  if (length(time) > 1 || length(elevation) > 1) {
+  if (length(time) > 1L || length(elevation) > 1L) {
     cov_raster <- summary$getCoverageStack(
       bbox = ows_bbox,
       crs = crs,
@@ -208,7 +208,7 @@ conv_nil_to_na <- function(cov_raster, summary, rangesubset) {
   n_bands <- terra::nlyr(cov_raster)
   nil_values <- rep(nil_values, times = n_bands / length(nil_values))
 
-  for (band_idx in 1:n_bands) {
+  for (band_idx in seq_len(n_bands)) {
     nil_value <- nil_values[[band_idx]]
     band_name <- names(nil_values)[band_idx]
 

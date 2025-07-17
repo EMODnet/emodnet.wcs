@@ -43,8 +43,8 @@ test_that("Services down handled", {
         "Accept" = "application/json, text/xml, application/xml, */*"
       )
     ) %>%
-    webmockr::to_return(status = 500) %>%
-    webmockr::to_return(status = 200)
+    webmockr::to_return(status = 500L) %>%
+    webmockr::to_return(status = 200L)
 
   req_fail <- httr::GET(test_url)
   expect_true(httr::http_error(req_fail))

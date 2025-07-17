@@ -13,17 +13,17 @@ test_that("validate_namespace works", {
 test_that("validate_bbox works", {
   expect_identical(
     validate_bbox(c(
-      xmin = -180,
+      xmin = -180.0,
       ymin = -90.000000000036,
       xmax = 180.000000000072,
-      ymax = 90
+      ymax = 90.0
     )),
     structure(
       c(
-        -180,
+        -180.0,
         -90.000000000036,
         180.000000000072,
-        90
+        90.0
       ),
       .Dim = c(2L, 2L),
       .Dimnames = list(
@@ -38,9 +38,9 @@ test_that("validate_bbox works", {
     validate_bbox(
       c(
         xmin = -90.000000000036,
-        ymin = -180,
+        ymin = -180.0,
         xmax = -180.000000000072,
-        ymax = 90
+        ymax = 90.0
       )
     ),
   )
@@ -50,8 +50,8 @@ test_that("validate_bbox works", {
     validate_bbox(
       c(
         xmin = -90.000000000036,
-        ymin = -180,
-        ymax = 90
+        ymin = -180.0,
+        ymax = 90.0
       )
     )
   )
@@ -60,7 +60,7 @@ test_that("validate_bbox works", {
     error = TRUE,
     validate_bbox(
       c(
-        xmin = -180,
+        xmin = -180.0,
         ymin = -90.000000000036,
         xmax = 180.000000000072,
         ymax = "90"
@@ -101,7 +101,7 @@ test_that("check coverages works", {
 })
 
 test_that("validate rangesubset works", {
-  summary <- create_biology_summary()[[1]]
+  summary <- create_biology_summary()[[1L]]
   withr::local_options(emodnet.wcs.quiet = FALSE)
   with_mock_dir("biology-description", {
     coverage_id <- "Emodnetbio__ratio_large_to_small_19582016_L1_err"
