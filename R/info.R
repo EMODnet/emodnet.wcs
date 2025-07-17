@@ -1,13 +1,21 @@
-.emdn_get_wcs_info <- function(wcs = NULL, service = NULL,
-                               service_version = c(
-                                 "2.0.1", "2.1.0", "2.0.0",
-                                 "1.1.1", "1.1.0"
-                               ),
-                               logger = c("NONE", "INFO", "DEBUG")) {
+.emdn_get_wcs_info <- function(
+  wcs = NULL,
+  service = NULL,
+  service_version = c(
+    "2.0.1",
+    "2.1.0",
+    "2.0.0",
+    "1.1.1",
+    "1.1.0"
+  ),
+  logger = c("NONE", "INFO", "DEBUG")
+) {
   if (is.null(wcs) && is.null(service)) {
-    cli::cli_abort(c("x" = "Please provide a valid {.var service}
+    cli::cli_abort(c(
+      "x" = "Please provide a valid {.var service}
         name or {.cls WCSClient} object to {.var wcs}.
-        Both cannot be {.val NULL}"))
+        Both cannot be {.val NULL}"
+    ))
   }
 
   if (is.null(wcs)) {
@@ -30,47 +38,50 @@
     service_access_constraits = service_id$getAccessConstraints(),
     service_fees = service_id$getFees(),
     service_type = service_id$getServiceType(),
-    coverage_details =
-      tibble::tibble(
-        coverage_id = purrr::map_chr(
-          summaries,
-          ~ error_wrap(.x$getId())
-        ),
-        dim_n = purrr::map_int(
-          summaries,
-          ~ error_wrap(length(.x$getDimensions()))
-        ),
-        dim_names = purrr::map_chr(
-          summaries,
-          ~ error_wrap(emdn_get_dimensions_info(.x, format = "character"))
-        ),
-        extent = purrr::map_chr(
-          summaries,
-          ~ error_wrap(emdn_get_bbox(.x) %>% conc_bbox())
-        ),
-        crs = purrr::map_chr(
-          summaries,
-          ~ error_wrap(extr_bbox_crs(.x)$input)
-        ),
-        wgs84_bbox = purrr::map_chr(
-          summaries,
-          ~ error_wrap(emdn_get_WGS84bbox(.x) %>% conc_bbox())
-        ),
-        temporal_extent = purrr::map_chr(
-          summaries,
-          ~ error_wrap(emdn_get_temporal_extent(.x) %>%
-            paste(collapse = " - "))
-        ),
-        vertical_extent = purrr::map_chr(
-          summaries,
-          ~ error_wrap(emdn_get_vertical_extent(.x) %>%
-            paste(collapse = " - "))
-        ),
-        subtype = purrr::map_chr(
-          summaries,
-          ~ error_wrap(.x$CoverageSubtype)
+    coverage_details = tibble::tibble(
+      coverage_id = purrr::map_chr(
+        summaries,
+        ~ error_wrap(.x$getId())
+      ),
+      dim_n = purrr::map_int(
+        summaries,
+        ~ error_wrap(length(.x$getDimensions()))
+      ),
+      dim_names = purrr::map_chr(
+        summaries,
+        ~ error_wrap(emdn_get_dimensions_info(.x, format = "character"))
+      ),
+      extent = purrr::map_chr(
+        summaries,
+        ~ error_wrap(emdn_get_bbox(.x) %>% conc_bbox())
+      ),
+      crs = purrr::map_chr(
+        summaries,
+        ~ error_wrap(extr_bbox_crs(.x)$input)
+      ),
+      wgs84_bbox = purrr::map_chr(
+        summaries,
+        ~ error_wrap(emdn_get_WGS84bbox(.x) %>% conc_bbox())
+      ),
+      temporal_extent = purrr::map_chr(
+        summaries,
+        ~ error_wrap(
+          emdn_get_temporal_extent(.x) %>%
+            paste(collapse = " - ")
         )
+      ),
+      vertical_extent = purrr::map_chr(
+        summaries,
+        ~ error_wrap(
+          emdn_get_vertical_extent(.x) %>%
+            paste(collapse = " - ")
+        )
+      ),
+      subtype = purrr::map_chr(
+        summaries,
+        ~ error_wrap(.x$CoverageSubtype)
       )
+    )
   )
 }
 
@@ -190,17 +201,25 @@ emdn_get_wcs_info <- memoise::memoise(.emdn_get_wcs_info)
 #' @export
 emdn_get_wcs_info_all <- memoise::memoise(.emdn_get_wcs_info_all)
 
-.emdn_get_coverage_info <- function(wcs = NULL, service = NULL,
-                                    coverage_ids,
-                                    service_version = c(
-                                      "2.0.1", "2.1.0", "2.0.0",
-                                      "1.1.1", "1.1.0"
-                                    ),
-                                    logger = c("NONE", "INFO", "DEBUG")) {
+.emdn_get_coverage_info <- function(
+  wcs = NULL,
+  service = NULL,
+  coverage_ids, # nolint: function_argument_linter
+  service_version = c(
+    "2.0.1",
+    "2.1.0",
+    "2.0.0",
+    "1.1.1",
+    "1.1.0"
+  ),
+  logger = c("NONE", "INFO", "DEBUG")
+) {
   if (is.null(wcs) && is.null(service)) {
-    cli::cli_abort(c("x" = "Please provide a valid {.var service}
+    cli::cli_abort(c(
+      "x" = "Please provide a valid {.var service}
         name or {.cls WCSClient} object to {.var wcs}.
-        Both cannot be {.val NULL}"))
+        Both cannot be {.val NULL}"
+    ))
   }
 
   if (is.null(wcs)) {
@@ -229,23 +248,31 @@ emdn_get_wcs_info_all <- memoise::memoise(.emdn_get_wcs_info_all)
     ),
     band_description = purrr::map_chr(
       summaries,
-      ~ error_wrap(emdn_get_band_descriptions(.x) %>%
-        paste(collapse = ", "))
+      ~ error_wrap(
+        emdn_get_band_descriptions(.x) %>%
+          paste(collapse = ", ")
+      )
     ),
     band_uom = purrr::map_chr(
       summaries,
-      ~ error_wrap(emdn_get_band_uom(.x) %>%
-        conc_band_uom())
+      ~ error_wrap(
+        emdn_get_band_uom(.x) %>%
+          conc_band_uom()
+      )
     ),
     constraint = purrr::map_chr(
       summaries,
-      ~ error_wrap(emdn_get_band_constraints(.x) %>%
-        conc_constraint())
+      ~ error_wrap(
+        emdn_get_band_constraints(.x) %>%
+          conc_constraint()
+      )
     ),
     nil_value = purrr::map_dbl(
       summaries,
-      ~ error_wrap(emdn_get_band_nil_values(.x) %>%
-        conc_nil_value())
+      ~ error_wrap(
+        emdn_get_band_nil_values(.x) %>%
+          conc_nil_value()
+      )
     ),
     dim_n = purrr::map_int(
       summaries,
@@ -254,20 +281,22 @@ emdn_get_wcs_info_all <- memoise::memoise(.emdn_get_wcs_info_all)
     dim_names = purrr::map_chr(
       summaries,
       ~ error_wrap(
-        emdn_get_dimensions_info(.x,
-          format = "character"
-        )
+        emdn_get_dimensions_info(.x, format = "character")
       )
     ),
     grid_size = purrr::map_chr(
       summaries,
-      ~ error_wrap(emdn_get_grid_size(.x) %>%
-        paste(collapse = "x"))
+      ~ error_wrap(
+        emdn_get_grid_size(.x) %>%
+          paste(collapse = "x")
+      )
     ),
     resolution = purrr::map_chr(
       summaries,
-      ~ error_wrap(emdn_get_resolution(.x) %>%
-        conc_resolution())
+      ~ error_wrap(
+        emdn_get_resolution(.x) %>%
+          conc_resolution()
+      )
     ),
     extent = purrr::map_chr(
       summaries,
@@ -283,13 +312,17 @@ emdn_get_wcs_info_all <- memoise::memoise(.emdn_get_wcs_info_all)
     ),
     temporal_extent = purrr::map_chr(
       summaries,
-      ~ error_wrap(emdn_get_temporal_extent(.x) %>%
-        paste(collapse = " - "))
+      ~ error_wrap(
+        emdn_get_temporal_extent(.x) %>%
+          paste(collapse = " - ")
+      )
     ),
     vertical_extent = purrr::map_chr(
       summaries,
-      ~ error_wrap(emdn_get_vertical_extent(.x) %>%
-        paste(collapse = " - "))
+      ~ error_wrap(
+        emdn_get_vertical_extent(.x) %>%
+          paste(collapse = " - ")
+      )
     ),
     subtype = purrr::map_chr(
       summaries,

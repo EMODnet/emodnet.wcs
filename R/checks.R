@@ -208,11 +208,11 @@ validate_rangesubset <- function(summary, rangesubset) {
 validate_dimension_subset <- function(
   wcs,
   coverage_id,
+  subset,
   type = c(
     "temporal",
     "vertical"
-  ),
-  subset
+  )
 ) {
   type <- match.arg(type)
   coefs <- emdn_get_coverage_dim_coefs(

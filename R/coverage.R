@@ -69,7 +69,7 @@
 emdn_get_coverage <- function(
   wcs = NULL,
   service = NULL,
-  coverage_id,
+  coverage_id, # nolint: function_argument_linter
   service_version = c(
     "2.0.1",
     "2.1.0",
@@ -120,16 +120,16 @@ emdn_get_coverage <- function(
     validate_dimension_subset(
       wcs,
       coverage_id,
-      type = "temporal",
-      subset = time
+      subset = time,
+      type = "temporal"
     )
   }
   if (!is.null(elevation)) {
     validate_dimension_subset(
       wcs,
       coverage_id,
-      type = "vertical",
-      subset = elevation
+      subset = elevation,
+      type = "vertical"
     )
   }
   check_cov_contains_bbox(summary, bbox, crs)
