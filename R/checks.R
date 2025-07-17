@@ -164,33 +164,32 @@ validate_namespace <- function(coverage_id) {
 validate_bbox <- function(bbox) {
   if (is.null(bbox)) {
     return(bbox)
-  } else {
-    checkmate::assert_numeric(
-      bbox,
-      len = 4L,
-      any.missing = FALSE,
-      names = "named"
-    )
-    checkmate::assert_subset(
-      names(bbox),
-      choices = c(
-        "xmin",
-        "xmax",
-        "ymin",
-        "ymax"
-      )
-    )
-
-    checkmate::assert_true(bbox["ymin"] < bbox["ymax"])
-    checkmate::assert_true(bbox["xmin"] < bbox["xmax"])
-
-    return(ows4R::OWSUtils$toBBOX(
-      xmin = bbox["xmin"],
-      xmax = bbox["xmax"],
-      ymin = bbox["ymin"],
-      ymax = bbox["ymax"]
-    ))
   }
+  checkmate::assert_numeric(
+    bbox,
+    len = 4L,
+    any.missing = FALSE,
+    names = "named"
+  )
+  checkmate::assert_subset(
+    names(bbox),
+    choices = c(
+      "xmin",
+      "xmax",
+      "ymin",
+      "ymax"
+    )
+  )
+
+  checkmate::assert_true(bbox["ymin"] < bbox["ymax"])
+  checkmate::assert_true(bbox["xmin"] < bbox["xmax"])
+
+  ows4R::OWSUtils$toBBOX(
+    xmin = bbox["xmin"],
+    xmax = bbox["xmax"],
+    ymin = bbox["ymin"],
+    ymax = bbox["ymax"]
+  )
 }
 
 validate_rangesubset <- function(summary, rangesubset) {
@@ -269,5 +268,5 @@ error_wrap <- function(expr) {
     )
   }
 
-  return(out)
+  out
 }

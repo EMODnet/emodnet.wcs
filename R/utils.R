@@ -128,14 +128,13 @@ emdn_get_coverage_dim_coefs <- function(
       )
 
       return(coefs)
-    } else {
-      cli::cli_warn(
-        "{.field coverage_id} {.val {coverage_id}}
-            has no {.val {type}} dimension."
-      )
-
-      return(NA)
     }
+    cli::cli_warn(
+      "{.field coverage_id} {.val {coverage_id}}
+            has no {.val {type}} dimension."
+    )
+
+    NA
   }
 
   purrr::map(
@@ -278,7 +277,7 @@ emdn_get_band_nil_values <- function(summary) {
 
   names(nil_val) <- purrr::map_chr(fields, \(x) x$description$value)
 
-  return(nil_val)
+  nil_val
 }
 
 #' @describeIn emdn_get_bbox Get the band descriptions of a coverage.
@@ -289,7 +288,7 @@ emdn_get_band_descriptions <- function(summary) {
 
   attr(band_names, "uom") <- purrr::map_chr(fields, \(x) x$uom$attrs$code)
 
-  return(band_names)
+  band_names
 }
 
 #' @describeIn emdn_get_bbox Get the units of measurement of the data contained in
@@ -301,7 +300,7 @@ emdn_get_band_uom <- function(summary) {
 
   names(uom) <- purrr::map_chr(fields, \(x) x$description$value)
 
-  return(uom)
+  uom
 }
 
 #' @describeIn emdn_get_bbox Get the range of values of the data contained in
@@ -320,7 +319,7 @@ emdn_get_band_constraints <- function(summary) {
   )
   names(constraints) <- purrr::map_chr(fields, \(x) x$description$value)
 
-  return(constraints)
+  constraints
 }
 
 #' @describeIn emdn_get_bbox Get the grid size of a coverage.
@@ -387,7 +386,7 @@ emdn_get_resolution <- function(summary) {
 
   attr(resolution, "uom") <- uom
 
-  return(resolution)
+  resolution
 }
 
 #' @describeIn emdn_get_bbox Get the grid function of a coverage.
@@ -558,7 +557,8 @@ extr_bbox_crs <- function(summary) {
   } else {
     bbox_crs <- sf::st_crs(4326L)
   }
-  return(bbox_crs)
+
+  bbox_crs
 }
 
 conc_resolution <- function(x) {

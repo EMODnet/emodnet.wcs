@@ -227,5 +227,5 @@ conv_nil_to_na <- function(cov_raster, summary, rangesubset) {
     }
   }
 
-  return(cov_raster)
+  cov_raster
 }
