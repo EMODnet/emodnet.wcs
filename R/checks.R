@@ -158,7 +158,7 @@ check_cov_contains_bbox <- function(summary, bbox, crs = NULL) {
 
 # ---- validations ----
 validate_namespace <- function(coverage_id) {
-  gsub(":", "__", coverage_id)
+  gsub(":", "__", coverage_id, fixed = TRUE)
 }
 
 validate_bbox <- function(bbox) {

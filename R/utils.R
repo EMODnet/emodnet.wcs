@@ -322,7 +322,7 @@ emdn_get_band_constraints <- function(summary) {
   constraints <- fields %>%
     purrr::map(
       ~ .x$constraint$AllowedValues$interval$value %>%
-        strsplit(" ") %>%
+        strsplit(" ", fixed = TRUE) %>%
         unlist() %>%
         as.numeric()
     )
@@ -352,7 +352,7 @@ emdn_get_resolution <- function(summary) {
 
   if (length(offset_vector) == 1L) {
     resolution <- offset_vector$value %>%
-      strsplit(" ") %>%
+      strsplit(" ", fixed = TRUE) %>%
       unlist() %>%
       as.numeric() %>%
       abs()
@@ -360,7 +360,7 @@ emdn_get_resolution <- function(summary) {
     resolution <- purrr::map_dbl(
       offset_vector,
       ~ .x$value %>%
-        strsplit(" ") %>%
+        strsplit(" ", fixed = TRUE) %>%
         unlist() %>%
         as.numeric() %>%
         sum() %>%
@@ -389,7 +389,7 @@ emdn_get_resolution <- function(summary) {
   }
 
   uom <- summary$getDescription()$boundedBy$attrs$uomLabels %>%
-    strsplit(" ") %>%
+    strsplit(" ", fixed = TRUE) %>%
     unlist()
 
   uom <- uom[emdn_get_dimension_types(summary) == "geographic"]
@@ -407,11 +407,11 @@ emdn_get_coverage_function <- function(summary) {
   list(
     sequence_rule = grid_function[["sequenceRule"]]$value,
     start_point = grid_function[["startPoint"]]$value %>%
-      strsplit(" ") %>%
+      strsplit(" ", fixed = TRUE) %>%
       unlist() %>%
       as.numeric(),
     axis_order = grid_function[["sequenceRule"]]$attrs$axisOrder %>%
-      strsplit(" ") %>%
+      strsplit(" ", fixed = TRUE) %>%
       unlist()
   )
 }
@@ -423,7 +423,7 @@ emdn_get_temporal_extent <- function(summary) {
 
   if (any(dim_df$type == "temporal")) {
     dim_df$range[dim_df$type == "temporal"] %>%
-      strsplit(" - ") %>%
+      strsplit(" - ", fixed = TRUE) %>%
       unlist()
   } else {
     NA
@@ -437,7 +437,7 @@ emdn_get_vertical_extent <- function(summary) {
 
   if (any(dim_df$type == "vertical")) {
     dim_df$range[dim_df$type == "vertical"] %>%
-      strsplit(" - ") %>%
+      strsplit(" - ", fixed = TRUE) %>%
       unlist()
   } else {
     NA
@@ -526,9 +526,9 @@ emdn_get_dimensions_names <- function(summary) {
 
   paste(
     paste0(
-      unlist(strsplit(dimensions$axisLabels, " ")),
+      unlist(strsplit(dimensions$axisLabels, " ", fixed = TRUE)),
       " (",
-      unlist(strsplit(dimensions$uomLabels, " ")),
+      unlist(strsplit(dimensions$uomLabels, " ", fixed = TRUE)),
       ")"
     ),
     collapse = ", "
@@ -558,7 +558,7 @@ extr_bbox_crs <- function(summary) {
   bbox_crs <- summary$getBoundingBox()$BoundingBox$attrs$crs
 
   if (!is.null(bbox_crs)) {
-    crs_parts <- unlist(strsplit(bbox_crs, "EPSG:"))
+    crs_parts <- unlist(strsplit(bbox_crs, "EPSG:", fixed = TRUE))
     if (length(crs_parts) == 2) {
       srid <- as.integer(crs_parts[2])
       if (!is.na(srid)) bbox_crs <- sf::st_crs(srid)
