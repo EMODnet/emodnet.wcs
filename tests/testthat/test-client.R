@@ -1,10 +1,10 @@
 test_that("Default connection works", {
   wcs <- create_biology_wcs()
-  expect_equal(
+  expect_identical(
     class(wcs),
     c("WCSClient", "OWSClient", "OGCAbstractObject", "R6")
   )
-  expect_equal(wcs$getUrl(), "https://geo.vliz.be/geoserver/Emodnetbio/wcs")
+  expect_identical(wcs$getUrl(), "https://geo.vliz.be/geoserver/Emodnetbio/wcs")
 })
 
 test_that("Error when wrong service", {

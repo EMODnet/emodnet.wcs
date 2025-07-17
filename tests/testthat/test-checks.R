@@ -1,17 +1,17 @@
 test_that("validate_namespace works", {
-  expect_equal(
+  expect_identical(
     validate_namespace("emodnet:2018_st_All_avg_POSTER"),
     "emodnet__2018_st_All_avg_POSTER"
   )
 
-  expect_equal(
+  expect_identical(
     validate_namespace("emodnet__2018_st_All_avg_POSTER"),
     "emodnet__2018_st_All_avg_POSTER"
   )
 })
 
 test_that("validate_bbox works", {
-  expect_equal(
+  expect_identical(
     validate_bbox(c(
       xmin = -180,
       ymin = -90.000000000036,
@@ -70,20 +70,20 @@ test_that("validate_bbox works", {
 
   expect_snapshot(error = TRUE, validate_bbox(NA))
 
-  expect_equal(validate_bbox(NULL), NULL)
+  expect_identical(validate_bbox(NULL), NULL)
 })
 
 test_that("check bbox works", {
-  expect_equal(error_wrap(stop(., call. = FALSE)), NA)
-  expect_equal(error_wrap(NULL), NA)
-  expect_equal(error_wrap("success"), "success")
+  expect_identical(error_wrap(stop(., call. = FALSE)), NA)
+  expect_identical(error_wrap(NULL), NA)
+  expect_identical(error_wrap("success"), "success")
 })
 
 
 test_that("error wrap works", {
-  expect_equal(error_wrap(stop(., call. = FALSE)), NA)
-  expect_equal(error_wrap(NULL), NA)
-  expect_equal(error_wrap("success"), "success")
+  expect_identical(error_wrap(stop(., call. = FALSE)), NA)
+  expect_identical(error_wrap(NULL), NA)
+  expect_identical(error_wrap("success"), "success")
 })
 
 
