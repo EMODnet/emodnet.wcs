@@ -42,7 +42,7 @@ test_that("validate_bbox works", {
         xmax = -180.000000000072,
         ymax = 90.0
       )
-    ),
+    )
   )
 
   expect_snapshot(
