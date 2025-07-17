@@ -1,7 +1,7 @@
 test_that("Default connection works", {
   wcs <- create_biology_wcs()
-  expect_identical(
-    class(wcs),
+  expect_s3_class(
+    wcs,
     c("WCSClient", "OWSClient", "OGCAbstractObject", "R6")
   )
   expect_identical(wcs$getUrl(), "https://geo.vliz.be/geoserver/Emodnetbio/wcs")
