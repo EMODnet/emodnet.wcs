@@ -265,10 +265,7 @@ emdn_get_WGS84bbox <- function(summary) {
 #' @export
 emdn_get_band_nil_values <- function(summary) {
   fields <- summary$getDescription()$rangeType$field
-  nil_val <- fields |>
-    purrr::map(
-      ~ .x$nilValues$nilValue[[1L]]$value
-    )
+  nil_val <- purrr::map(fields, \(x) x$nilValues$nilValue[[1L]]$value)
 
   nil_val <- nil_val |>
     purrr::map_dbl(
@@ -279,10 +276,7 @@ emdn_get_band_nil_values <- function(summary) {
       )
     )
 
-  names(nil_val) <- fields |>
-    purrr::map_chr(
-      ~ .x$description$value
-    )
+  names(nil_val) <- purrr::map_chr(fields, \(x) x$description$value)
 
   return(nil_val)
 }
@@ -291,11 +285,9 @@ emdn_get_band_nil_values <- function(summary) {
 #' @export
 emdn_get_band_descriptions <- function(summary) {
   fields <- summary$getDescription()$rangeType$field
-  band_names <- fields |>
-    purrr::map_chr(~ .x$description$value)
+  band_names <- purrr::map_chr(fields, \(x) x$description$value)
 
-  attr(band_names, "uom") <- fields |>
-    purrr::map_chr(~ .x$uom$attrs$code)
+  attr(band_names, "uom") <- purrr::map_chr(fields, \(x) x$uom$attrs$code)
 
   return(band_names)
 }
@@ -305,11 +297,9 @@ emdn_get_band_descriptions <- function(summary) {
 #' @export
 emdn_get_band_uom <- function(summary) {
   fields <- summary$getDescription()$rangeType$field
-  uom <- fields |>
-    purrr::map_chr(~ .x$uom$attrs$code)
+  uom <- purrr::map_chr(fields, \(x) x$uom$attrs$code)
 
-  names(uom) <- fields |>
-    purrr::map_chr(~ .x$description$value)
+  names(uom) <- purrr::map_chr(fields, \(x) x$description$value)
 
   return(uom)
 }
@@ -319,15 +309,16 @@ emdn_get_band_uom <- function(summary) {
 #' @export
 emdn_get_band_constraints <- function(summary) {
   fields <- summary$getDescription()$rangeType$field
-  constraints <- fields |>
-    purrr::map(
-      ~ .x$constraint$AllowedValues$interval$value |>
+  constraints <- purrr::map(
+    fields,
+    \(x) {
+      x$constraint$AllowedValues$interval$value |>
         strsplit(" ", fixed = TRUE) |>
         unlist() |>
         as.numeric()
-    )
-  names(constraints) <- fields |>
-    purrr::map_chr(~ .x$description$value)
+    }
+  )
+  names(constraints) <- purrr::map_chr(fields, \(x) x$description$value)
 
   return(constraints)
 }
