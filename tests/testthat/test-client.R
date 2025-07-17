@@ -40,7 +40,7 @@ test_that("Services down handled", {
   webmockr::stub_request("get", uri = test_url) %>%
     webmockr::wi_th(
       headers = list(
-        "Accept" = "application/json, text/xml, application/xml, */*"
+        Accept = "application/json, text/xml, application/xml, */*"
       )
     ) %>%
     webmockr::to_return(status = 500L) %>%

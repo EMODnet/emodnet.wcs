@@ -12,7 +12,7 @@
 ) {
   if (is.null(wcs) && is.null(service)) {
     cli::cli_abort(c(
-      "x" = "Please provide a valid {.var service}
+      x = "Please provide a valid {.var service}
         name or {.cls WCSClient} object to {.var wcs}.
         Both cannot be {.val NULL}"
     ))
@@ -216,7 +216,7 @@ emdn_get_wcs_info_all <- memoise::memoise(.emdn_get_wcs_info_all)
 ) {
   if (is.null(wcs) && is.null(service)) {
     cli::cli_abort(c(
-      "x" = "Please provide a valid {.var service}
+      x = "Please provide a valid {.var service}
         name or {.cls WCSClient} object to {.var wcs}.
         Both cannot be {.val NULL}"
     ))

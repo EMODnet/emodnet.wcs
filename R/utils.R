@@ -513,9 +513,9 @@ emdn_get_dimensions_info <- function(
 
   switch(
     format,
-    "character" = process_character(dimensions),
-    "list" = process_list(dimensions, include_coeffs = include_coeffs),
-    "tibble" = process_tibble(dimensions)
+    character = process_character(dimensions),
+    list = process_list(dimensions, include_coeffs = include_coeffs),
+    tibble = process_tibble(dimensions)
   )
 }
 
