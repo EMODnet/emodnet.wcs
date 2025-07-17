@@ -76,11 +76,11 @@ check_service <- function(request) {
       error = FALSE
     ))
     if (interactive() && is_monitor_up) {
-      cli_alert_info(c(
+      cli_alert_info(
         "Browse the EMODnet OGC monitor for more info on
-                the status of the services by visiting
-                {.url https://monitor.emodnet.eu/resources?lang=en&resource_type=OGC:WCS}"
-      ))
+         the status of the services by visiting
+         {.url https://monitor.emodnet.eu/resources?lang=en&resource_type=OGC:WCS}"
+      )
     }
 
     rlang::abort("Service creation failed")
