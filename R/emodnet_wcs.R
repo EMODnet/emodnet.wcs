@@ -5,7 +5,7 @@
       "services.csv",
       package = "emodnet.wcs"
     )
-  ) %>%
+  ) |>
     tibble::as_tibble()
 }
 

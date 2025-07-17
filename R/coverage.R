@@ -109,7 +109,7 @@ emdn_get_coverage <- function(
   # validate request arguments
   if (!is.null(rangesubset)) {
     validate_rangesubset(summary, rangesubset)
-    rangesubset_encoded <- utils::URLencode(rangesubset) %>%
+    rangesubset_encoded <- utils::URLencode(rangesubset) |>
       paste(collapse = ",")
   } else {
     rangesubset_encoded <- NULL

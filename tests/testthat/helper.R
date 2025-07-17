@@ -24,7 +24,7 @@ create_seabed_wcs <- function() {
 
 create_biology_summary <- function() {
   with_mock_dir("wcs-biology-summary", {
-    emdn_init_wcs_client(service = "biology") %>%
+    emdn_init_wcs_client(service = "biology") |>
       emdn_get_coverage_summaries(
         coverage_ids = "Emodnetbio__aca_spp_19582016_L1"
       )

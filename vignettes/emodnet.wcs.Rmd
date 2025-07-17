@@ -164,7 +164,7 @@ terra::plot(cov)
 For more details on downloading coverages, please refer to the [Download Coverages](https://emodnet.github.io/emodnet.wcs/articles/coverages.html) article in the `emodnet.wcs` online documentation.
 
 ```{r, include=FALSE}
-fs::dir_ls(type = "file", glob = "*.tif") %>%
+fs::dir_ls(type = "file", glob = "*.tif") |>
   fs::file_delete()
 ```
 

@@ -196,7 +196,7 @@ emdn_get_coverage(
   bbox = bbox,
   rangesubset = "Relative error",
   nil_values_as_na = TRUE
-) %>%
+) |>
   terra::plot()
 ```
 
@@ -221,7 +221,7 @@ emdn_get_coverage(
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-fs::dir_ls(type = "file", glob = "*.tif") %>%
+fs::dir_ls(type = "file", glob = "*.tif") |>
   fs::file_delete()
 ```
 
