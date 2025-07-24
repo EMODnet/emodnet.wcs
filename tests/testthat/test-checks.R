@@ -88,7 +88,9 @@ test_that("error wrap works", {
 
 
 test_that("check coverages works", {
-  wcs <- create_biology_wcs()
+  vcr::local_cassette("biology")
+
+  wcs <- emdn_init_wcs_client("biology")
   coverage_ids <- c(
     "Emodnetbio__ratio_large_to_small_19582016_L1_err",
     "Emodnetbio__aca_spp_19582016_L1",
@@ -101,16 +103,18 @@ test_that("check coverages works", {
 })
 
 test_that("validate rangesubset works", {
-  summary <- create_biology_summary()[[1L]]
   withr::local_options(emodnet.wcs.quiet = FALSE)
-  with_mock_dir("biology-description", {
-    coverage_id <- "Emodnetbio__ratio_large_to_small_19582016_L1_err"
+  vcr::local_cassette("biology-description")
 
-    expect_invisible(validate_rangesubset(summary, "relative_abundance"))
-
-    expect_snapshot(
-      error = TRUE,
-      validate_rangesubset(summary, "erroneous_rangetype")
+  summary <- emdn_init_wcs_client("biology") |>
+    emdn_get_coverage_summaries(
+      coverage_ids = "Emodnetbio__ratio_large_to_small_19582016_L1_err"
     )
-  })
+
+  expect_invisible(validate_rangesubset(summary[[1]], "Relative abundance"))
+
+  expect_snapshot(
+    error = TRUE,
+    validate_rangesubset(summary[[1]], "erroneous_rangetype")
+  )
 })

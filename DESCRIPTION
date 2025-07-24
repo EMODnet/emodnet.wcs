@@ -28,16 +28,15 @@ Imports:
 Suggests: 
     covr,
     fs,
-    httptest,
     huxtable,
     knitr,
     rmarkdown,
     testthat (>= 3.0.0),
-    vcr (>= 1.7.0.91),
+    vcr (>= 2.0.0),
     webmockr,
     withr
 Config/testthat/edition: 3
-Remotes:  
+Remotes: 
     eblondel/ows4R,
     ropensci/vcr
 Encoding: UTF-8

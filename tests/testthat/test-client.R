@@ -1,5 +1,7 @@
 test_that("Default connection works", {
-  wcs <- create_biology_wcs()
+  vcr::local_cassette("biology")
+
+  wcs <- emdn_init_wcs_client("biology")
   expect_s3_class(
     wcs,
     c("WCSClient", "OWSClient", "OGCAbstractObject", "R6")
@@ -25,6 +27,7 @@ test_that("Error when wrong service version", {
 test_that("Warning when unsupported service version", {
   skip_if_offline()
   withr::local_options(emodnet.wcs.quiet = FALSE)
+
   expect_snapshot(emdn_init_wcs_client(
     service = "human_activities",
     service_version = "1.1.1"
