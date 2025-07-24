@@ -2,7 +2,7 @@
 title: "Get Started with emodnet.wcs"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Getting Started}
+  %\VignetteIndexEntry{Get Started with emodnet.wcs}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -12,14 +12,14 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-vcr::setup_knitr(prefix = "emodnet.wcs")
+vcr::setup_knitr()
 ```
 
 ## WCS Basics
 
 The [Web Coverage Service (WCS)](https://www.ogc.org/standards/wcs)is a standard issued by the Open Geospatial Consortium (OGC).
 It is designed to simplify remote access to coverages, commonly known as raster maps in GIS.
-WCS functions over the HTTP protocol, setting out how to obtain data and meta-data using the requests available in the protocol.
+WCS functions over the HTTP protocol, setting out how to obtain data and metadata using the requests available in the protocol.
 In practice it allows metadata and raster maps to be obtained from a web browser or from any other programme that uses the protocol.
 
 An important distinction must be made between WCS and Web Map Service (WMS).
@@ -29,13 +29,14 @@ It additionally allows more precise queries, potentially against multi-dimension
 The WCS standard is composed by three core requests, each with a particular purpose:
 
 1. `GetCapabilities`: This request provides information on a particular service.
-2. `DescribeCoverage`: This request To provides more detailed information about a particular coverage.
-3. `GetCoverage`: This request that actually obtains coverage data.
+2. `DescribeCoverage`: This request provides more detailed information about a particular coverage.
+3. `GetCoverage`: This request actually obtains coverage data.
 
-WCS requests are handled in `emodnet.wcs` through package [`ows4R`](https://eblondel.github.io/ows4R/). 
-`ows4R` uses [`R6` classes](https://r6.r-lib.org/articles/Introduction.html) and implements an encapsulated object-oriented programming paradigm which may be unfamiliar to some R users. `emodnet.wcs` wraps `ows4R`and aims to provide more familiar workflows and return more familiar, usable and easy to review outputs.
+WCS requests are handled in emodnet.wcs through the [ows4R package](https://eblondel.github.io/ows4R/). 
+ows4R uses [R6 classes](https://r6.r-lib.org/articles/Introduction.html) and implements an encapsulated object-oriented programming paradigm which may be unfamiliar to some R users. 
+emodnet.wcs wraps ows4R and aims to provide more familiar workflows and return more familiar, usable and easy to review outputs.
 It also provides checks and validations to ensure smooth and easy interaction with EMODnet WCS services.
-You can however use`ows4R` with any of the EMODnet WCS endpoints if you prefer.
+You can however use ows4R with any of the EMODnet WCS endpoints if you prefer.
 
 ## EMODnet WCS Services
 
@@ -57,8 +58,8 @@ The `service_name` column contains the service names that can be used to establi
 
 ## Connecting to EMODnet WCS Services
 
-Before we can make requests to any of the services, we first need to create new WCS Client.
-We specify the service we want to connect to using the`service` argument.
+Before we can make requests to any of the services, we first need to create a new WCS Client.
+We specify the service we want to connect to using the `service` argument.
 
 ```{r}
 #| label: bio
@@ -66,14 +67,14 @@ We specify the service we want to connect to using the`service` argument.
 wcs <- emdn_init_wcs_client("biology")
 ```
 
-There are options for logging additional messages arising from `ows4R` and the underlying `libculrl`/`curl` library through argument `logger`.
-These can be useful in trouble shooting issues.
+There are options for logging additional messages arising from ows4R and the underlying `libculrl`/`curl` library through the `logger` argument.
+These can be useful in troubleshooting issues.
 
 There are 3 levels of potential logging:
 
 - `'NONE'` (the default) for no logger.
-- `'INFO'` includes `ows4R` logs.
-- `'DEBUG'` for all internal logs (such as as Curl details)
+- `'INFO'` includes ows4R logs.
+- `'DEBUG'` for all internal logs (such as as curl details)
 
 The following example sets the logger to `"DEBUG"`.
 
@@ -89,7 +90,7 @@ The `emdn_init_wcs_client()` functions returns an R6 object of class [`<WCSClien
 debug_wcs
 ```
 
-You can use any of the methods provided within the class should you wish (see [`ows4R` documentation](https://eblondel.github.io/ows4R/articles/wcs.html) for details).
+You can use any of the methods provided within the class should you wish (see [ows4R documentation](https://eblondel.github.io/ows4R/articles/wcs.html) for details).
 
 ```{r}
 debug_wcs$getUrl()
@@ -98,10 +99,10 @@ debug_wcs$loggerType
 ```
 
 
-However `emodnet.wcs` provides a host of functions for extracting/compiling useful metadata in a variety of forms as well downloading raster data from emodnet.wcs service which you will likely find easier to work with.
+However emodnet.wcs provides a host of functions for extracting/compiling useful metadata in a variety of forms as well downloading raster data from emodnet.wcs service which you will likely find easier to work with.
 
-Here are some examples of functionality provided by `emodnet.wcs`.
-For more details see the relevant vignette.
+Here are some examples of functionality provided by emodnet.wcs.
+For more details see the other vignettes.
 
 ## Getting Metadata
 
@@ -123,13 +124,13 @@ emdn_get_coverage_info(
 )
 ```
 
-The package offers a number of functions for extracting individual metadata in more usable forms. e.g.
+The package offers a number of functions for extracting individual metadata in more usable forms, for instance:
 
 ```{r}
 emdn_get_coverage_ids(wcs)
 ```
 
-For more details, please refer to the [Getting metadata about Services \& Coverages](https://emodnet.github.io/emodnet.wcs/articles/metadata.html) article in the `emodnet.wcs` online documentation.
+For more details, please refer to the [Getting metadata about Services \& Coverages](https://emodnet.github.io/emodnet.wcs/articles/metadata.html) article in the emodnet.wcs online documentation.
 
 ## Downloading Coverages
 
@@ -159,7 +160,7 @@ cov
 terra::plot(cov)
 ```
 
-For more details on downloading coverages, please refer to the [Download Coverages](https://emodnet.github.io/emodnet.wcs/articles/coverages.html) article in the `emodnet.wcs` online documentation.
+For more details on downloading coverages, please refer to the [Download Coverages](https://emodnet.github.io/emodnet.wcs/articles/coverages.html) article in the emodnet.wcs online documentation.
 
 ```{r, include=FALSE}
 fs::dir_ls(type = "file", glob = "*.tif") |>

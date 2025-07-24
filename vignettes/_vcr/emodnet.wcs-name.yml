@@ -14,7 +14,7 @@ http_interactions:
       content-disposition: inline; filename=Emodnetbio__cal_fin_19582016_L1_err.tif
       content-type: image/tiff
       transfer-encoding: chunked
-      date: Thu, 17 Jul 2025 11:00:20 GMT
+      date: Thu, 24 Jul 2025 08:32:36 GMT
     body:
       raw_gzip: |-
         eJzt3bFrE2EcxvHfm1Rx6FCHLrp0FAcpLYRmOlErOnTyrxECh4O4uDiqq4sgODtJ/gsFh1qq
@@ -49,5 +49,5 @@ http_interactions:
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICS+P1QOtx/qXDs
         DwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAD19A/vwOYL
-  recorded_at: 2025-07-17 11:00:20
-recorded_with: VCR-vcr/1.7.1.93
+  recorded_at: 2025-07-24 08:32:36
+recorded_with: VCR-vcr/2.0.0

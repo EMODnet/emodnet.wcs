@@ -15,7 +15,7 @@ http_interactions:
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Thu, 17 Jul 2025 10:56:11 GMT
+      date: Thu, 24 Jul 2025 08:27:40 GMT
     body:
       string: |
         <?xml version="1.0" encoding="UTF-8"?><wcs:CoverageDescriptions xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcsgs="http://www.geoserver.org/wcsgs/2.0" xsi:schemaLocation=" http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsDescribeCoverage.xsd http://www.geoserver.org/wcsgs/2.0 https://geo.vliz.be/geoserver/schemas/wcs/2.0/wcsgs.xsd">
@@ -824,14 +824,14 @@ http_interactions:
             </wcs:ServiceParameters>
           </wcs:CoverageDescription>
         </wcs:CoverageDescriptions>
-  recorded_at: 2025-07-17 10:56:12
+  recorded_at: 2025-07-24 08:27:40
 - request:
     method: GET
     uri: https://www.opengis.net/def/crs/EPSG/0/4326
   response:
     status: 200
     headers:
-      date: Thu, 17 Jul 2025 10:56:18 GMT
+      date: Thu, 24 Jul 2025 08:27:47 GMT
       server: Apache/2.4.62 (Debian)
       content-length: '2091'
       cache-control: max-age=86400
@@ -860,7 +860,7 @@ http_interactions:
         ysz3koxnH3+ffRNPiv6sg7wA6XjJwaBcFZBplsMiaAU7SNtF08UfUcdIyQSkv9YZmo47kD
         cc
         3H7q/e28Aeqaa6t4werlf3SgL38ypvT98j1B1e/lFXNbcRaBR5JJTN/91F1lLzZ++g8RQqO/
-  recorded_at: 2025-07-17 10:56:19
+  recorded_at: 2025-07-24 08:27:47
 - request:
     method: GET
     uri: https://geo.vliz.be/geoserver/Emodnetbio/wcs?service=WCS&version=2.0.1&coverageId=Emodnetbio__aca_spp_19582016_L1&request=DescribeCoverage
@@ -876,7 +876,7 @@ http_interactions:
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Thu, 17 Jul 2025 10:56:19 GMT
+      date: Thu, 24 Jul 2025 08:27:47 GMT
     body:
       string: |
         <?xml version="1.0" encoding="UTF-8"?><wcs:CoverageDescriptions xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcsgs="http://www.geoserver.org/wcsgs/2.0" xsi:schemaLocation=" http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsDescribeCoverage.xsd http://www.geoserver.org/wcsgs/2.0 https://geo.vliz.be/geoserver/schemas/wcs/2.0/wcsgs.xsd">
@@ -1669,14 +1669,14 @@ http_interactions:
             </wcs:ServiceParameters>
           </wcs:CoverageDescription>
         </wcs:CoverageDescriptions>
-  recorded_at: 2025-07-17 10:56:19
+  recorded_at: 2025-07-24 08:27:47
 - request:
     method: GET
     uri: https://www.opengis.net/def/crs/EPSG/0/4326
   response:
     status: 200
     headers:
-      date: Thu, 17 Jul 2025 10:56:25 GMT
+      date: Thu, 24 Jul 2025 08:27:55 GMT
       server: Apache/2.4.62 (Debian)
       content-length: '2091'
       cache-control: max-age=86400
@@ -1705,7 +1705,7 @@ http_interactions:
         ysz3koxnH3+ffRNPiv6sg7wA6XjJwaBcFZBplsMiaAU7SNtF08UfUcdIyQSkv9YZmo47kD
         cc
         3H7q/e28Aeqaa6t4werlf3SgL38ypvT98j1B1e/lFXNbcRaBR5JJTN/91F1lLzZ++g8RQqO/
-  recorded_at: 2025-07-17 10:56:25
+  recorded_at: 2025-07-24 08:27:55
 - request:
     method: GET
     uri: https://geo.vliz.be/geoserver/Emodnetbio/wcs?service=WCS&version=2.0.1&coverageId=Emodnetbio__cal_fin_19582016_L1_err&request=DescribeCoverage
@@ -1721,7 +1721,7 @@ http_interactions:
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Thu, 17 Jul 2025 10:56:26 GMT
+      date: Thu, 24 Jul 2025 08:27:55 GMT
     body:
       string: |
         <?xml version="1.0" encoding="UTF-8"?><wcs:CoverageDescriptions xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcsgs="http://www.geoserver.org/wcsgs/2.0" xsi:schemaLocation=" http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsDescribeCoverage.xsd http://www.geoserver.org/wcsgs/2.0 https://geo.vliz.be/geoserver/schemas/wcs/2.0/wcsgs.xsd">
@@ -2530,14 +2530,14 @@ http_interactions:
             </wcs:ServiceParameters>
           </wcs:CoverageDescription>
         </wcs:CoverageDescriptions>
-  recorded_at: 2025-07-17 10:56:26
+  recorded_at: 2025-07-24 08:27:55
 - request:
     method: GET
     uri: https://www.opengis.net/def/crs/EPSG/0/4326
   response:
     status: 200
     headers:
-      date: Thu, 17 Jul 2025 10:56:32 GMT
+      date: Thu, 24 Jul 2025 08:28:02 GMT
       server: Apache/2.4.62 (Debian)
       content-length: '2091'
       cache-control: max-age=86400
@@ -2566,7 +2566,7 @@ http_interactions:
         ysz3koxnH3+ffRNPiv6sg7wA6XjJwaBcFZBplsMiaAU7SNtF08UfUcdIyQSkv9YZmo47kD
         cc
         3H7q/e28Aeqaa6t4werlf3SgL38ypvT98j1B1e/lFXNbcRaBR5JJTN/91F1lLzZ++g8RQqO/
-  recorded_at: 2025-07-17 10:56:33
+  recorded_at: 2025-07-24 08:28:02
 - request:
     method: GET
     uri: https://geo.vliz.be/geoserver/Emodnetbio/wcs?service=WCS&version=2.0.1&coverageId=Emodnetbio__cal_hel_19582016_L1_err&request=DescribeCoverage
@@ -2578,11 +2578,12 @@ http_interactions:
       content-security-policy: base-uri 'self'; form-action 'self'; default-src 'none';
         child-src 'self'; connect-src 'self'; font-src 'self'; img-src 'self' data:;
         style-src 'self' 'unsafe-inline'; script-src 'self';, frame-ancestors 'self';
+      access-control-allow-origin: '*'
       content-disposition: inline; filename=geoserver-DescribeCoverage.application
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Thu, 17 Jul 2025 10:56:33 GMT
+      date: Thu, 24 Jul 2025 08:28:02 GMT
     body:
       string: |
         <?xml version="1.0" encoding="UTF-8"?><wcs:CoverageDescriptions xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcsgs="http://www.geoserver.org/wcsgs/2.0" xsi:schemaLocation=" http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsDescribeCoverage.xsd http://www.geoserver.org/wcsgs/2.0 https://geo.vliz.be/geoserver/schemas/wcs/2.0/wcsgs.xsd">
@@ -3391,14 +3392,14 @@ http_interactions:
             </wcs:ServiceParameters>
           </wcs:CoverageDescription>
         </wcs:CoverageDescriptions>
-  recorded_at: 2025-07-17 10:56:33
+  recorded_at: 2025-07-24 08:28:02
 - request:
     method: GET
     uri: https://www.opengis.net/def/crs/EPSG/0/4326
   response:
     status: 200
     headers:
-      date: Thu, 17 Jul 2025 10:56:39 GMT
+      date: Thu, 24 Jul 2025 08:28:09 GMT
       server: Apache/2.4.62 (Debian)
       content-length: '2091'
       cache-control: max-age=86400
@@ -3427,7 +3428,7 @@ http_interactions:
         ysz3koxnH3+ffRNPiv6sg7wA6XjJwaBcFZBplsMiaAU7SNtF08UfUcdIyQSkv9YZmo47kD
         cc
         3H7q/e28Aeqaa6t4werlf3SgL38ypvT98j1B1e/lFXNbcRaBR5JJTN/91F1lLzZ++g8RQqO/
-  recorded_at: 2025-07-17 10:56:39
+  recorded_at: 2025-07-24 08:28:09
 - request:
     method: GET
     uri: https://geo.vliz.be/geoserver/Emodnetbio/wcs?service=WCS&version=2.0.1&coverageId=Emodnetbio__met_luc_19582016_L1_err&request=DescribeCoverage
@@ -3439,12 +3440,11 @@ http_interactions:
       content-security-policy: base-uri 'self'; form-action 'self'; default-src 'none';
         child-src 'self'; connect-src 'self'; font-src 'self'; img-src 'self' data:;
         style-src 'self' 'unsafe-inline'; script-src 'self';, frame-ancestors 'self';
-      access-control-allow-origin: '*'
       content-disposition: inline; filename=geoserver-DescribeCoverage.application
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Thu, 17 Jul 2025 10:56:39 GMT
+      date: Thu, 24 Jul 2025 08:28:09 GMT
     body:
       string: |
         <?xml version="1.0" encoding="UTF-8"?><wcs:CoverageDescriptions xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcsgs="http://www.geoserver.org/wcsgs/2.0" xsi:schemaLocation=" http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsDescribeCoverage.xsd http://www.geoserver.org/wcsgs/2.0 https://geo.vliz.be/geoserver/schemas/wcs/2.0/wcsgs.xsd">
@@ -4253,14 +4253,14 @@ http_interactions:
             </wcs:ServiceParameters>
           </wcs:CoverageDescription>
         </wcs:CoverageDescriptions>
-  recorded_at: 2025-07-17 10:56:40
+  recorded_at: 2025-07-24 08:28:09
 - request:
     method: GET
     uri: https://www.opengis.net/def/crs/EPSG/0/4326
   response:
     status: 200
     headers:
-      date: Thu, 17 Jul 2025 10:56:46 GMT
+      date: Thu, 24 Jul 2025 08:28:16 GMT
       server: Apache/2.4.62 (Debian)
       content-length: '2091'
       cache-control: max-age=86400
@@ -4289,7 +4289,7 @@ http_interactions:
         ysz3koxnH3+ffRNPiv6sg7wA6XjJwaBcFZBplsMiaAU7SNtF08UfUcdIyQSkv9YZmo47kD
         cc
         3H7q/e28Aeqaa6t4werlf3SgL38ypvT98j1B1e/lFXNbcRaBR5JJTN/91F1lLzZ++g8RQqO/
-  recorded_at: 2025-07-17 10:56:46
+  recorded_at: 2025-07-24 08:28:16
 - request:
     method: GET
     uri: https://geo.vliz.be/geoserver/Emodnetbio/wcs?service=WCS&version=2.0.1&coverageId=Emodnetbio__oit_spp_19582016_L1_err&request=DescribeCoverage
@@ -4301,12 +4301,11 @@ http_interactions:
       content-security-policy: base-uri 'self'; form-action 'self'; default-src 'none';
         child-src 'self'; connect-src 'self'; font-src 'self'; img-src 'self' data:;
         style-src 'self' 'unsafe-inline'; script-src 'self';, frame-ancestors 'self';
-      access-control-allow-origin: '*'
       content-disposition: inline; filename=geoserver-DescribeCoverage.application
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Thu, 17 Jul 2025 10:56:45 GMT
+      date: Thu, 24 Jul 2025 08:28:16 GMT
     body:
       string: |
         <?xml version="1.0" encoding="UTF-8"?><wcs:CoverageDescriptions xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcsgs="http://www.geoserver.org/wcsgs/2.0" xsi:schemaLocation=" http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsDescribeCoverage.xsd http://www.geoserver.org/wcsgs/2.0 https://geo.vliz.be/geoserver/schemas/wcs/2.0/wcsgs.xsd">
@@ -5115,14 +5114,14 @@ http_interactions:
             </wcs:ServiceParameters>
           </wcs:CoverageDescription>
         </wcs:CoverageDescriptions>
-  recorded_at: 2025-07-17 10:56:46
+  recorded_at: 2025-07-24 08:28:16
 - request:
     method: GET
     uri: https://www.opengis.net/def/crs/EPSG/0/4326
   response:
     status: 200
     headers:
-      date: Thu, 17 Jul 2025 10:56:53 GMT
+      date: Thu, 24 Jul 2025 08:28:23 GMT
       server: Apache/2.4.62 (Debian)
       content-length: '2091'
       cache-control: max-age=86400
@@ -5151,7 +5150,7 @@ http_interactions:
         ysz3koxnH3+ffRNPiv6sg7wA6XjJwaBcFZBplsMiaAU7SNtF08UfUcdIyQSkv9YZmo47kD
         cc
         3H7q/e28Aeqaa6t4werlf3SgL38ypvT98j1B1e/lFXNbcRaBR5JJTN/91F1lLzZ++g8RQqO/
-  recorded_at: 2025-07-17 10:56:53
+  recorded_at: 2025-07-24 08:28:23
 - request:
     method: GET
     uri: https://geo.vliz.be/geoserver/Emodnetbio/wcs?service=WCS&version=2.0.1&coverageId=Emodnetbio__tem_lon_19582016_L1_err&request=DescribeCoverage
@@ -5163,12 +5162,11 @@ http_interactions:
       content-security-policy: base-uri 'self'; form-action 'self'; default-src 'none';
         child-src 'self'; connect-src 'self'; font-src 'self'; img-src 'self' data:;
         style-src 'self' 'unsafe-inline'; script-src 'self';, frame-ancestors 'self';
-      access-control-allow-origin: '*'
       content-disposition: inline; filename=geoserver-DescribeCoverage.application
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Thu, 17 Jul 2025 10:56:53 GMT
+      date: Thu, 24 Jul 2025 08:28:23 GMT
     body:
       string: |
         <?xml version="1.0" encoding="UTF-8"?><wcs:CoverageDescriptions xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcsgs="http://www.geoserver.org/wcsgs/2.0" xsi:schemaLocation=" http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsDescribeCoverage.xsd http://www.geoserver.org/wcsgs/2.0 https://geo.vliz.be/geoserver/schemas/wcs/2.0/wcsgs.xsd">
@@ -5977,14 +5975,14 @@ http_interactions:
             </wcs:ServiceParameters>
           </wcs:CoverageDescription>
         </wcs:CoverageDescriptions>
-  recorded_at: 2025-07-17 10:56:54
+  recorded_at: 2025-07-24 08:28:23
 - request:
     method: GET
     uri: https://www.opengis.net/def/crs/EPSG/0/4326
   response:
     status: 200
     headers:
-      date: Thu, 17 Jul 2025 10:57:01 GMT
+      date: Thu, 24 Jul 2025 08:28:30 GMT
       server: Apache/2.4.62 (Debian)
       content-length: '2091'
       cache-control: max-age=86400
@@ -6013,7 +6011,7 @@ http_interactions:
         ysz3koxnH3+ffRNPiv6sg7wA6XjJwaBcFZBplsMiaAU7SNtF08UfUcdIyQSkv9YZmo47kD
         cc
         3H7q/e28Aeqaa6t4werlf3SgL38ypvT98j1B1e/lFXNbcRaBR5JJTN/91F1lLzZ++g8RQqO/
-  recorded_at: 2025-07-17 10:57:01
+  recorded_at: 2025-07-24 08:28:30
 - request:
     method: GET
     uri: https://geo.vliz.be/geoserver/Emodnetbio/wcs?service=WCS&version=2.0.1&coverageId=Emodnetbio__chli_19582016_L1_err&request=DescribeCoverage
@@ -6025,12 +6023,11 @@ http_interactions:
       content-security-policy: base-uri 'self'; form-action 'self'; default-src 'none';
         child-src 'self'; connect-src 'self'; font-src 'self'; img-src 'self' data:;
         style-src 'self' 'unsafe-inline'; script-src 'self';, frame-ancestors 'self';
-      access-control-allow-origin: '*'
       content-disposition: inline; filename=geoserver-DescribeCoverage.application
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Thu, 17 Jul 2025 10:57:01 GMT
+      date: Thu, 24 Jul 2025 08:28:30 GMT
     body:
       string: |
         <?xml version="1.0" encoding="UTF-8"?><wcs:CoverageDescriptions xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcsgs="http://www.geoserver.org/wcsgs/2.0" xsi:schemaLocation=" http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsDescribeCoverage.xsd http://www.geoserver.org/wcsgs/2.0 https://geo.vliz.be/geoserver/schemas/wcs/2.0/wcsgs.xsd">
@@ -6838,14 +6835,14 @@ http_interactions:
             </wcs:ServiceParameters>
           </wcs:CoverageDescription>
         </wcs:CoverageDescriptions>
-  recorded_at: 2025-07-17 10:57:01
+  recorded_at: 2025-07-24 08:28:30
 - request:
     method: GET
     uri: https://www.opengis.net/def/crs/EPSG/0/4326
   response:
     status: 200
     headers:
-      date: Thu, 17 Jul 2025 10:57:08 GMT
+      date: Thu, 24 Jul 2025 08:28:37 GMT
       server: Apache/2.4.62 (Debian)
       content-length: '2091'
       cache-control: max-age=86400
@@ -6874,7 +6871,7 @@ http_interactions:
         ysz3koxnH3+ffRNPiv6sg7wA6XjJwaBcFZBplsMiaAU7SNtF08UfUcdIyQSkv9YZmo47kD
         cc
         3H7q/e28Aeqaa6t4werlf3SgL38ypvT98j1B1e/lFXNbcRaBR5JJTN/91F1lLzZ++g8RQqO/
-  recorded_at: 2025-07-17 10:57:09
+  recorded_at: 2025-07-24 08:28:37
 - request:
     method: GET
     uri: https://geo.vliz.be/geoserver/Emodnetbio/wcs?service=WCS&version=2.0.1&coverageId=Emodnetbio__tot_lar_19582016_L1_err&request=DescribeCoverage
@@ -6890,7 +6887,7 @@ http_interactions:
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Thu, 17 Jul 2025 10:57:09 GMT
+      date: Thu, 24 Jul 2025 08:28:37 GMT
     body:
       string: |
         <?xml version="1.0" encoding="UTF-8"?><wcs:CoverageDescriptions xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcsgs="http://www.geoserver.org/wcsgs/2.0" xsi:schemaLocation=" http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsDescribeCoverage.xsd http://www.geoserver.org/wcsgs/2.0 https://geo.vliz.be/geoserver/schemas/wcs/2.0/wcsgs.xsd">
@@ -7699,14 +7696,14 @@ http_interactions:
             </wcs:ServiceParameters>
           </wcs:CoverageDescription>
         </wcs:CoverageDescriptions>
-  recorded_at: 2025-07-17 10:57:09
+  recorded_at: 2025-07-24 08:28:37
 - request:
     method: GET
     uri: https://www.opengis.net/def/crs/EPSG/0/4326
   response:
     status: 200
     headers:
-      date: Thu, 17 Jul 2025 10:57:16 GMT
+      date: Thu, 24 Jul 2025 08:28:44 GMT
       server: Apache/2.4.62 (Debian)
       content-length: '2091'
       cache-control: max-age=86400
@@ -7735,7 +7732,7 @@ http_interactions:
         ysz3koxnH3+ffRNPiv6sg7wA6XjJwaBcFZBplsMiaAU7SNtF08UfUcdIyQSkv9YZmo47kD
         cc
         3H7q/e28Aeqaa6t4werlf3SgL38ypvT98j1B1e/lFXNbcRaBR5JJTN/91F1lLzZ++g8RQqO/
-  recorded_at: 2025-07-17 10:57:16
+  recorded_at: 2025-07-24 08:28:44
 - request:
     method: GET
     uri: https://geo.vliz.be/geoserver/Emodnetbio/wcs?service=WCS&version=2.0.1&coverageId=Emodnetbio__tot_sma_19582016_L1_err&request=DescribeCoverage
@@ -7747,12 +7744,11 @@ http_interactions:
       content-security-policy: base-uri 'self'; form-action 'self'; default-src 'none';
         child-src 'self'; connect-src 'self'; font-src 'self'; img-src 'self' data:;
         style-src 'self' 'unsafe-inline'; script-src 'self';, frame-ancestors 'self';
-      access-control-allow-origin: '*'
       content-disposition: inline; filename=geoserver-DescribeCoverage.application
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Thu, 17 Jul 2025 10:57:15 GMT
+      date: Thu, 24 Jul 2025 08:28:45 GMT
     body:
       string: |
         <?xml version="1.0" encoding="UTF-8"?><wcs:CoverageDescriptions xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcsgs="http://www.geoserver.org/wcsgs/2.0" xsi:schemaLocation=" http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsDescribeCoverage.xsd http://www.geoserver.org/wcsgs/2.0 https://geo.vliz.be/geoserver/schemas/wcs/2.0/wcsgs.xsd">
@@ -8561,14 +8557,14 @@ http_interactions:
             </wcs:ServiceParameters>
           </wcs:CoverageDescription>
         </wcs:CoverageDescriptions>
-  recorded_at: 2025-07-17 10:57:16
+  recorded_at: 2025-07-24 08:28:45
 - request:
     method: GET
     uri: https://www.opengis.net/def/crs/EPSG/0/4326
   response:
     status: 200
     headers:
-      date: Thu, 17 Jul 2025 10:57:23 GMT
+      date: Thu, 24 Jul 2025 08:28:51 GMT
       server: Apache/2.4.62 (Debian)
       content-length: '2091'
       cache-control: max-age=86400
@@ -8597,5 +8593,5 @@ http_interactions:
         ysz3koxnH3+ffRNPiv6sg7wA6XjJwaBcFZBplsMiaAU7SNtF08UfUcdIyQSkv9YZmo47kD
         cc
         3H7q/e28Aeqaa6t4werlf3SgL38ypvT98j1B1e/lFXNbcRaBR5JJTN/91F1lLzZ++g8RQqO/
-  recorded_at: 2025-07-17 10:57:23
-recorded_with: VCR-vcr/1.7.1.93
+  recorded_at: 2025-07-24 08:28:52
+recorded_with: VCR-vcr/2.0.0

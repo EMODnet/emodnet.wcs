@@ -10,13 +10,12 @@ http_interactions:
       content-security-policy: base-uri 'self'; form-action 'self'; default-src 'none';
         child-src 'self'; connect-src 'self'; font-src 'self'; img-src 'self' data:;
         style-src 'self' 'unsafe-inline'; script-src 'self';, frame-ancestors 'self';
-      access-control-allow-origin: '*'
       cache-control: max-age=0, must-revalidate
       content-disposition: inline; filename=geoserver-GetCapabilities.application
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Thu, 17 Jul 2025 10:56:11 GMT
+      date: Thu, 24 Jul 2025 08:27:40 GMT
     body:
       string: <?xml version="1.0" encoding="UTF-8"?><wcs:Capabilities xmlns:wcs="http://www.opengis.net/wcs/2.0"
         xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
@@ -175,5 +174,5 @@ http_interactions:
         xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0">33388e9718d07e8171ea43735e71e549f0173231</inspire_common:Code></inspire_dls:SpatialDataSetIdentifier><inspire_dls:SpatialDataSetIdentifier
         metadataURL="http://geonetwork.vliz.be/geonetwork/srv/eng/xml.metadata.get?uuid=b1d3b444a111c94e69e6853a83957f1d2ebaa387"><inspire_common:Code
         xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0">b1d3b444a111c94e69e6853a83957f1d2ebaa387</inspire_common:Code></inspire_dls:SpatialDataSetIdentifier></inspire_dls:ExtendedCapabilities></ows:ExtendedCapabilities></wcs:Extension></wcs:Contents></wcs:Capabilities>
-  recorded_at: 2025-07-17 10:56:11
-recorded_with: VCR-vcr/1.7.1.93
+  recorded_at: 2025-07-24 08:27:40
+recorded_with: VCR-vcr/2.0.0
