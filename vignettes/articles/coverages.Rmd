@@ -57,7 +57,9 @@ While downloading full coverages for most services will work, it may take a long
 
 <h5> **Warning!**</h5>
 
-<p>While most coverages can be downloaded in full, the coverages from the `"bathymetry"` service in particular are 100GB in size and full download will not be permitted by the server so spatial subsetting **must** be used with the services. Otherwise the request will return a `curl` error (most likely ` curl: (92) HTTP/2 stream 0 was not closed cleanly: INTERNAL_ERROR (err 2)`). Note that, in the near future, it will be possible to download larger boxes than what the WCS can currently handle, but this will still be capped at 2 GB.</p>
+<p>While most coverages can be downloaded in full, the coverages from the `"bathymetry"` service in particular are 100GB in size and full download will not be permitted by the server so spatial subsetting **must** be used with the services. 
+Otherwise the request will return a `curl` error (most likely ` curl: (92) HTTP/2 stream 0 was not closed cleanly: INTERNAL_ERROR (err 2)`). 
+Note that, in the near future, it will be possible to download larger boxes than what the WCS can currently handle, but this will still be capped at 2 GB.</p>
 
 <p>If you need to download the full [EMODnet Digital Bathymetry (DTM)](https://data.europa.eu/data/datasets/emodnet_bathymetry?locale=en), you will have to download it tile by tile from <https://portal.emodnet-bathymetry.eu/></p>
 
@@ -107,7 +109,7 @@ You can access nil values for each band from a `summary` object using `emdn_get_
 emdn_get_band_nil_values(cov_summary)
 ```
 
-If you wish to encode nil values as `NA` during coverage download, you can use argument `nil_values_as_na`.
+If you wish to encode nil values as `NA` during coverage download, you can use the `nil_values_as_na` argument.
 
 ```{r}
 #| label: get-cov-nil
@@ -181,7 +183,7 @@ terra::plot(cov_2)
 ```
 
 
-A similar approach is used for specifying points in the vertical dimension, using argument `elevation` where appropriate.
+A similar approach is used for specifying points in the vertical dimension, using the `elevation` argument where appropriate.
 
 ## Subset a specific band
 
@@ -194,7 +196,7 @@ First let's check the available bands in our coverage.
 emdn_get_band_descriptions(cov_summary)
 ```
 
-To download a specifc band we use the argument `rangesubset`:
+To download a specifc band we use the `rangesubset` argument:
 ```{r, eval=FALSE}
 #| label: get-subset
 emdn_get_coverage(
@@ -213,7 +215,7 @@ emdn_get_coverage(
 
 When downloading data, underlying package `ows4R` uses the in-built [`WCSCoverageFilenameHandler()`](https://eblondel.github.io/ows4R/reference/WCSCoverageFilenameHandler.html) function for generating appropriate filenames from the parameters supplied to the request.
 
-However, it is possible to override this as well as the location the file is written to by supplying a file path to argument `filename`.
+However, it is possible to override this as well as the location the file is written to by supplying a file path to the `filename` argument.
 
 ```{r}
 #| label: tif
