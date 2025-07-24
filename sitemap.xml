@@ -1,63 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/404.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/CONTRIBUTING.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/articles/EMODnetWCS.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/articles/coverages.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/articles/metadata.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/index.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/reference/emdn_get_bbox.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/reference/emdn_get_coverage.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/reference/emdn_get_coverage_summaries.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/reference/emdn_get_wcs_info.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/reference/emdn_init_wcs_client.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/reference/emdn_wcs.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://emodnet.github.io/EMODnetWCS/reference/pipe.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://emodnet.github.io/emodnet.wcs/404.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/CONTRIBUTING.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/LICENSE-text.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/LICENSE.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/articles/coverages.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/articles/emodnet.wcs.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/articles/index.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/articles/metadata.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/authors.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/index.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/news/index.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/reference/emdn_get_bbox.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/reference/emdn_get_coverage.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/reference/emdn_get_coverage_summaries.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/reference/emdn_get_wcs_info.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/reference/emdn_init_wcs_client.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/reference/emdn_wcs.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/reference/emodnet.wcs-package.html</loc></url>
+<url><loc>https://emodnet.github.io/emodnet.wcs/reference/index.html</loc></url>
 </urlset>
+
