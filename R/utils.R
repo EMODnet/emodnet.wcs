@@ -239,20 +239,7 @@ emdn_get_coverage_dim_coefs <- function(
 #' as the coverage.
 #' @export
 emdn_get_bbox <- function(summary) {
-  # summary$getBoundingBox()$BoundingBox$getBBOX()
-  boundaries <- summary$getDescription()$boundedBy
-  upper <- unlist(c(boundaries$upperCorner))
-  lower <- unlist(c(boundaries$lowerCorner))
-
-  sf::st_bbox(
-    c(
-      xmin = lower[2L],
-      xmax = upper[2L],
-      ymin = lower[1L],
-      ymax = upper[1L]
-    ),
-    crs = extr_bbox_crs(summary)
-  )
+  summary$getBoundingBox()$BoundingBox$getBBOX()
 }
 
 #' @describeIn emdn_get_bbox Get the bounding box (geographic extent) of a
