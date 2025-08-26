@@ -74,37 +74,32 @@ writes the coverage to a local file.
 Get a coverage from an EMODnet WCS Service
 }
 \examples{
-\dontrun{
+\dontshow{vcr::insert_example_cassette('emdn_get_coverage', package = 'emodnet.wcs')}
 wcs <- emdn_init_wcs_client(service = "biology")
 coverage_id <- "Emodnetbio__cal_fin_19582016_L1_err"
+
 # Subset using a bounding box
-emdn_get_coverage(wcs,
+cov1 <- emdn_get_coverage(wcs,
   coverage_id = coverage_id,
   bbox = c(
     xmin = 0, ymin = 40,
     xmax = 5, ymax = 45
   )
 )
+terra::plot(cov1)
+
 # Subset using a bounding box and specific timepoints
-emdn_get_coverage(wcs,
+cov2 <- emdn_get_coverage(wcs,
   coverage_id = coverage_id,
   bbox = c(
     xmin = 0, ymin = 40,
     xmax = 5, ymax = 45
   ),
   time = c(
-    "1963-11-16T00:00:00.000Z",
-    "1964-02-16T00:00:00.000Z"
+    "1958-02-16T01:00:00",
+    "2016-11-16T01:00:00"
   )
 )
-# Subset using a bounding box and a specific band
-emdn_get_coverage(wcs,
-  coverage_id = coverage_id,
-  bbox = c(
-    xmin = 0, ymin = 40,
-    xmax = 5, ymax = 45
-  ),
-  rangesubset = "Relative abundance"
-)
-}
+terra::plot(cov2)
+\dontshow{vcr::eject_cassette()}
 }

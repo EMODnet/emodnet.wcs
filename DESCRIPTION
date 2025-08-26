@@ -38,9 +38,9 @@ Suggests:
 Config/testthat/edition: 3
 Remotes: 
     eblondel/ows4R,
-    ropensci/vcr
+    ropensci/vcr@easier-examples
 Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
+Roxygen: list(markdown = TRUE, roclets = c("collate", "rd", "namespace", "vcr::examplesVCR_roclet"), packages = "vcr")
 RoxygenNote: 7.3.2.9000
 URL: https://github.com/EMODnet/emodnet.wcs,
     https://emodnet.github.io/emodnet.wcs/
@@ -49,3 +49,4 @@ Depends:
     R (>= 4.1.0)
 LazyData: true
 VignetteBuilder: knitr
+Config/Needs/build: vcr
