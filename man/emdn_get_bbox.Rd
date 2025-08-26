@@ -154,6 +154,7 @@ range (in tibble format).
 
 }}
 \examples{
+\dontshow{vcr::insert_example_cassette('emdn_get_bbox', package = 'emodnet.wcs')}
 wcs <- emdn_init_wcs_client(service = "biology")
 summaries <- emdn_get_coverage_summaries_all(wcs)
 summary <- summaries[[1]]
@@ -189,4 +190,5 @@ emdn_get_dimensions_names(summary)
 emdn_get_dimensions_n(summary)
 # get dimensions types
 emdn_get_dimension_types(summary)
+\dontshow{vcr::eject_cassette()}
 }

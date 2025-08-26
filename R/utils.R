@@ -19,8 +19,7 @@
 #' @describeIn emdn_get_coverage_summaries Get summaries for specific coverages.
 #' @export
 #'
-#' @examples
-#' \dontrun{
+#' @examplesVCR emdn_has_dimension
 #' wcs <- emdn_init_wcs_client(service = "biology")
 #' cov_ids <- emdn_get_coverage_ids(wcs)
 #' cov_ids
@@ -38,7 +37,6 @@
 #'   cov_ids[1:2],
 #'   type = "temporal"
 #' )
-#' }
 emdn_get_coverage_summaries <- function(wcs, coverage_ids) {
   check_coverages(wcs, coverage_ids)
 
@@ -198,7 +196,7 @@ emdn_get_coverage_dim_coefs <- function(
 #'   information
 #'   - `list`: a list of dimension information
 #'   - `tibble`: a tibble of dimension information
-#' @examples
+#' @examplesVCR emdn_get_bbox
 #' wcs <- emdn_init_wcs_client(service = "biology")
 #' summaries <- emdn_get_coverage_summaries_all(wcs)
 #' summary <- summaries[[1]]

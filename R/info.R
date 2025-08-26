@@ -165,8 +165,7 @@
 #'
 #' @export
 #' @describeIn emdn_get_wcs_info Get info on all coverages from am EMODnet WCS service.
-#' @examples
-#' \dontrun{
+#' @examplesVCR emdn_get_wcs_info
 #' # Get information from a wcs object.
 #' wcs <- emdn_init_wcs_client(service = "seabed_habitats")
 #' emdn_get_wcs_info(wcs)
@@ -181,7 +180,6 @@
 #'   wcs = wcs,
 #'   coverage_ids = coverage_ids
 #' )
-#' }
 emdn_get_wcs_info <- memoise::memoise(.emdn_get_wcs_info)
 
 

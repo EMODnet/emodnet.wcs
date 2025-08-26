@@ -138,7 +138,7 @@ coverages from each service.
 
 }}
 \examples{
-\dontrun{
+\dontshow{vcr::insert_example_cassette('emdn_get_wcs_info', package = 'emodnet.wcs')}
 # Get information from a wcs object.
 wcs <- emdn_init_wcs_client(service = "seabed_habitats")
 emdn_get_wcs_info(wcs)
@@ -153,5 +153,5 @@ emdn_get_coverage_info(
   wcs = wcs,
   coverage_ids = coverage_ids
 )
-}
+\dontshow{vcr::eject_cassette()}
 }

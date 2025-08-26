@@ -27,9 +27,10 @@ Web Coverage Service.
 Initialise an EMODnet WCS client
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{vcr::insert_example_cassette('emdn_init_wcs_client', package = 'emodnet.wcs')}
 wcs <- emdn_init_wcs_client(service = "bathymetry")
-\dontshow{\}) # examplesIf}
+wcs
+\dontshow{vcr::eject_cassette()}
 }
 \seealso{
 \code{WCSClient} in package \code{ows4R}.

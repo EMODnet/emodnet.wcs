@@ -12,8 +12,9 @@
 #' @export
 #'
 #' @seealso `WCSClient` in package `ows4R`.
-#' @examplesIf interactive()
+#' @examplesVCR emdn_init_wcs_client
 #' wcs <- emdn_init_wcs_client(service = "bathymetry")
+#' wcs
 emdn_init_wcs_client <- function(
   service,
   service_version = c(
