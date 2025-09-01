@@ -7,11 +7,19 @@ Authors@R: c(
     person("Salvador", "Fernández-Bejarano", , "salvador.fernandez@vliz.be", role = "cre",
            comment = c(ORCID = "0000-0003-0535-7677")),
     person("European Marine Observation Data Network (EMODnet) Biology project", "European Commission's Directorate - General for Maritime Affairs and Fisheries (DG MARE)", , "bio@emodnet.eu", role = "cph"),
-    person("VLIZ (VLAAMS INSTITUUT VOOR DE ZEE)", , , "info@vliz.be", role = "fnd", comment = c(ROR = "0496vr396"))
+    person("VLIZ (VLAAMS INSTITUUT VOOR DE ZEE)", , , "info@vliz.be", role = "fnd",
+           comment = c(ROR = "0496vr396")),
+    person("Pepijn", "de Vries", , "pepijn.devries@outlook.com", role = "ctb",
+           comment = c(ORCID = "0000-0002-7961-6646"))
   )
 Description: Access and interrogate EMODnet Web Coverage Service data
     through R.
 License: MIT + file LICENSE
+URL: https://github.com/EMODnet/emodnet.wcs,
+    https://emodnet.github.io/emodnet.wcs/
+BugReports: https://github.com/EMODnet/emodnet.wcs/issues
+Depends: 
+    R (>= 4.1.0)
 Imports: 
     checkmate,
     cli,
@@ -35,17 +43,13 @@ Suggests:
     vcr (>= 2.0.0),
     webmockr,
     withr
-Config/testthat/edition: 3
+VignetteBuilder: 
+    knitr
 Remotes: 
     eblondel/ows4R,
     ropensci/vcr
+Config/testthat/edition: 3
 Encoding: UTF-8
+LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2.9000
-URL: https://github.com/EMODnet/emodnet.wcs,
-    https://emodnet.github.io/emodnet.wcs/
-BugReports: https://github.com/EMODnet/emodnet.wcs/issues
-Depends: 
-    R (>= 4.1.0)
-LazyData: true
-VignetteBuilder: knitr
