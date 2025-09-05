@@ -31,42 +31,22 @@
       ....|-- version: 1.1.1
       ....|-- capabilities <WCSCapabilities>
 
+# No internet handled
+
+    Code
+      emdn_init_wcs_client("biology")
+    Condition
+      Error in `emdn_init_wcs_client()`:
+      ! There is no internet connection.
+
 # Services down handled
 
     Code
-      check_service(req_fail)
-    Message
-      i HTTP Status: Server error: (500) Internal Server Error
-    Condition
-      Error in `check_service()`:
-      ! Service creation failed
-
----
-
-    Code
-      check_service(req_success)
-    Message
-      i HTTP Status: Success: (200) OK
-    Condition
-      Error in `check_service()`:
-      ! An exception has occurred.  Please raise an issue in <https://github.com/EMODnet/emodnet.wcs/issues>
-
-# No internet challenge
-
-    Code
-      (req_no_internet <- perform_http_request(test_url))
-    Message
-      x WCS client creation failed.
-      ! Service: "https://demo.geo-solutions.it/geoserver/ows?"
-      i Reason: There is no internet connection
-    Output
-      NULL
-
----
-
-    Code
-      check_service(req_no_internet)
+      check_service(service_url)
     Condition
       Error in `check_service()`:
       ! WCS client creation failed.
+      i Service: "https://geo.vliz.be/geoserver/Emodnetbio/wcs"
+      i Browse the EMODnet OGC monitor for more info on the status of the services by visiting <https://monitor.emodnet.eu/resources?lang=en&resource_type=OGC:WCS>
+      You could raise an issue in <https://github.com/EMODnet/emodnet.wcs/issues>
 

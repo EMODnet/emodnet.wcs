@@ -34,42 +34,14 @@ test_that("Warning when unsupported service version", {
   ))
 })
 
-test_that("Services down handled", {
-  webmockr::httr_mock()
-  withr::local_options(emodnet.wcs.quiet = FALSE)
-
-  test_url <- "https://demo.geo-solutions.it/geoserver/ows?request=GetCapabilities"
-
-  webmockr::stub_request("get", uri = test_url) |>
-    webmockr::wi_th(
-      headers = list(
-        Accept = "application/json, text/xml, application/xml, */*"
-      )
-    ) |>
-    webmockr::to_return(status = 500L) |>
-    webmockr::to_return(status = 200L)
-
-  req_fail <- httr::GET(test_url)
-  expect_true(httr::http_error(req_fail))
-
-  req_success <- httr::GET(test_url)
-  expect_false(httr::http_error(req_success))
-
-  # Test check_service behavior
-  expect_snapshot(check_service(req_fail), error = TRUE)
-  expect_snapshot(check_service(req_success), error = TRUE)
-
-  webmockr::disable()
+test_that("No internet handled", {
+  testthat::local_mocked_bindings(has_internet = function() FALSE)
+  expect_snapshot(emdn_init_wcs_client("biology"), error = TRUE)
 })
 
-test_that("No internet challenge", {
-  withr::local_envvar(list(NO_INTERNET_TEST_EMODNET = "bla"))
-  withr::local_options(emodnet.wcs.quiet = FALSE)
 
-  test_url <- "https://demo.geo-solutions.it/geoserver/ows?"
-
-  expect_snapshot(
-    (req_no_internet <- perform_http_request(test_url)) # nolint: implicit_assignment_linter
-  )
-  expect_snapshot(check_service(req_no_internet), error = TRUE)
+test_that("Services down handled", {
+  rlang::local_interactive()
+  service_url <- "https://geo.vliz.be/geoserver/Emodnetbio/wcs"
+  expect_snapshot(check_service(service_url), error = TRUE)
 })

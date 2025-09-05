@@ -25,6 +25,9 @@ emdn_init_wcs_client <- function(
   ),
   logger = c("NONE", "INFO", "DEBUG")
 ) {
+  if (!has_internet()) {
+    cli::cli_abort("There is no internet connection.")
+  }
   check_service_name(service)
   service_version <- match.arg(service_version)
   logger <- match.arg(logger)
@@ -34,15 +37,12 @@ emdn_init_wcs_client <- function(
   service_url <- get_service_url(service)
 
   create_client <- function() {
-    config <- httr::config()
-
     wcs <- suppressWarnings(ows4R::WCSClient$new(
       service_url,
       serviceVersion = service_version,
       headers = c(
         "User-Agent" = "emodnet.wcs R package https://github.com/EMODnet/emodnet.wcs"
       ),
-      config = config,
       logger = logger
     ))
 
@@ -60,7 +60,7 @@ emdn_init_wcs_client <- function(
   tryCatch(
     create_client(),
     error = function(e) {
-      check_service(perform_http_request(service_url))
+      check_service(service_url)
     }
   )
 }

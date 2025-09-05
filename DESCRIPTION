@@ -25,7 +25,7 @@ Imports:
     cli,
     curl,
     glue,
-    httr,
+    httr2,
     memoise,
     ows4R (>= 0.3-2),
     purrr,
