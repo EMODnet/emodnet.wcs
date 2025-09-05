@@ -38,63 +38,49 @@ check_wcs_version <- function(wcs) {
   }
 }
 
-# Checks if there is internet and performs an HTTP GET request
-perform_http_request <- function(service_url) {
-  cli_alert_danger("WCS client creation failed.")
-  cli_alert_warning("Service: {.val {service_url}}")
-
-  has_internet <- function() {
-    if (nzchar(Sys.getenv("NO_INTERNET_TEST_EMODNET"))) {
-      return(FALSE)
-    }
-    curl::has_internet()
-  }
-
-  if (!has_internet()) {
-    cli_alert_info("Reason: There is no internet connection")
-    return(NULL)
-  }
-
-  service_url |>
-    paste0("?request=GetCapabilities") |>
-    httr::GET()
+has_internet <- function() {
+  curl::has_internet()
 }
 
 # Checks if there is internet connection and HTTP status of the service
-check_service <- function(request) {
-  if (is.null(request)) {
-    rlang::abort("WCS client creation failed.")
-  }
+check_service <- function(service_url) {
+  message <- c(
+    "WCS client creation failed.",
+    i = "Service: {.val {service_url}}"
+  )
 
-  if (httr::http_error(request)) {
-    cli_alert_info(
-      "HTTP Status: {cli::col_red(httr::http_status(request)$message)}"
-    )
-
-    is_monitor_up <- !is.null(curl::nslookup(
-      "monitor.emodnet.eu",
-      error = FALSE
-    ))
-    if (interactive() && is_monitor_up) {
-      cli_alert_info(
-        "Browse the EMODnet OGC monitor for more info on
+  is_monitor_up <- !is.null(curl::nslookup(
+    "monitor.emodnet.eu",
+    error = FALSE
+  ))
+  if (rlang::is_interactive() && is_monitor_up) {
+    message <- c(
+      message,
+      i = "Browse the EMODnet OGC monitor for more info on
          the status of the services by visiting
          {.url https://monitor.emodnet.eu/resources?lang=en&resource_type=OGC:WCS}"
-      )
-    }
-
-    rlang::abort("Service creation failed")
-
-    # If no HTTP status, something else is wrong
-  } else if (!httr::http_error(request)) {
-    cli_alert_info(
-      "HTTP Status: {cli::col_green(httr::http_status(request)$message)}"
-    )
-    cli::cli_abort(
-      "An exception has occurred. 
-    Please raise an issue in {.url {packageDescription('emodnet.wcs')$BugReports}}"
     )
   }
+
+  request <- service_url |>
+    httr2::request() |>
+    httr2::req_url_query(request = "GetCapabilities") |>
+    httr2::req_perform()
+
+  if (httr2::resp_status(request) != 200) {
+    message <- c(
+      message,
+      "HTTP Status: {httr2::resp_status(request)} ({httr2::resp_status_desc(request)})."
+    )
+    # Something else is wrong
+  } else {
+    message <- c(
+      message,
+      "You could raise an issue in {.url {packageDescription('emodnet.wcs')$BugReports}}"
+    )
+  }
+
+  cli::cli_abort(message)
 }
 
 check_coverages <- function(wcs, coverages) {
