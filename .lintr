@@ -14,7 +14,8 @@ linters: lintr::linters_with_tags(
     object_usage_linter = NULL,
     trailing_whitespace_linter = NULL,
     undesirable_function_linter = NULL,
-    unnecessary_nesting_linter = NULL
+    unnecessary_nesting_linter = NULL,
+    implicit_integer_linter = NULL
    )
 encoding: "UTF-8"
 exclusions: list(
