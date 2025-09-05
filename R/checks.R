@@ -118,6 +118,14 @@ check_cov_contains_bbox <- function(summary, bbox, crs) {
   cov_bbox <- emdn_get_WGS84bbox(summary) |>
     sf::st_as_sfc(crs = "WGS84")
 
+  if (is.null(crs)) {
+    message <- sprintf(
+      "The coverage crs is %s. You can supply the crs of your bbox through {.arg crs}.",
+      sf::st_crs(cov_bbox)[["input"]]
+    )
+    cli_alert_info(message)
+  }
+
   # crs is NULL if it's the same as the coverage crs
   user_supplied_crs <- crs
   crs <- crs %||% sf::st_crs(cov_bbox)
