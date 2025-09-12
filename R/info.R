@@ -24,7 +24,6 @@
 
   check_wcs(wcs)
   check_wcs_version(wcs)
-
   capabilities <- wcs$getCapabilities()
   service_id <- capabilities$getServiceIdentification()
   summaries <- capabilities$getCoverageSummaries()
@@ -45,7 +44,8 @@
       ),
       dim_n = purrr::map_int(
         summaries,
-        ~ error_wrap(length(.x$getDimensions()))
+        # https://github.com/eblondel/ows4R/issues/148
+        ~ error_wrap(length(suppressMessages(.x$getDimensions())))
       ),
       dim_names = purrr::map_chr(
         summaries,
