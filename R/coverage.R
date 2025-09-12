@@ -5,8 +5,7 @@
 #' @param bbox a named numeric vector of length 4, with names `xmin`, `ymin`,
 #' `xmax` and `ymax`. specifying the bounding box.
 #' (extent) of the raster to be returned.
-#' @param crs the CRS of the supplied bounding box. Leave as `NULL` (default) if
-#' same as coverage crs.
+#' @param crs the CRS of the supplied bounding box. Defaults to `"EPSG:4326"`.
 #' @param time for coverages that include a temporal dimension,
 #' a vector of temporal coefficients specifying the
 #' time points for which coverage data should be returned.
@@ -79,7 +78,7 @@ emdn_get_coverage <- function(
   ),
   logger = c("NONE", "INFO", "DEBUG"),
   bbox = NULL,
-  crs = NULL,
+  crs = "EPSG:4326",
   time = NULL,
   elevation = NULL,
   format = NULL,
