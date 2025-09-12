@@ -37,7 +37,9 @@ to get ows4R logs, 'DEBUG' for all internal logs (such as as Curl details)}
 \code{xmax} and \code{ymax}. specifying the bounding box.
 (extent) of the raster to be returned.}
 
-\item{crs}{the CRS of the supplied bounding box. Defaults to \code{"EPSG:4326"}.}
+\item{crs}{the CRS of the supplied bounding box
+(EPSG prefixed code, or URI/URN).
+Defaults to \code{"EPSG:4326"}.}
 
 \item{time}{for coverages that include a temporal dimension,
 a vector of temporal coefficients specifying the
