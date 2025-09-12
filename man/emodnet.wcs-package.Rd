@@ -29,6 +29,7 @@ Other contributors:
 \itemize{
   \item European Marine Observation Data Network (EMODnet) Biology project European Commission's Directorate - General for Maritime Affairs and Fisheries (DG MARE) \email{bio@emodnet.eu} [copyright holder]
   \item VLIZ (VLAAMS INSTITUUT VOOR DE ZEE) \email{info@vliz.be} (\href{https://ror.org/0496vr396}{ROR}) [funder]
+  \item Pepijn de Vries \email{pepijn.devries@outlook.com} (\href{https://orcid.org/0000-0002-7961-6646}{ORCID}) [contributor]
 }
 
 }
