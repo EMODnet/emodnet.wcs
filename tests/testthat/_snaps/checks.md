@@ -55,10 +55,7 @@
     Code
       cov <- emdn_get_coverage(wcs, coverage_id = coverage_id, bbox = c(xmin = -80,
         ymin = 76, xmax = -79, ymax = 77))
-    Message
-      i The coverage crs is EPSG:4326. You can supply the crs of your bbox through `crs`.
     Condition
       Error in `check_cov_contains_bbox()`:
       ! `bbox` boundaries lie outside coverage extent. No overlapping data to download.
-      i The coverage crs is EPSG:4326. You can supply the crs of your bbox through `crs`.
 
