@@ -151,7 +151,7 @@ emdn_get_coverage <- function(
   if (length(time) > 1L || length(elevation) > 1L) {
     cov_raster <- summary$getCoverageStack(
       bbox = ows_bbox,
-      crs = "WGS84",
+      crs = crs,
       time = time,
       format = format,
       rangesubset = rangesubset_encoded,
