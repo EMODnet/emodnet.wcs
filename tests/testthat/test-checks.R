@@ -11,26 +11,13 @@ test_that("validate_namespace works", {
 })
 
 test_that("validate_bbox works", {
-  expect_identical(
+  expect_true(
     validate_bbox(c(
       xmin = -180.0,
       ymin = -90.000000000036,
       xmax = 180.000000000072,
       ymax = 90.0
-    )),
-    structure(
-      c(
-        -180.0,
-        -90.000000000036,
-        180.000000000072,
-        90.0
-      ),
-      .Dim = c(2L, 2L),
-      .Dimnames = list(
-        c("x", "y"),
-        c("min", "max")
-      )
-    )
+    ))
   )
 
   expect_snapshot(
