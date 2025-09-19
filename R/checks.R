@@ -115,6 +115,7 @@ check_cov_contains_bbox <- function(summary, bbox, crs) {
   # crs is NULL if it's the same as the coverage crs
   user_supplied_crs <- crs
   crs <- crs %||% sf::st_crs(cov_bbox)
+
   user_bbox <- sf::st_as_sfc(sf::st_bbox(bbox))
   sf::st_crs(user_bbox) <- crs
   user_bbox <- sf::st_as_sfc(sf::st_bbox(user_bbox)) |>
@@ -135,8 +136,6 @@ check_cov_contains_bbox <- function(summary, bbox, crs) {
     }
     cli::cli_abort(message)
   }
-
-  return(sf::st_bbox(user_bbox))
 }
 
 s2_intersects <- function(bbox1, bbox2) {
