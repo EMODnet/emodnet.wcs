@@ -5,7 +5,7 @@ http_interactions:
   response:
     status: 200
     headers:
-      date: Fri, 05 Sep 2025 12:14:15 GMT
+      date: Fri, 19 Sep 2025 12:28:58 GMT
       content-type: application/xml
       server: cloudflare
       x-frame-options: SAMEORIGIN
@@ -13,16 +13,16 @@ http_interactions:
       cache-control: max-age=0, must-revalidate
       content-disposition: inline; filename=geoserver-GetCapabilities.application
       content-encoding: gzip
-      report-to: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=kgjNoABECNqrD0IMSx%2FhmuGpMkuNHt4zXqrycQp04ILuX7NyEaTjWMTPbRkdioaJAJa08F9o8Dr7OoGZha1V2uHTIdku2BN9a3QHpNMahZzTJ%2F6%2BbW9uNsS6lvxDjd7v6IQ%2FRuYAz4y8"}]}'
+      report-to: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=o4y%2Fps2gb33ZxHskuEnIMYzCTy%2B0gw2ZVIhgFR%2BGWinbgg5lHmtb1E1zBUs%2FtNRoOih58wQ68fHieefc%2FVjcFJzr6HMQnmYPyTaw9ps9R6OKoRmCCH%2Fht5QkExJf4ewgC4DE1AwIxFL2"}]}'
       nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
       cf-cache-status: DYNAMIC
       vary: accept-encoding
-      cf-ray: 97a5a5333a8f6fd6-CDG
+      cf-ray: 98191602bf8a8ded-CDG
     body:
       string: <?xml version="1.0" encoding="UTF-8"?><wcs:Capabilities xmlns:wcs="http://www.opengis.net/wcs/2.0"
         xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
         xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0.1" updateSequence="9738"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0.1" updateSequence="9780"
         xmlns:int="http://www.opengis.net/WCS_service-extension_interpolation/1.0"
         xmlns:crs="http://www.opengis.net/wcs/crs/1.0" xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0"
         xmlns:inspire_dls="http://inspire.ec.europa.eu/schemas/inspire_dls/1.0" xsi:schemaLocation="
@@ -666,25 +666,25 @@ http_interactions:
         xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0"><inspire_common:Language>eng</inspire_common:Language></inspire_common:ResponseLanguage><inspire_dls:SpatialDataSetIdentifier
         metadataURL="https://ows.emodnet-humanactivities.eu/geonetwork/srv/eng/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;elementsetname=full&amp;id=0f2f3ff1-30ef-49e1-96e7-8ca78d58a07c&amp;outputschema=http://www.isotc211.org/2005/gmd"><inspire_common:Code
         xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0">2020_05_st_All</inspire_common:Code></inspire_dls:SpatialDataSetIdentifier></inspire_dls:ExtendedCapabilities></ows:ExtendedCapabilities></wcs:Extension></wcs:Contents></wcs:Capabilities>
-  recorded_at: 2025-09-05 12:14:15
+  recorded_at: 2025-09-19 12:28:58
 - request:
     method: GET
     uri: https://ows.emodnet-humanactivities.eu/wcs?service=WCS&version=2.0.1&coverageId=emodnet__vesseldensity_all&request=DescribeCoverage
   response:
     status: 200
     headers:
-      date: Fri, 05 Sep 2025 12:14:16 GMT
+      date: Fri, 19 Sep 2025 12:28:59 GMT
       content-type: application/xml
       server: cloudflare
       x-frame-options: SAMEORIGIN
       x-content-type-options: nosniff
       content-disposition: inline; filename=geoserver-DescribeCoverage.application
       content-encoding: gzip
-      report-to: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=O441SyyP25qvy2OGmkTqqTLHpAEgOkH8%2FXGp%2FPSpfkSA13IuEn1vEO%2FSbaJbvvPqbVUTjLloglHwrXtq1JBjxWz9kpf7OZPQct%2BseHVpeQlrg1X6WJHLZHplyCka%2BPMvFBNHpPQ4iCUU"}]}'
+      report-to: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=pMYuP1L46kQT0tPHuJ4Xkh0FovoYPuG029DKF3Sok8ByFzewU6hLXNSyMinAOkExuwWjvKzWxIPH5lI%2Fvcgzc89Zh2qiwA0r2GUCIq3OZV2UCvMNqv9wMZkObDCyoRTXxdyfuzTP9Nw1"}]}'
       nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
       cf-cache-status: DYNAMIC
       vary: accept-encoding
-      cf-ray: 97a5a5368cf36fd6-CDG
+      cf-ray: 981916053cc58ded-CDG
     body:
       string: |
         <?xml version="1.0" encoding="UTF-8"?><wcs:CoverageDescriptions xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcsgs="http://www.geoserver.org/wcsgs/2.0" xsi:schemaLocation=" http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsDescribeCoverage.xsd http://www.geoserver.org/wcsgs/2.0 https://ows.emodnet-humanactivities.eu/geoserver/schemas/wcs/2.0/wcsgs.xsd">
@@ -1014,15 +1014,15 @@ http_interactions:
             </wcs:ServiceParameters>
           </wcs:CoverageDescription>
         </wcs:CoverageDescriptions>
-  recorded_at: 2025-09-05 12:14:16
+  recorded_at: 2025-09-19 12:28:59
 - request:
     method: GET
     uri: https://www.opengis.net/def/crs/EPSG/0/3857
   response:
     status: 200
     headers:
-      date: Fri, 05 Sep 2025 12:14:19 GMT
-      server: Apache/2.4.62 (Debian)
+      date: Fri, 19 Sep 2025 12:29:01 GMT
+      server: Apache/2.4.65 (Debian)
       content-length: '2209'
       cache-control: max-age=86400
       strict-transport-security: max-age=31536000; includeSubDomains
@@ -1056,23 +1056,23 @@ http_interactions:
         9hxZob2gMrVX1sevnoRLH0oQGdxMSDJxU996+7nId4Uk+GY6eH79A/oNZvO1q
         Hl7pVymQqe6xXoYWJY
         M8+5sKZ8ahFUxd/4PCgX4wnT5Hvy/h+WdG+QvXzczX
-  recorded_at: 2025-09-05 12:14:20
+  recorded_at: 2025-09-19 12:29:01
 - request:
     method: GET
     uri: https://ows.emodnet-humanactivities.eu/wcs?service=WCS&version=2.0.1&coverageId=emodnet__vesseldensity_all&subset=X%28484177.9%2C1035747%29&format=image%2Ftiff&request=GetCoverage
   response:
     status: 200
     headers:
-      date: Fri, 05 Sep 2025 12:14:20 GMT
+      date: Fri, 19 Sep 2025 12:29:02 GMT
       content-type: image/tiff
       server: cloudflare
       x-frame-options: SAMEORIGIN
       x-content-type-options: nosniff
       content-disposition: inline; filename=emodnet__vesseldensity_all.tif
-      report-to: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=0O9qrm8kdP2P3zd0tfESyO%2F1Yi5qmAY%2BH0%2Fcq3H7UtZ7HzNKes%2FRHi5WMH01ZnWqiTKM%2Fj0dzq6ylpoWW3YEEI7rcP7rH56CNqaOwpRB6dpzgtv8Pvztl%2BLA%2B5Zyzp9pRO5f9Y644j4o"}]}'
+      report-to: '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=alNPBRbPkeuwW5OGhVRQtfSlc7BVGZEiU%2FwFGRpX7LsHjc3sRWPKVnFyr6saDVHR3MppXu2G3i0DYw8RwouIFmlCTjWRH1TI36MIn3ghJEYRszYP1a7zxhE65hCVEYojwhgyQhZynjTv"}]}'
       nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
       cf-cache-status: DYNAMIC
-      cf-ray: 97a5a550d86a6fd6-CDG
+      cf-ray: 981916182f048ded-CDG
     body:
       raw_gzip: |-
         eJztvQVcVsvaPvwQ0iXdUqICggKSa+575iFUVOzCxkJsxS4apKRBQJQUEBFRQhTFLgQDFQu7
@@ -5008,5 +5008,5 @@ http_interactions:
         lFbB0443MMmxJzRUK6L1hI14qF4MN6p1wlN71mHwwad4pGpfS5znF3/xF3/xP4W8X
         /iFX/iF
         X/iFX/iFX/iFX/iFX/iFX/ivwP8HIWC5JA==
-  recorded_at: 2025-09-05 12:14:20
+  recorded_at: 2025-09-19 12:29:02
 recorded_with: VCR-vcr/2.0.0

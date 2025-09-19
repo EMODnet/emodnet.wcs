@@ -10,17 +10,18 @@ http_interactions:
       content-security-policy: base-uri 'self'; form-action 'self'; default-src 'none';
         child-src 'self'; connect-src 'self'; font-src 'self'; img-src 'self' data:;
         style-src 'self' 'unsafe-inline'; script-src 'self';, frame-ancestors 'self';
+      access-control-allow-origin: '*'
       cache-control: max-age=0, must-revalidate
       content-disposition: inline; filename=geoserver-GetCapabilities.application
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Thu, 24 Jul 2025 12:21:30 GMT
+      date: Fri, 19 Sep 2025 12:28:47 GMT
     body:
       string: <?xml version="1.0" encoding="UTF-8"?><wcs:Capabilities xmlns:wcs="http://www.opengis.net/wcs/2.0"
         xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
         xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0.1" updateSequence="102218"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0.1" updateSequence="105231"
         xmlns:int="https://www.opengis.net/wcs/interpolation/1.0" xmlns:crs="http://www.opengis.net/wcs/crs/1.0"
         xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" xmlns:inspire_dls="http://inspire.ec.europa.eu/schemas/inspire_dls/1.0"
         xsi:schemaLocation=" http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsGetCapabilities.xsd
@@ -57,7 +58,7 @@ http_interactions:
         crs="http://www.opengis.net/def/crs/EPSG/0/4326"><ows:LowerCorner>-75.05 34.95</ows:LowerCorner><ows:UpperCorner>20.05000000000001
         75.05000000000001</ows:UpperCorner></ows:BoundingBox><ows:WGS84BoundingBox><ows:LowerCorner>-75.05
         34.95</ows:LowerCorner><ows:UpperCorner>20.05 75.05</ows:UpperCorner></ows:WGS84BoundingBox><ows:Metadata
-        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-00000000005438/formatters/xml"/><ows:Metadata
+        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-000000005438/formatters/xml"/><ows:Metadata
         xlink:type="simple" xlink:href="https://www.vliz.be/nl/imis?module=dataset&amp;dasid=5438&amp;show=inspire"/></wcs:CoverageSummary><wcs:CoverageSummary><ows:Title>EMODnet
         Relative abundance Acartia spp. masked with relative error 0.3 (North Atlantic,
         1958-2016)</ows:Title><ows:Abstract>Gridded abundance map of Acartia spp.
@@ -67,7 +68,7 @@ http_interactions:
         crs="http://www.opengis.net/def/crs/EPSG/0/4326"><ows:LowerCorner>-75.05 34.95</ows:LowerCorner><ows:UpperCorner>20.05000000000001
         75.05000000000001</ows:UpperCorner></ows:BoundingBox><ows:WGS84BoundingBox><ows:LowerCorner>-75.05
         34.95</ows:LowerCorner><ows:UpperCorner>20.05 75.05</ows:UpperCorner></ows:WGS84BoundingBox><ows:Metadata
-        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-00000000005438/formatters/xml"/><ows:Metadata
+        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-000000005438/formatters/xml"/><ows:Metadata
         xlink:type="simple" xlink:href="https://www.vliz.be/en/imis?module=dataset&amp;dasid=5438&amp;show=inspire"/></wcs:CoverageSummary><wcs:CoverageSummary><ows:Title>EMODnet
         Relative abundance Calanus finmarchicus masked with relative error 0.3 (North
         Atlantic, 1958-2016)</ows:Title><ows:Abstract>Gridded abundance map of Calanus
@@ -77,7 +78,7 @@ http_interactions:
         crs="http://www.opengis.net/def/crs/EPSG/0/4326"><ows:LowerCorner>-75.05 34.95</ows:LowerCorner><ows:UpperCorner>20.05000000000001
         75.05000000000001</ows:UpperCorner></ows:BoundingBox><ows:WGS84BoundingBox><ows:LowerCorner>-75.05
         34.95</ows:LowerCorner><ows:UpperCorner>20.05 75.05</ows:UpperCorner></ows:WGS84BoundingBox><ows:Metadata
-        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-00000000005438/formatters/xml"/><ows:Metadata
+        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-000000005438/formatters/xml"/><ows:Metadata
         xlink:type="simple" xlink:href="https://www.vliz.be/nl/imis?module=dataset&amp;dasid=5438&amp;show=inspire"/></wcs:CoverageSummary><wcs:CoverageSummary><ows:Title>EMODnet
         Relative abundance Calanus helgolandicus masked with relative error 0.3 (North
         Atlantic, 1958-2016)</ows:Title><ows:Abstract>Gridded abundance map of Calanus
@@ -87,7 +88,7 @@ http_interactions:
         crs="http://www.opengis.net/def/crs/EPSG/0/4326"><ows:LowerCorner>-75.05 34.95</ows:LowerCorner><ows:UpperCorner>20.05000000000001
         75.05000000000001</ows:UpperCorner></ows:BoundingBox><ows:WGS84BoundingBox><ows:LowerCorner>-75.05
         34.95</ows:LowerCorner><ows:UpperCorner>20.05 75.05</ows:UpperCorner></ows:WGS84BoundingBox><ows:Metadata
-        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-00000000005438/formatters/xml"/><ows:Metadata
+        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-000000005438/formatters/xml"/><ows:Metadata
         xlink:type="simple" xlink:href="https://www.vliz.be/nl/imis?module=dataset&amp;dasid=5438&amp;show=inspire"/></wcs:CoverageSummary><wcs:CoverageSummary><ows:Title>EMODnet
         Relative abundance Metridia lucens masked with relative error 0.3 (North Atlantic,
         1958-2016)</ows:Title><ows:Abstract>Gridded abundance map of Metridia lucens.
@@ -97,7 +98,7 @@ http_interactions:
         crs="http://www.opengis.net/def/crs/EPSG/0/4326"><ows:LowerCorner>-75.05 34.95</ows:LowerCorner><ows:UpperCorner>20.05000000000001
         75.05000000000001</ows:UpperCorner></ows:BoundingBox><ows:WGS84BoundingBox><ows:LowerCorner>-75.05
         34.95</ows:LowerCorner><ows:UpperCorner>20.05 75.05</ows:UpperCorner></ows:WGS84BoundingBox><ows:Metadata
-        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-00000000005438/formatters/xml"/><ows:Metadata
+        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-000000005438/formatters/xml"/><ows:Metadata
         xlink:type="simple" xlink:href="https://www.vliz.be/nl/imis?module=dataset&amp;dasid=5438&amp;show=inspire"/></wcs:CoverageSummary><wcs:CoverageSummary><ows:Title>EMODnet
         Relative abundance Oithona spp. masked with relative error 0.3 (North Atlantic,
         1958-2016)</ows:Title><ows:Abstract>Gridded abundance map of Oithona spp.
@@ -107,7 +108,7 @@ http_interactions:
         crs="http://www.opengis.net/def/crs/EPSG/0/4326"><ows:LowerCorner>-75.05 34.95</ows:LowerCorner><ows:UpperCorner>20.05000000000001
         75.05000000000001</ows:UpperCorner></ows:BoundingBox><ows:WGS84BoundingBox><ows:LowerCorner>-75.05
         34.95</ows:LowerCorner><ows:UpperCorner>20.05 75.05</ows:UpperCorner></ows:WGS84BoundingBox><ows:Metadata
-        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-00000000005438/formatters/xml"/><ows:Metadata
+        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-000000005438/formatters/xml"/><ows:Metadata
         xlink:type="simple" xlink:href="https://www.vliz.be/nl/imis?module=dataset&amp;dasid=5438&amp;show=inspire"/></wcs:CoverageSummary><wcs:CoverageSummary><ows:Title>EMODnet
         Relative abundance Temora longicornis masked with relative error 0.3 (North
         Atlantic, 1958-2016)</ows:Title><ows:Abstract>Gridded abundance map of Temora
@@ -117,7 +118,7 @@ http_interactions:
         crs="http://www.opengis.net/def/crs/EPSG/0/4326"><ows:LowerCorner>-75.05 34.95</ows:LowerCorner><ows:UpperCorner>20.05000000000001
         75.05000000000001</ows:UpperCorner></ows:BoundingBox><ows:WGS84BoundingBox><ows:LowerCorner>-75.05
         34.95</ows:LowerCorner><ows:UpperCorner>20.05 75.05</ows:UpperCorner></ows:WGS84BoundingBox><ows:Metadata
-        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-00000000005438/formatters/xml"/><ows:Metadata
+        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-000000005438/formatters/xml"/><ows:Metadata
         xlink:type="simple" xlink:href="https://www.vliz.be/nl/imis?module=dataset&amp;dasid=5438&amp;show=inspire"/></wcs:CoverageSummary><wcs:CoverageSummary><ows:Title>EMODnet
         Relative abundance chlorophyll index masked with relative error 0.3 (North
         Atlantic, 1958-2016)</ows:Title><ows:Abstract>Gridded map of the abundance
@@ -136,7 +137,7 @@ http_interactions:
         crs="http://www.opengis.net/def/crs/EPSG/0/4326"><ows:LowerCorner>-75.05 34.95</ows:LowerCorner><ows:UpperCorner>20.05000000000001
         75.05000000000001</ows:UpperCorner></ows:BoundingBox><ows:WGS84BoundingBox><ows:LowerCorner>-75.05
         34.95</ows:LowerCorner><ows:UpperCorner>20.05 75.05</ows:UpperCorner></ows:WGS84BoundingBox><ows:Metadata
-        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-00000000005438/formatters/xml"/><ows:Metadata
+        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-000000005438/formatters/xml"/><ows:Metadata
         xlink:type="simple" xlink:href="https://www.vliz.be/nl/imis?module=dataset&amp;dasid=5438&amp;show=inspire"/></wcs:CoverageSummary><wcs:CoverageSummary><ows:Title>EMODnet
         Relative abundance small copepods masked with relative error 0.3 (North Atlantic,
         1958-2016)</ows:Title><ows:Abstract>Gridded map of the relative abundance
@@ -146,7 +147,7 @@ http_interactions:
         crs="http://www.opengis.net/def/crs/EPSG/0/4326"><ows:LowerCorner>-75.05 34.95</ows:LowerCorner><ows:UpperCorner>20.05000000000001
         75.05000000000001</ows:UpperCorner></ows:BoundingBox><ows:WGS84BoundingBox><ows:LowerCorner>-75.05
         34.95</ows:LowerCorner><ows:UpperCorner>20.05 75.05</ows:UpperCorner></ows:WGS84BoundingBox><ows:Metadata
-        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-00000000005438/formatters/xml"/><ows:Metadata
+        xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-000000005438/formatters/xml"/><ows:Metadata
         xlink:type="simple" xlink:href="https://www.vliz.be/nl/imis?module=dataset&amp;dasid=5438&amp;show=inspire"/></wcs:CoverageSummary><wcs:Extension><ows:ExtendedCapabilities><inspire_dls:ExtendedCapabilities
         xmlns:inspire_dls="http://inspire.ec.europa.eu/schemas/inspire_dls/1.0"><inspire_common:MetadataUrl
         xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0"><inspire_common:URL>https://emodnet.ec.europa.eu/geonetwork/srv/api/records/34a67b6d-1afd-4c42-97af-8463d29c2e59/formatters/xml</inspire_common:URL><inspire_common:MediaType>application/vnd.ogc.csw.GetRecordByIdResponse_xml</inspire_common:MediaType></inspire_common:MetadataUrl><inspire_common:SupportedLanguages
@@ -174,7 +175,7 @@ http_interactions:
         xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0">33388e9718d07e8171ea43735e71e549f0173231</inspire_common:Code></inspire_dls:SpatialDataSetIdentifier><inspire_dls:SpatialDataSetIdentifier
         metadataURL="http://geonetwork.vliz.be/geonetwork/srv/eng/xml.metadata.get?uuid=b1d3b444a111c94e69e6853a83957f1d2ebaa387"><inspire_common:Code
         xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0">b1d3b444a111c94e69e6853a83957f1d2ebaa387</inspire_common:Code></inspire_dls:SpatialDataSetIdentifier></inspire_dls:ExtendedCapabilities></ows:ExtendedCapabilities></wcs:Extension></wcs:Contents></wcs:Capabilities>
-  recorded_at: 2025-07-24 12:21:30
+  recorded_at: 2025-09-19 12:28:47
 - request:
     method: GET
     uri: https://geo.vliz.be/geoserver/Emodnetbio/wcs?service=WCS&version=2.0.1&coverageId=Emodnetbio__ratio_large_to_small_19582016_L1_err&request=DescribeCoverage
@@ -186,12 +187,11 @@ http_interactions:
       content-security-policy: base-uri 'self'; form-action 'self'; default-src 'none';
         child-src 'self'; connect-src 'self'; font-src 'self'; img-src 'self' data:;
         style-src 'self' 'unsafe-inline'; script-src 'self';, frame-ancestors 'self';
-      access-control-allow-origin: '*'
       content-disposition: inline; filename=geoserver-DescribeCoverage.application
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Thu, 24 Jul 2025 12:21:30 GMT
+      date: Fri, 19 Sep 2025 12:28:48 GMT
     body:
       string: |
         <?xml version="1.0" encoding="UTF-8"?><wcs:CoverageDescriptions xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcsgs="http://www.geoserver.org/wcsgs/2.0" xsi:schemaLocation=" http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsDescribeCoverage.xsd http://www.geoserver.org/wcsgs/2.0 https://geo.vliz.be/geoserver/schemas/wcs/2.0/wcsgs.xsd">
@@ -220,7 +220,7 @@ http_interactions:
                   <ows:Keyword>WCS</ows:Keyword>
                   <ows:Keyword>ImageMosaic</ows:Keyword>
                 </ows:Keywords>
-                <ows:Metadata xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-00000000005438/formatters/xml"/>
+                <ows:Metadata xlink:type="simple" xlink:href="https://emodnet.ec.europa.eu/geonetwork/srv/api/records/6d617269-6e65-696e-666f-000000005438/formatters/xml"/>
                 <ows:Metadata xlink:type="simple" xlink:href="https://www.vliz.be/nl/imis?module=dataset&amp;dasid=5438&amp;show=inspire"/>
                 <wcsgs:TimeDomain xmlns:wcsgs="http://www.geoserver.org/wcsgs/2.0" default="2016-11-16T01:00:00.000Z">
                   <gml:TimeInstant gml:id="Emodnetbio__ratio_large_to_small_19582016_L1_err_td_0">
@@ -1000,5 +1000,5 @@ http_interactions:
             </wcs:ServiceParameters>
           </wcs:CoverageDescription>
         </wcs:CoverageDescriptions>
-  recorded_at: 2025-07-24 12:21:30
+  recorded_at: 2025-09-19 12:28:48
 recorded_with: VCR-vcr/2.0.0
