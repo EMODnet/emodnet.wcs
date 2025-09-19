@@ -134,7 +134,7 @@ emdn_get_coverage <- function(
     )
   }
 
-  bbox <- check_cov_contains_bbox(summary, bbox, crs)
+  check_cov_contains_bbox(summary, bbox, crs)
   cli_rule(left = "Downloading coverage {.val {coverage_id}}")
 
   coverage_id <- validate_namespace(coverage_id)
@@ -151,7 +151,7 @@ emdn_get_coverage <- function(
   if (length(time) > 1L || length(elevation) > 1L) {
     cov_raster <- summary$getCoverageStack(
       bbox = ows_bbox,
-      crs = crs,
+      crs = "WGS84",
       time = time,
       format = format,
       rangesubset = rangesubset_encoded,
