@@ -115,7 +115,6 @@ check_cov_contains_bbox <- function(summary, bbox, crs) {
   # crs is NULL if it's the same as the coverage crs
   user_supplied_crs <- crs
   crs <- crs %||% sf::st_crs(cov_bbox)
-
   user_bbox <- sf::st_as_sfc(sf::st_bbox(bbox))
   sf::st_crs(user_bbox) <- crs
   user_bbox <- sf::st_as_sfc(sf::st_bbox(user_bbox)) |>
@@ -136,6 +135,8 @@ check_cov_contains_bbox <- function(summary, bbox, crs) {
     }
     cli::cli_abort(message)
   }
+
+  return(sf::st_bbox(user_bbox))
 }
 
 s2_intersects <- function(bbox1, bbox2) {
@@ -172,13 +173,6 @@ validate_bbox <- function(bbox) {
 
   checkmate::assert_true(bbox["ymin"] < bbox["ymax"])
   checkmate::assert_true(bbox["xmin"] < bbox["xmax"])
-
-  ows4R::OWSUtils$toBBOX(
-    xmin = bbox["xmin"],
-    xmax = bbox["xmax"],
-    ymin = bbox["ymin"],
-    ymax = bbox["ymax"]
-  )
 }
 
 validate_rangesubset <- function(summary, rangesubset) {

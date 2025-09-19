@@ -103,7 +103,7 @@ emdn_get_coverage <- function(
 
   checkmate::assert_character(coverage_id, len = 1L)
   check_coverages(wcs, coverage_id)
-  ows_bbox <- validate_bbox(bbox)
+  validate_bbox(bbox)
 
   summary <- emdn_get_coverage_summaries(wcs, coverage_id)[[1L]]
 
@@ -133,10 +133,20 @@ emdn_get_coverage <- function(
       type = "vertical"
     )
   }
-  check_cov_contains_bbox(summary, bbox, crs)
+
+  bbox <- check_cov_contains_bbox(summary, bbox, crs)
   cli_rule(left = "Downloading coverage {.val {coverage_id}}")
 
   coverage_id <- validate_namespace(coverage_id)
+
+  if (!is.null(bbox)) {
+    ows_bbox <- ows4R::OWSUtils$toBBOX(
+      xmin = bbox["xmin"],
+      xmax = bbox["xmax"],
+      ymin = bbox["ymin"],
+      ymax = bbox["ymax"]
+    )
+  }
 
   if (length(time) > 1L || length(elevation) > 1L) {
     cov_raster <- summary$getCoverageStack(
