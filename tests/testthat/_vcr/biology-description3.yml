@@ -16,7 +16,7 @@ http_interactions:
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Fri, 19 Sep 2025 12:29:14 GMT
+      date: Fri, 19 Sep 2025 12:34:04 GMT
     body:
       string: <?xml version="1.0" encoding="UTF-8"?><wcs:Capabilities xmlns:wcs="http://www.opengis.net/wcs/2.0"
         xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
@@ -175,7 +175,7 @@ http_interactions:
         xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0">33388e9718d07e8171ea43735e71e549f0173231</inspire_common:Code></inspire_dls:SpatialDataSetIdentifier><inspire_dls:SpatialDataSetIdentifier
         metadataURL="http://geonetwork.vliz.be/geonetwork/srv/eng/xml.metadata.get?uuid=b1d3b444a111c94e69e6853a83957f1d2ebaa387"><inspire_common:Code
         xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0">b1d3b444a111c94e69e6853a83957f1d2ebaa387</inspire_common:Code></inspire_dls:SpatialDataSetIdentifier></inspire_dls:ExtendedCapabilities></ows:ExtendedCapabilities></wcs:Extension></wcs:Contents></wcs:Capabilities>
-  recorded_at: 2025-09-19 12:29:14
+  recorded_at: 2025-09-19 12:34:04
 - request:
     method: GET
     uri: https://geo.vliz.be/geoserver/Emodnetbio/wcs?service=WCS&version=2.0.1&coverageId=Emodnetbio__aca_spp_19582016_L1&request=DescribeCoverage
@@ -187,12 +187,11 @@ http_interactions:
       content-security-policy: base-uri 'self'; form-action 'self'; default-src 'none';
         child-src 'self'; connect-src 'self'; font-src 'self'; img-src 'self' data:;
         style-src 'self' 'unsafe-inline'; script-src 'self';, frame-ancestors 'self';
-      access-control-allow-origin: '*'
       content-disposition: inline; filename=geoserver-DescribeCoverage.application
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Fri, 19 Sep 2025 12:29:14 GMT
+      date: Fri, 19 Sep 2025 12:34:04 GMT
     body:
       string: |
         <?xml version="1.0" encoding="UTF-8"?><wcs:CoverageDescriptions xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcsgs="http://www.geoserver.org/wcsgs/2.0" xsi:schemaLocation=" http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsDescribeCoverage.xsd http://www.geoserver.org/wcsgs/2.0 https://geo.vliz.be/geoserver/schemas/wcs/2.0/wcsgs.xsd">
@@ -985,5 +984,5 @@ http_interactions:
             </wcs:ServiceParameters>
           </wcs:CoverageDescription>
         </wcs:CoverageDescriptions>
-  recorded_at: 2025-09-19 12:29:14
+  recorded_at: 2025-09-19 12:34:04
 recorded_with: VCR-vcr/2.0.0
