@@ -29,13 +29,14 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
+<li class="active nav-item"><a class="nav-link" href="../articles/emodnet.wcs.html">Get started</a></li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/metadata.html">Getting metadata about Services &amp; Coverages</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="../articles/coverages.html">Downloading Coverages</a></li>
+<li><a class="dropdown-item" href="../articles/coverages.html">Downloading Coverages</a></li>
+    <li><a class="dropdown-item" href="../articles/emodnet.wcs.html">Get Started with emodnet.wcs</a></li>
+    <li><a class="dropdown-item" href="../articles/metadata.html">Getting metadata about Services &amp; Coverages</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
@@ -296,7 +297,7 @@ a bounding box.</p>
 <span><span class="co">#&gt; ....|-- <span style="font-style: italic;">upperCorner</span>: <span style="background-color: #BBBBBB;">45 5 "2016-11-16T01:00:00"</span></span></span>
 <span><span class="co">#&gt; Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message</span></span>
 <span><span class="co">#&gt; 1:</span></span>
-<span><span class="co">#&gt; /tmp/RtmpWGL2Zu/Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif:</span></span>
+<span><span class="co">#&gt; /tmp/Rtmpezvrru/Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif:</span></span>
 <span><span class="co">#&gt; TIFFReadDirectory:Sum of Photometric type-related color channels and</span></span>
 <span><span class="co">#&gt; ExtraSamples doesn't match SamplesPerPixel. Defining non-color channels as</span></span>
 <span><span class="co">#&gt; ExtraSamples.</span></span>
@@ -318,12 +319,12 @@ a bounding box.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">cov</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning in x@pntr$readStart(): GDAL Message 1:</span></span>
-<span><span class="co">#&gt; /tmp/RtmpWGL2Zu/Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif:</span></span>
+<span><span class="co">#&gt; /tmp/Rtmpezvrru/Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif:</span></span>
 <span><span class="co">#&gt; TIFFReadDirectory:Sum of Photometric type-related color channels and</span></span>
 <span><span class="co">#&gt; ExtraSamples doesn't match SamplesPerPixel. Defining non-color channels as</span></span>
 <span><span class="co">#&gt; ExtraSamples.</span></span>
 <span><span class="co">#&gt; Warning in x@pntr$readStart(): GDAL Message 1:</span></span>
-<span><span class="co">#&gt; /tmp/RtmpWGL2Zu/Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif:</span></span>
+<span><span class="co">#&gt; /tmp/Rtmpezvrru/Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif:</span></span>
 <span><span class="co">#&gt; TIFFReadDirectory:Sum of Photometric type-related color channels and</span></span>
 <span><span class="co">#&gt; ExtraSamples doesn't match SamplesPerPixel. Defining non-color channels as</span></span>
 <span><span class="co">#&gt; ExtraSamples.</span></span></code></pre></div>
