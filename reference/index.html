@@ -38,9 +38,9 @@
     </div>
 
     <div class="section level2">
-      <h2 id="connecting-to-emodnet-wcs-services">Connecting to EMODnet WCS Services<a class="anchor" aria-label="anchor" href="#connecting-to-emodnet-wcs-services"></a></h2>
+      <h2 id="download-information-about-data-sources">Download information about data sources<a class="anchor" aria-label="anchor" href="#download-information-about-data-sources"></a></h2>
 
-      <div class="section-desc"><p>Get details of available EMODnet WCS services and create <code>&lt;WCSClient&gt;</code> class objects to connect to them.</p></div>
+
 
 
     </div><div class="section level2">
@@ -53,51 +53,29 @@
           <code><a href="emdn_wcs.html">emdn_wcs()</a></code>
 
         </dt>
-        <dd>Available EMODnet Web Coverage Services</dd>
+        <dd>Which data sources (services) are available?</dd>
       </dl><dl><dt>
 
           <code><a href="emdn_init_wcs_client.html">emdn_init_wcs_client()</a></code>
 
         </dt>
-        <dd>Initialise an EMODnet WCS client</dd>
-      </dl></div><div class="section level2">
-      <h2 id="compile-metadata-about-emodnet-wcs-services-and-the-coverages-they-serve">Compile metadata about EMODnet WCS Services and the coverages they serve<a class="anchor" aria-label="anchor" href="#compile-metadata-about-emodnet-wcs-services-and-the-coverages-they-serve"></a></h2>
-
-      <div class="section-desc"><p>Functions for compiling metadata on services and available coverages for easy review.</p></div>
-
-
-    </div><div class="section level2">
-
-
-
-
-      <dl><dt>
+        <dd>Connect to a data source (service)</dd>
+      </dl><dl><dt>
 
           <code><a href="emdn_get_wcs_info.html">emdn_get_wcs_info()</a></code> <code><a href="emdn_get_wcs_info.html">emdn_get_wcs_info_all()</a></code> <code><a href="emdn_get_wcs_info.html">emdn_get_coverage_info()</a></code>
 
         </dt>
-        <dd>Get EMODnet WCS service and available coverage information.</dd>
-      </dl></div><div class="section level2">
-      <h2 id="extract-metadata-metadata-objects-from-a-object">Extract metadata &amp; metadata objects from a <code>&lt;WCSClient&gt;</code> object<a class="anchor" aria-label="anchor" href="#extract-metadata-metadata-objects-from-a-object"></a></h2>
-
-      <div class="section-desc"><p>Functions for extracting a variety of both service and coverage level metadata including <code>&lt;WCSCoverageSummary&gt;</code> objects from a <code>&lt;WCSClient&gt;</code> object.</p></div>
-
-
-    </div><div class="section level2">
-
-
-
-
-      <dl><dt>
+        <dd>Metadata about data available from the different services: data (coverage) from a data source (service), metadata on coverage from a service.</dd>
+      </dl><dl><dt>
 
           <code><a href="emdn_get_coverage_summaries.html">emdn_get_coverage_summaries()</a></code> <code><a href="emdn_get_coverage_summaries.html">emdn_get_coverage_summaries_all()</a></code> <code><a href="emdn_get_coverage_summaries.html">emdn_get_coverage_ids()</a></code> <code><a href="emdn_get_coverage_summaries.html">emdn_has_dimension()</a></code> <code><a href="emdn_get_coverage_summaries.html">emdn_get_coverage_dim_coefs()</a></code>
 
         </dt>
-        <dd>Get metadata objects from a <code>WCSClient</code> object.</dd>
+        <dd>Service and coverage level metadata</dd>
       </dl></div><div class="section level2">
-      <h2 id="extract-individual-coverage-level-metadata-from-a-object">Extract individual coverage level metadata from a <code>&lt;WCSCoverageSummary&gt;</code> object<a class="anchor" aria-label="anchor" href="#extract-individual-coverage-level-metadata-from-a-object"></a></h2>
+      <h2 id="download-coverage-level-metadata">Download coverage level metadata<a class="anchor" aria-label="anchor" href="#download-coverage-level-metadata"></a></h2>
 
-      <div class="section-desc"><p>Functions for extracting individual metadata for specific coverages from a <code>&lt;WCSCoverageSummary&gt;</code> object.</p></div>
+
 
 
     </div><div class="section level2">
@@ -110,9 +88,9 @@
           <code><a href="emdn_get_bbox.html">emdn_get_bbox()</a></code> <code><a href="emdn_get_bbox.html">emdn_get_WGS84bbox()</a></code> <code><a href="emdn_get_bbox.html">emdn_get_band_nil_values()</a></code> <code><a href="emdn_get_bbox.html">emdn_get_band_descriptions()</a></code> <code><a href="emdn_get_bbox.html">emdn_get_band_uom()</a></code> <code><a href="emdn_get_bbox.html">emdn_get_band_constraints()</a></code> <code><a href="emdn_get_bbox.html">emdn_get_grid_size()</a></code> <code><a href="emdn_get_bbox.html">emdn_get_resolution()</a></code> <code><a href="emdn_get_bbox.html">emdn_get_coverage_function()</a></code> <code><a href="emdn_get_bbox.html">emdn_get_temporal_extent()</a></code> <code><a href="emdn_get_bbox.html">emdn_get_vertical_extent()</a></code> <code><a href="emdn_get_bbox.html">emdn_get_dimensions_info()</a></code> <code><a href="emdn_get_bbox.html">emdn_get_dimensions_names()</a></code> <code><a href="emdn_get_bbox.html">emdn_get_dimensions_n()</a></code> <code><a href="emdn_get_bbox.html">emdn_get_dimension_types()</a></code>
 
         </dt>
-        <dd>Get coverage metadata from a <code>&lt;WCSCoverageSummary&gt;</code> object.</dd>
+        <dd>Individual coverage level metadata</dd>
       </dl></div><div class="section level2">
-      <h2 id="download-a-coverage-from-a-emodnet-wcs-service">Download a coverage from a EMODnet WCS service<a class="anchor" aria-label="anchor" href="#download-a-coverage-from-a-emodnet-wcs-service"></a></h2>
+      <h2 id="download-data-coverages-">Download data (coverages)<a class="anchor" aria-label="anchor" href="#download-data-coverages-"></a></h2>
 
 
 
@@ -127,7 +105,7 @@
           <code><a href="emdn_get_coverage.html">emdn_get_coverage()</a></code>
 
         </dt>
-        <dd>Get a coverage from an EMODnet WCS Service</dd>
+        <dd>Download data (coverage)</dd>
       </dl></div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>

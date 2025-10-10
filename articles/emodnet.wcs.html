@@ -199,18 +199,6 @@ more details see the other vignettes.</p>
 for easy review.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/emdn_get_wcs_info.html">emdn_get_wcs_info</a></span><span class="op">(</span>wcs <span class="op">=</span> <span class="va">wcs</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Loading required package: sf</span></span>
-<span><span class="co">#&gt; Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.4.0; sf_use_s2() is FALSE</span></span>
-<span><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></span>
-<span><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></span>
-<span><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></span>
-<span><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></span>
-<span><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></span>
-<span><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></span>
-<span><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></span>
-<span><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></span>
-<span><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></span>
-<span><span class="co">#&gt; No encoding supplied: defaulting to UTF-8.</span></span>
 <span><span class="co">#&gt; $data_source</span></span>
 <span><span class="co">#&gt; [1] "emodnet_wcs"</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -302,15 +290,13 @@ a bounding box.</p>
 <span>    ymax <span class="op">=</span> <span class="fl">45L</span></span>
 <span>  <span class="op">)</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; although coordinates are longitude/latitude, st_intersects assumes that they</span></span>
-<span><span class="co">#&gt; are planar</span></span>
 <span><span class="co">#&gt; ── Downloading coverage <span style="color: #0000BB;">"Emodnetbio__cal_fin_19582016_L1_err"</span> ──────────────────</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">GMLEnvelope</span><span style="color: #BBBBBB;">&gt;</span></span></span>
 <span><span class="co">#&gt; ....|-- <span style="font-style: italic;">lowerCorner</span>: <span style="background-color: #BBBBBB;">40 0 "1958-02-16T01:00:00"</span></span></span>
 <span><span class="co">#&gt; ....|-- <span style="font-style: italic;">upperCorner</span>: <span style="background-color: #BBBBBB;">45 5 "2016-11-16T01:00:00"</span></span></span>
 <span><span class="co">#&gt; Warning in new_CppObject_xp(fields$.module, fields$.pointer, ...): GDAL Message</span></span>
 <span><span class="co">#&gt; 1:</span></span>
-<span><span class="co">#&gt; /tmp/RtmpmUJGPO/Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif:</span></span>
+<span><span class="co">#&gt; /tmp/RtmpWGL2Zu/Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif:</span></span>
 <span><span class="co">#&gt; TIFFReadDirectory:Sum of Photometric type-related color channels and</span></span>
 <span><span class="co">#&gt; ExtraSamples doesn't match SamplesPerPixel. Defining non-color channels as</span></span>
 <span><span class="co">#&gt; ExtraSamples.</span></span>
@@ -332,12 +318,12 @@ a bounding box.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">cov</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning in x@pntr$readStart(): GDAL Message 1:</span></span>
-<span><span class="co">#&gt; /tmp/RtmpmUJGPO/Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif:</span></span>
+<span><span class="co">#&gt; /tmp/RtmpWGL2Zu/Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif:</span></span>
 <span><span class="co">#&gt; TIFFReadDirectory:Sum of Photometric type-related color channels and</span></span>
 <span><span class="co">#&gt; ExtraSamples doesn't match SamplesPerPixel. Defining non-color channels as</span></span>
 <span><span class="co">#&gt; ExtraSamples.</span></span>
 <span><span class="co">#&gt; Warning in x@pntr$readStart(): GDAL Message 1:</span></span>
-<span><span class="co">#&gt; /tmp/RtmpmUJGPO/Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif:</span></span>
+<span><span class="co">#&gt; /tmp/RtmpWGL2Zu/Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif:</span></span>
 <span><span class="co">#&gt; TIFFReadDirectory:Sum of Photometric type-related color channels and</span></span>
 <span><span class="co">#&gt; ExtraSamples doesn't match SamplesPerPixel. Defining non-color channels as</span></span>
 <span><span class="co">#&gt; ExtraSamples.</span></span></code></pre></div>
