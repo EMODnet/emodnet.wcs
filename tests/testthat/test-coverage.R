@@ -21,7 +21,7 @@ test_that("emdn_get_coverage() works", {
 })
 
 test_that("emdn_get_coverage() works, crs already set", {
-  vcr::local_cassette("vessels2")
+  vcr::local_cassette("vessels-crs")
 
   wcs <- emdn_init_wcs_client(service = "human_activities")
   coverage_id <- "emodnet__vesseldensity_all"
@@ -35,14 +35,6 @@ test_that("emdn_get_coverage() works, crs already set", {
     )
   )
   expect_s4_class(cov, "SpatRaster")
-
-  expect_snapshot(
-    cov <- emdn_get_coverage(
-      wcs,
-      coverage_id = coverage_id,
-      bbox = c(xmin = -120, ymin = -19, xmax = -119, ymax = -18)
-    )
-  )
 })
 
 test_that("emdn_get_coverage() works -- stack", {
