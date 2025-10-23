@@ -20,6 +20,31 @@ test_that("emdn_get_coverage() works", {
   )
 })
 
+test_that("emdn_get_coverage() works, crs already set", {
+  vcr::local_cassette("vessels2")
+
+  wcs <- emdn_init_wcs_client(service = "human_activities")
+  coverage_id <- "emodnet__vesseldensity_all"
+
+  cov <- emdn_get_coverage(
+    wcs,
+    coverage_id = coverage_id,
+    bbox = sf::st_bbox(
+      c(xmin = 484177.9, ymin = 6957617.3, xmax = 1035747, ymax = 7308616.2),
+      crs = 3857
+    )
+  )
+  expect_s4_class(cov, "SpatRaster")
+
+  expect_snapshot(
+    cov <- emdn_get_coverage(
+      wcs,
+      coverage_id = coverage_id,
+      bbox = c(xmin = -120, ymin = -19, xmax = -119, ymax = -18)
+    )
+  )
+})
+
 test_that("emdn_get_coverage() works -- stack", {
   vcr::local_cassette("biology-stack")
   wcs <- emdn_init_wcs_client(service = "biology")
