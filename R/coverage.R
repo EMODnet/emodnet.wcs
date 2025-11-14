@@ -158,6 +158,7 @@ emdn_get_coverage <- function(
   }
 
   if (length(time) > 1L || length(elevation) > 1L) {
+    browser()
     cov_raster <- try(
       suppressWarnings(summary$getCoverageStack(
         bbox = ows_bbox,
@@ -169,19 +170,16 @@ emdn_get_coverage <- function(
       )),
       silent = TRUE
     )
-    if (inherits(cov_raster, "try-error")) {
-      # better to extract filename, so it exists
-      filename <- trimws(sub(".* SpatRaster: ", "", as.character(cov_raster)))
-      no_data <- any(grepl(
-        "Empty intersection after subsetting",
-        readLines(filename)
-      ))
+    if (is(cov_raster, "try-error")) {
+      cli::cli_abort(cov_raster)
+    } else if (inherits(cov_raster, "OWSException")) {
+      no_data <- cov_raster$getText() == "Empty intersection after subsetting"
       if (no_data) {
         cli::cli_warn("Can't find any data in the {.arg bbox}.")
         return(NULL)
       } else {
         # error we don't know about
-        cli::cli_abort(cov_raster)
+        cli::cli_abort(cov_raster$getText())
       }
     }
 
@@ -204,18 +202,16 @@ emdn_get_coverage <- function(
       silent = TRUE
     )
 
-    if (inherits(cov_raster, "try-error")) {
-      filename <- trimws(sub(".* SpatRaster: ", "", as.character(cov_raster)))
-      no_data <- any(grepl(
-        "Empty intersection after subsetting",
-        readLines(filename)
-      ))
+    if (is(cov_raster, "try-error")) {
+      cli::cli_abort(cov_raster)
+    } else if (inherits(cov_raster, "OWSException")) {
+      no_data <- cov_raster$getText() == "Empty intersection after subsetting"
       if (no_data) {
         cli::cli_warn("Can't find any data in the {.arg bbox}.")
         return(NULL)
       } else {
         # error we don't know about
-        cli::cli_abort(cov_raster)
+        cli::cli_abort(cov_raster$getText())
       }
     }
 
