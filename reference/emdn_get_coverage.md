@@ -1,0 +1,139 @@
+# Download data (coverage)
+
+Get a coverage from an EMODnet WCS Service
+
+## Usage
+
+``` r
+emdn_get_coverage(
+  wcs = NULL,
+  service = NULL,
+  coverage_id,
+  service_version = c("2.0.1", "2.1.0", "2.0.0", "1.1.1", "1.1.0"),
+  logger = c("NONE", "INFO", "DEBUG"),
+  bbox = NULL,
+  crs = "EPSG:4326",
+  time = NULL,
+  elevation = NULL,
+  format = NULL,
+  rangesubset = NULL,
+  filename = NULL,
+  nil_values_as_na = FALSE
+)
+```
+
+## Arguments
+
+- wcs:
+
+  A `WCSClient` R6 object, created with function
+  [`emdn_init_wcs_client`](https://emodnet.github.io/emodnet.wcs/reference/emdn_init_wcs_client.md).
+
+- service:
+
+  the EMODnet OGC WCS service name. For available services, see
+  [`emdn_wcs()`](https://emodnet.github.io/emodnet.wcs/reference/emdn_wcs.md).
+
+- coverage_id:
+
+  character string. Coverage ID.
+
+- service_version:
+
+  the WCS service version. Defaults to "2.0.1".
+
+- logger:
+
+  character string. Level of logger: 'NONE' for no logger, 'INFO' to get
+  ows4R logs, 'DEBUG' for all internal logs (such as as Curl details)
+
+- bbox:
+
+  a named numeric vector of length 4, with names `xmin`, `ymin`, `xmax`
+  and `ymax`. specifying the bounding box. (extent) of the raster to be
+  returned.
+
+- crs:
+
+  the CRS of the supplied bounding box (EPSG prefixed code, or URI/URN).
+  Defaults to `"EPSG:4326"`.
+
+- time:
+
+  for coverages that include a temporal dimension, a vector of temporal
+  coefficients specifying the time points for which coverage data should
+  be returned. If `NULL` (default), the last time point is returned. To
+  get a list of all available temporal coefficients, see
+  [`emdn_get_coverage_dim_coefs`](https://emodnet.github.io/emodnet.wcs/reference/emdn_get_coverage_summaries.md).
+  For a single time point, a `SpatRaster` is returned. For more than one
+  time points, `SpatRaster` stack is returned.
+
+- elevation:
+
+  for coverages that include a vertical dimension, a vector of vertical
+  coefficients specifying the elevation for which coverage data should
+  be returned. If `NULL` (default), the last elevation is returned. To
+  get a list of all available vertical coefficients, see
+  [`emdn_get_coverage_dim_coefs`](https://emodnet.github.io/emodnet.wcs/reference/emdn_get_coverage_summaries.md).
+  For a single elevation, a `SpatRaster` is returned. For more than one
+  elevation, `SpatRaster` stack is returned.
+
+- format:
+
+  the format of the file the coverage should be written out to.
+
+- rangesubset:
+
+  character vector of band descriptions to subset.
+
+- filename:
+
+  the file name to write to.
+
+- nil_values_as_na:
+
+  logical. Should raster nil values be converted to `NA`?
+
+## Value
+
+an object of class
+[`terra::SpatRaster`](https://rspatial.github.io/terra/reference/SpatRaster-class.html).
+The function also writes the coverage to a local file.
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+wcs <- emdn_init_wcs_client(service = "biology")
+coverage_id <- "Emodnetbio__cal_fin_19582016_L1_err"
+# Subset using a bounding box
+emdn_get_coverage(wcs,
+  coverage_id = coverage_id,
+  bbox = c(
+    xmin = 0, ymin = 40,
+    xmax = 5, ymax = 45
+  )
+)
+# Subset using a bounding box and specific timepoints
+emdn_get_coverage(wcs,
+  coverage_id = coverage_id,
+  bbox = c(
+    xmin = 0, ymin = 40,
+    xmax = 5, ymax = 45
+  ),
+  time = c(
+    "1963-11-16T00:00:00.000Z",
+    "1964-02-16T00:00:00.000Z"
+  )
+)
+# Subset using a bounding box and a specific band
+emdn_get_coverage(wcs,
+  coverage_id = coverage_id,
+  bbox = c(
+    xmin = 0, ymin = 40,
+    xmax = 5, ymax = 45
+  ),
+  rangesubset = "Relative abundance"
+)
+} # }
+```
