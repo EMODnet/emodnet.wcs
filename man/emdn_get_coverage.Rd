@@ -26,7 +26,8 @@ emdn_get_coverage(
 \item{service}{the EMODnet OGC WCS service name.
 For available services, see \code{\link[=emdn_wcs]{emdn_wcs()}}.}
 
-\item{coverage_id}{character string. Coverage ID.}
+\item{coverage_id}{character string. Coverage ID. Inspect your
+\code{wcs} object for available coverages.}
 
 \item{service_version}{the WCS service version. Defaults to "2.0.1".}
 
@@ -34,12 +35,14 @@ For available services, see \code{\link[=emdn_wcs]{emdn_wcs()}}.}
 to get ows4R logs, 'DEBUG' for all internal logs (such as as Curl details)}
 
 \item{bbox}{a named numeric vector of length 4, with names \code{xmin}, \code{ymin},
-\code{xmax} and \code{ymax}. specifying the bounding box.
-(extent) of the raster to be returned.}
+\code{xmax} and \code{ymax}, specifying the bounding box
+(extent) of the raster to be returned. Can also be an object that
+can be coerced to a \code{bbox} object with \code{\link[sf:st_bbox]{sf::st_bbox()}}.}
 
 \item{crs}{the CRS of the supplied bounding box
 (EPSG prefixed code, or URI/URN).
-Defaults to \code{"EPSG:4326"}.}
+Defaults to \code{"EPSG:4326"}. It will be ignored when the CRS is already
+defined for argument \code{bbox}.}
 
 \item{time}{for coverages that include a temporal dimension,
 a vector of temporal coefficients specifying the
