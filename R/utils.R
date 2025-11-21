@@ -296,8 +296,8 @@ emdn_get_band_uom <- function(summary) {
   uom
 }
 
-#' @describeIn emdn_get_bbox Get the range of values of the data contained in
-#' the bands of the coverage.
+#' @describeIn emdn_get_bbox Get the range of values of the data allowed in
+#' the bands of the coverage, for requests.
 #' @export
 emdn_get_band_constraints <- function(summary) {
   fields <- summary$getDescription()$rangeType$field

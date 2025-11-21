@@ -129,8 +129,8 @@ coverage.
 \item \code{emdn_get_band_uom()}: Get the units of measurement of the data contained in
 the bands values of a coverage.
 
-\item \code{emdn_get_band_constraints()}: Get the range of values of the data contained in
-the bands of the coverage.
+\item \code{emdn_get_band_constraints()}: Get the range of values of the data allowed in
+the bands of the coverage, for requests.
 
 \item \code{emdn_get_grid_size()}: Get the grid size of a coverage.
 
