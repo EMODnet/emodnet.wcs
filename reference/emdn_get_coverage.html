@@ -77,7 +77,8 @@ For available services, see <code><a href="emdn_wcs.html">emdn_wcs()</a></code>.
 
 
 <dt id="arg-coverage-id">coverage_id<a class="anchor" aria-label="anchor" href="#arg-coverage-id"></a></dt>
-<dd><p>character string. Coverage ID.</p></dd>
+<dd><p>character string. Coverage ID. Inspect your
+<code>wcs</code> object for available coverages.</p></dd>
 
 
 <dt id="arg-service-version">service_version<a class="anchor" aria-label="anchor" href="#arg-service-version"></a></dt>
@@ -91,14 +92,16 @@ to get ows4R logs, 'DEBUG' for all internal logs (such as as Curl details)</p></
 
 <dt id="arg-bbox">bbox<a class="anchor" aria-label="anchor" href="#arg-bbox"></a></dt>
 <dd><p>a named numeric vector of length 4, with names <code>xmin</code>, <code>ymin</code>,
-<code>xmax</code> and <code>ymax</code>. specifying the bounding box.
-(extent) of the raster to be returned.</p></dd>
+<code>xmax</code> and <code>ymax</code>, specifying the bounding box
+(extent) of the raster to be returned. Can also be an object that
+can be coerced to a <code>bbox</code> object with <code><a href="https://r-spatial.github.io/sf/reference/st_bbox.html" class="external-link">sf::st_bbox()</a></code>.</p></dd>
 
 
 <dt id="arg-crs">crs<a class="anchor" aria-label="anchor" href="#arg-crs"></a></dt>
 <dd><p>the CRS of the supplied bounding box
 (EPSG prefixed code, or URI/URN).
-Defaults to <code>"EPSG:4326"</code>.</p></dd>
+Defaults to <code>"EPSG:4326"</code>. It will be ignored when the CRS is already
+defined for argument <code>bbox</code>.</p></dd>
 
 
 <dt id="arg-time">time<a class="anchor" aria-label="anchor" href="#arg-time"></a></dt>

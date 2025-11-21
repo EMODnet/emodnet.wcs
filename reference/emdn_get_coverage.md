@@ -36,7 +36,8 @@ emdn_get_coverage(
 
 - coverage_id:
 
-  character string. Coverage ID.
+  character string. Coverage ID. Inspect your `wcs` object for available
+  coverages.
 
 - service_version:
 
@@ -50,13 +51,16 @@ emdn_get_coverage(
 - bbox:
 
   a named numeric vector of length 4, with names `xmin`, `ymin`, `xmax`
-  and `ymax`. specifying the bounding box. (extent) of the raster to be
-  returned.
+  and `ymax`, specifying the bounding box (extent) of the raster to be
+  returned. Can also be an object that can be coerced to a `bbox` object
+  with
+  [`sf::st_bbox()`](https://r-spatial.github.io/sf/reference/st_bbox.html).
 
 - crs:
 
   the CRS of the supplied bounding box (EPSG prefixed code, or URI/URN).
-  Defaults to `"EPSG:4326"`.
+  Defaults to `"EPSG:4326"`. It will be ignored when the CRS is already
+  defined for argument `bbox`.
 
 - time:
 
