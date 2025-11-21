@@ -274,7 +274,7 @@ extract_coverage_resp <- function(cov_try, type) {
     no_data <- (cov_try$getText() == "Empty intersection after subsetting")
     if (no_data) {
       cli::cli_warn("Can't find any data in the {.arg bbox}.")
-      return(NULL)
+      NULL
     } else {
       # error we don't know about
       cli::cli_abort(cov_try$getText())
