@@ -140,7 +140,8 @@ from <a href="https://portal.emodnet-bathymetry.eu/" class="external-link uri">h
 <p>So let’s also create a subsetting <code>bbox</code> of an area of
 interest, the southern North Sea.</p>
 <p>We can first check the bounding box of the full coverage to ensure
-the subset bounding box lies within.</p>
+the subset bounding box lies within. Note that this bounding box is
+approximate and might <em>overestimate</em> the actual coverage.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cov_summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/emdn_get_coverage_summaries.html">emdn_get_coverage_summaries</a></span><span class="op">(</span></span>
 <span>  <span class="va">wcs</span>,</span>

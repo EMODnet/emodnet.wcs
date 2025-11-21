@@ -82,7 +82,8 @@ So let’s also create a subsetting `bbox` of an area of interest, the
 southern North Sea.
 
 We can first check the bounding box of the full coverage to ensure the
-subset bounding box lies within.
+subset bounding box lies within. Note that this bounding box is
+approximate and might *overestimate* the actual coverage.
 
 ``` r
 cov_summary <- emdn_get_coverage_summaries(
