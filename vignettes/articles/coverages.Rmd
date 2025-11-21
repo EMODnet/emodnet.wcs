@@ -68,6 +68,7 @@ Note that, in the near future, it will be possible to download larger boxes than
 So let's also create a subsetting `bbox` of an area of interest, the southern North Sea. 
 
 We can first check the bounding box of the full coverage to ensure the subset bounding box lies within.
+Note that this bounding box is approximate and might _overestimate_ the actual coverage.
 
 ```{r}
 #| label: summary
