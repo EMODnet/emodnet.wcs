@@ -22,5 +22,9 @@
       ....|-- upperCorner: 1 -5 "2016-11-16T01:00:00"<GMLEnvelope>
       ....|-- lowerCorner: 0 -10 "1958-02-16T01:00:00"
       ....|-- upperCorner: 1 -5 "2016-11-16T01:00:00"
+    Condition
+      Warning:
+      Can't find any data in the `bbox`.
+    Output
       NULL
 
