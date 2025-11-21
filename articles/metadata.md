@@ -409,7 +409,8 @@ summary <- summaries[[1]]
 ##### Get the bounding box
 
 Get the bounding box (geographic extent) of a coverage. Coordinates are
-given in the same Coordinate Reference System as the coverage.
+given in the same Coordinate Reference System as the coverage. The
+bounding box is approximate and might overestimate coverage.
 
 ``` r
 emdn_get_bbox(summary)
@@ -420,7 +421,8 @@ emdn_get_bbox(summary)
 ##### Get the WGS84 bbox
 
 Get the bounding box (geographic extent) of a coverage in World Geodetic
-System 1984 (WGS84) Coordinate Reference System (or EPSG:4326).
+System 1984 (WGS84) Coordinate Reference System (or EPSG:4326). The
+bounding box is approximate and might overestimate coverage.
 
 ``` r
 emdn_get_WGS84bbox(summary)
@@ -430,7 +432,9 @@ emdn_get_WGS84bbox(summary)
 
 ##### Get the nil value of a coverage
 
-Get the value representing nil values in a coverage.
+Get the value representing nil values in a coverage. This is useful to
+convert them to NA (see also `nil_values_as_na` argument of
+[`emdn_get_coverage()`](https://emodnet.github.io/emodnet.wcs/reference/emdn_get_coverage.md)).
 
 ``` r
 emdn_get_band_nil_values(summary)
@@ -462,8 +466,8 @@ emdn_get_band_uom(summary)
 
 ##### Get range of band values
 
-Get the range of values of the data contained in the bands of the
-coverage.
+Get the range of values of the data allowed in the bands of the coverage
+(for requests).
 
 ``` r
 emdn_get_band_constraints(summary)

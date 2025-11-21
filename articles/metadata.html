@@ -628,7 +628,8 @@ object returned in the previous step for coverage
 <h5 id="get-the-bounding-box">Get the bounding box<a class="anchor" aria-label="anchor" href="#get-the-bounding-box"></a>
 </h5>
 <p>Get the bounding box (geographic extent) of a coverage. Coordinates
-are given in the same Coordinate Reference System as the coverage.</p>
+are given in the same Coordinate Reference System as the coverage. The
+bounding box is approximate and might overestimate coverage.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/emdn_get_bbox.html">emdn_get_bbox</a></span><span class="op">(</span><span class="va">summary</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   xmin   ymin   xmax   ymax </span></span>
@@ -638,8 +639,8 @@ are given in the same Coordinate Reference System as the coverage.</p>
 <h5 id="get-the-wgs84-bbox">Get the WGS84 bbox<a class="anchor" aria-label="anchor" href="#get-the-wgs84-bbox"></a>
 </h5>
 <p>Get the bounding box (geographic extent) of a coverage in World
-Geodetic System 1984 (WGS84) Coordinate Reference System (or
-EPSG:4326).</p>
+Geodetic System 1984 (WGS84) Coordinate Reference System (or EPSG:4326).
+The bounding box is approximate and might overestimate coverage.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/emdn_get_bbox.html">emdn_get_WGS84bbox</a></span><span class="op">(</span><span class="va">summary</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   xmin   ymin   xmax   ymax </span></span>
@@ -648,7 +649,9 @@ EPSG:4326).</p>
 <div class="section level5">
 <h5 id="get-the-nil-value-of-a-coverage">Get the nil value of a coverage<a class="anchor" aria-label="anchor" href="#get-the-nil-value-of-a-coverage"></a>
 </h5>
-<p>Get the value representing nil values in a coverage.</p>
+<p>Get the value representing nil values in a coverage. This is useful
+to convert them to NA (see also <code>nil_values_as_na</code> argument
+of <code><a href="../reference/emdn_get_coverage.html">emdn_get_coverage()</a></code>).</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/emdn_get_bbox.html">emdn_get_band_nil_values</a></span><span class="op">(</span><span class="va">summary</span><span class="op">)</span></span>
 <span><span class="co">#&gt; relative_abundance </span></span>
@@ -677,8 +680,8 @@ values of a coverage.</p>
 <div class="section level5">
 <h5 id="get-range-of-band-values">Get range of band values<a class="anchor" aria-label="anchor" href="#get-range-of-band-values"></a>
 </h5>
-<p>Get the range of values of the data contained in the bands of the
-coverage.</p>
+<p>Get the range of values of the data allowed in the bands of the
+coverage (for requests).</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/emdn_get_bbox.html">emdn_get_band_constraints</a></span><span class="op">(</span><span class="va">summary</span><span class="op">)</span></span>
 <span><span class="co">#&gt; $relative_abundance</span></span>

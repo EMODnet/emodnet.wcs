@@ -144,7 +144,7 @@ emdn_get_dimension_types(summary)
   contained in the bands values of a coverage.
 
 - `emdn_get_band_constraints()`: Get the range of values of the data
-  contained in the bands of the coverage.
+  allowed in the bands of the coverage, for requests.
 
 - `emdn_get_grid_size()`: Get the grid size of a coverage.
 

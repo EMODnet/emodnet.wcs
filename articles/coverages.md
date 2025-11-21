@@ -177,15 +177,9 @@ cov_nil_to_na
 #> max value   :                                                     2.5854254
 ```
 
-``` r
-terra::plot(cov_nil_to_na)
-```
-
-![](coverages_files/figure-html/unnamed-chunk-4-1.png)
-
-Now, nil values are encode as `NA` and plotting is much more informative
-as the range of values within the raster is now constrained to valid
-values of interest.
+Now, nil values are encoded as `NA` and if there are such nil values,
+plotting is much more informative as the range of values within the
+raster is now constrained to valid values of interest.
 
 ## Subset using a bounding box and specific timepoints
 
@@ -266,7 +260,7 @@ Note that this returns a `<SpatRaster>` Stack instead of a single
 terra::plot(cov_2)
 ```
 
-![](coverages_files/figure-html/unnamed-chunk-7-1.png)
+![](coverages_files/figure-html/unnamed-chunk-6-1.png)
 
 A similar approach is used for specifying points in the vertical
 dimension, using the `elevation` argument where appropriate.
