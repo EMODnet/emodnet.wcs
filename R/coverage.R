@@ -158,7 +158,6 @@ emdn_get_coverage <- function(
   }
 
   if (length(time) > 1L || length(elevation) > 1L) {
-    browser()
     cov_raster <- try(
       suppressWarnings(summary$getCoverageStack(
         bbox = ows_bbox,
