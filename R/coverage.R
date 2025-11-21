@@ -3,13 +3,16 @@
 #' Get a coverage from an EMODnet WCS Service
 #'
 #' @inheritParams emdn_get_coverage_info
-#' @param coverage_id character string. Coverage ID.
+#' @param coverage_id character string. Coverage ID. Inspect your
+#' `wcs` object for available coverages.
 #' @param bbox a named numeric vector of length 4, with names `xmin`, `ymin`,
-#' `xmax` and `ymax`. specifying the bounding box.
-#' (extent) of the raster to be returned.
+#' `xmax` and `ymax`, specifying the bounding box
+#' (extent) of the raster to be returned. Can also be an object that
+#' can be coerced to a `bbox` object with [sf::st_bbox()].
 #' @param crs the CRS of the supplied bounding box
 #' (EPSG prefixed code, or URI/URN).
-#' Defaults to `"EPSG:4326"`.
+#' Defaults to `"EPSG:4326"`. It will be ignored when the CRS is already
+#' defined for argument `bbox`.
 #' @param time for coverages that include a temporal dimension,
 #' a vector of temporal coefficients specifying the
 #' time points for which coverage data should be returned.

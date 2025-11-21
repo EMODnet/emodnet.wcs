@@ -23,12 +23,13 @@ Useful links:
 Authors:
 \itemize{
   \item Anna Krystalli \email{annakrystalli@googlemail.com} (\href{https://orcid.org/0000-0002-2378-4915}{ORCID})
+  \item Maëlle Salmon \email{maelle.salmon@gmail.com} (\href{https://orcid.org/0000-0002-2815-0399}{ORCID})
 }
 
 Other contributors:
 \itemize{
   \item European Marine Observation Data Network (EMODnet) Biology project European Commission's Directorate - General for Maritime Affairs and Fisheries (DG MARE) \email{bio@emodnet.eu} [copyright holder]
-  \item VLIZ (VLAAMS INSTITUUT VOOR DE ZEE) \email{info@vliz.be} (\href{https://ror.org/0496vr396}{ROR}) [funder]
+  \item VLIZ (VLAAMS INSTITUUT VOOR DE ZEE) \email{info@vliz.be} (0496vr396) [funder]
   \item Pepijn de Vries \email{pepijn.devries@outlook.com} (\href{https://orcid.org/0000-0002-7961-6646}{ORCID}) [contributor]
 }
 

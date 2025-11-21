@@ -27,7 +27,7 @@ Web Coverage Service.
 Initialise an EMODnet WCS client
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 wcs <- emdn_init_wcs_client(service = "bathymetry")
 \dontshow{\}) # examplesIf}
 }
