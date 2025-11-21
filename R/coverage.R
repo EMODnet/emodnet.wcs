@@ -158,7 +158,7 @@ emdn_get_coverage <- function(
   }
 
   if (length(time) > 1L || length(elevation) > 1L) {
-    cov_raster <- try(
+    cov_try <- try(
       suppressWarnings(summary$getCoverageStack(
         bbox = ows_bbox,
         crs = crs,
@@ -169,29 +169,10 @@ emdn_get_coverage <- function(
       )),
       silent = TRUE
     )
-    if (inherits(cov_raster, "try-error")) {
-      # better to extract filename, so it exists
-      filename <- trimws(sub(".* SpatRaster: ", "", as.character(cov_raster)))
-      no_data <- any(grepl(
-        "Empty intersection after subsetting",
-        readLines(filename)
-      ))
-      if (no_data) {
-        cli::cli_warn("Can't find any data in the {.arg bbox}.")
-        return(NULL)
-      } else {
-        # error we don't know about
-        cli::cli_abort(cov_raster)
-      }
-    }
-
-    cli_alert_success(
-      "\n Coverage {.val {coverage_id}} downloaded succesfully as a
-        {.pkg terra} {.cls SpatRaster} Stack"
-    )
+    cov_raster <- extract_coverage_resp(cov_try, type = "Stack")
   } else {
     # https://github.com/eblondel/ows4R/issues/151
-    cov_raster <- try(
+    cov_try <- try(
       suppressWarnings(summary$getCoverage(
         bbox = ows_bbox,
         crs = crs,
@@ -203,26 +184,7 @@ emdn_get_coverage <- function(
       )),
       silent = TRUE
     )
-
-    if (inherits(cov_raster, "try-error")) {
-      filename <- trimws(sub(".* SpatRaster: ", "", as.character(cov_raster)))
-      no_data <- any(grepl(
-        "Empty intersection after subsetting",
-        readLines(filename)
-      ))
-      if (no_data) {
-        cli::cli_warn("Can't find any data in the {.arg bbox}.")
-        return(NULL)
-      } else {
-        # error we don't know about
-        cli::cli_abort(cov_raster)
-      }
-    }
-
-    cli_alert_success(
-      "\n Coverage {.val {coverage_id}} downloaded succesfully as a
-        {.pkg terra} {.cls SpatRaster}"
-    )
+    cov_raster <- extract_coverage_resp(cov_try, type = "")
   }
 
   if (nil_values_as_na) {
@@ -285,4 +247,37 @@ conv_nil_to_na <- function(cov_raster, summary, rangesubset) {
   }
 
   cov_raster
+}
+
+extract_coverage_resp <- function(cov_try, type) {
+  if (inherits(cov_try, "try-error")) {
+    cli::cli_abort(cov_try)
+  }
+
+  if (inherits(cov_try, "SpatRaster")) {
+    cli_alert_success(
+      "\n Coverage {.val {coverage_id}} downloaded succesfully as a
+        {.pkg terra} {.cls SpatRaster} {type}"
+    )
+    return(cov_try)
+  }
+
+  if (is.null(cov_try)) {
+    cli::cli_warn("Can't find any data in the {.arg bbox}.")
+    return(NULL)
+  }
+
+  # at this stage why wouldn't it be an exception though
+  is_exception <- inherits(cov_try, "OWSException")
+
+  if (is_exception) {
+    no_data <- (cov_try$getText() == "Empty intersection after subsetting")
+    if (no_data) {
+      cli::cli_warn("Can't find any data in the {.arg bbox}.")
+      NULL
+    } else {
+      # error we don't know about
+      cli::cli_abort(cov_try$getText())
+    }
+  }
 }

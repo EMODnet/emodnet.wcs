@@ -29,7 +29,7 @@ Imports:
     glue,
     httr2,
     memoise,
-    ows4R (>= 0.3-2),
+    ows4R (>= 0.5-1),
     purrr,
     rlang,
     sf,
