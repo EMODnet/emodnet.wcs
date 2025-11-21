@@ -267,6 +267,7 @@ extract_coverage_resp <- function(cov_try, type) {
     return(NULL)
   }
 
+  # at this stage why wouldn't it be an exception though
   is_exception <- inherits(cov_try, "OWSException")
 
   if (is_exception) {
