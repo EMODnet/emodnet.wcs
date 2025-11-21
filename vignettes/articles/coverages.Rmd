@@ -124,11 +124,7 @@ cov_nil_to_na <- emdn_get_coverage(
 cov_nil_to_na
 ```
 
-```{r}
-terra::plot(cov_nil_to_na)
-```
-
-Now, nil values are encode as `NA` and plotting is much more informative as the range of values within the raster is now constrained to valid values of interest.
+Now, nil values are encoded as `NA` and if there are such nil values, plotting is much more informative as the range of values within the raster is now constrained to valid values of interest.
 
 ## Subset using a bounding box and specific timepoints
 
