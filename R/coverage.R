@@ -169,10 +169,10 @@ emdn_get_coverage <- function(
       )),
       silent = TRUE
     )
-    if (is(cov_raster, "try-error")) {
+    if (inherits(cov_raster, "try-error")) {
       cli::cli_abort(cov_raster)
     } else if (inherits(cov_raster, "OWSException")) {
-      no_data <- cov_raster$getText() == "Empty intersection after subsetting"
+      no_data <- (cov_raster$getText() == "Empty intersection after subsetting")
       if (no_data) {
         cli::cli_warn("Can't find any data in the {.arg bbox}.")
         return(NULL)
@@ -201,10 +201,10 @@ emdn_get_coverage <- function(
       silent = TRUE
     )
 
-    if (is(cov_raster, "try-error")) {
+    if (inherits(cov_raster, "try-error")) {
       cli::cli_abort(cov_raster)
     } else if (inherits(cov_raster, "OWSException")) {
-      no_data <- cov_raster$getText() == "Empty intersection after subsetting"
+      no_data <- (cov_raster$getText() == "Empty intersection after subsetting")
       if (no_data) {
         cli::cli_warn("Can't find any data in the {.arg bbox}.")
         return(NULL)
