@@ -1,3 +1,19 @@
+test_that("extract_coverage_resp() emits success message", {
+  local_test_context()
+  withr::local_options(emodnet.wcs.quiet = FALSE)
+  mock_raster <- terra::rast(nrows = 10, ncols = 10)
+
+  expect_message(
+    result <- extract_coverage_resp(
+      mock_raster,
+      type = "",
+      coverage_id = "test__coverage"
+    ),
+    "downloaded succesfully"
+  )
+  expect_s4_class(result, "SpatRaster")
+})
+
 test_that("emdn_get_coverage() works", {
   vcr::local_cassette("vessels")
 

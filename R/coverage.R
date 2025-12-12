@@ -169,7 +169,7 @@ emdn_get_coverage <- function(
       )),
       silent = TRUE
     )
-    cov_raster <- extract_coverage_resp(cov_try, type = "Stack")
+    cov_raster <- extract_coverage_resp(cov_try, type = "Stack", coverage_id)
   } else {
     # https://github.com/eblondel/ows4R/issues/151
     cov_try <- try(
@@ -184,7 +184,7 @@ emdn_get_coverage <- function(
       )),
       silent = TRUE
     )
-    cov_raster <- extract_coverage_resp(cov_try, type = "")
+    cov_raster <- extract_coverage_resp(cov_try, type = "", coverage_id)
   }
 
   if (nil_values_as_na) {
@@ -249,15 +249,15 @@ conv_nil_to_na <- function(cov_raster, summary, rangesubset) {
   cov_raster
 }
 
-extract_coverage_resp <- function(cov_try, type) {
+extract_coverage_resp <- function(cov_try, type, coverage_id) {
   if (inherits(cov_try, "try-error")) {
     cli::cli_abort(cov_try)
   }
 
   if (inherits(cov_try, "SpatRaster")) {
     cli_alert_success(
-      "\n Coverage {.val {coverage_id}} downloaded succesfully as a
-        {.pkg terra} {.cls SpatRaster} {type}"
+      "Coverage {.val {coverage_id}} downloaded succesfully as a
+        {.pkg terra} {.cls SpatRaster} {type}."
     )
     return(cov_try)
   }
