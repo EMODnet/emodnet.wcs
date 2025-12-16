@@ -116,7 +116,7 @@ cov_1 <- emdn_get_coverage(wcs, coverage_id = coverage_id, bbox = bbox)
 #> ....|-- lowerCorner: 53 1.5 "1958-02-16T01:00:00"
 #> ....|-- upperCorner: 58 6.5 "2016-11-16T01:00:00"
 #> ✔ Coverage "Emodnetbio__aca_spp_19582016_L1" downloaded succesfully as a
-#>        terra <SpatRaster>
+#> terra <SpatRaster> .
 
 cov_1
 #> class       : SpatRaster 
@@ -161,7 +161,7 @@ cov_nil_to_na <- emdn_get_coverage(
 #> ....|-- lowerCorner: 53 1.5 "1958-02-16T01:00:00"
 #> ....|-- upperCorner: 58 6.5 "2016-11-16T01:00:00"
 #> ✔ Coverage "Emodnetbio__aca_spp_19582016_L1" downloaded succesfully as a
-#>        terra <SpatRaster>
+#> terra <SpatRaster> .
 #> ✔ nil values 9.96920996838687e+36 converted to NA on all bands.
 
 cov_nil_to_na
@@ -236,7 +236,7 @@ cov_2 <- emdn_get_coverage(
 #> ....|-- lowerCorner: 53 1.5 "1958-02-16T01:00:00"
 #> ....|-- upperCorner: 58 6.5 "2016-11-16T01:00:00"
 #> ✔ Coverage "Emodnetbio__aca_spp_19582016_L1" downloaded succesfully as a
-#>        terra <SpatRaster> Stack
+#> terra <SpatRaster> Stack.
 #> ✔ nil values 9.96920996838687e+36 converted to NA on all bands.
 ```
 
@@ -314,7 +314,7 @@ emdn_get_coverage(
 #> ....|-- lowerCorner: 53 1.5 "1958-02-16T01:00:00"
 #> ....|-- upperCorner: 58 6.5 "2016-11-16T01:00:00"
 #> ✔ Coverage "Emodnetbio__aca_spp_19582016_L1" downloaded succesfully as a
-#>        terra <SpatRaster>
+#> terra <SpatRaster> .
 #> class       : SpatRaster 
 #> size        : 50, 50, 1  (nrow, ncol, nlyr)
 #> resolution  : 0.1, 0.1  (x, y)

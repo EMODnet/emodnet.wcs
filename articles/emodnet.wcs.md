@@ -245,7 +245,7 @@ cov <- emdn_get_coverage(
 #> ....|-- lowerCorner: 40 0 "1958-02-16T01:00:00"
 #> ....|-- upperCorner: 45 5 "2016-11-16T01:00:00"
 #> ✔ Coverage "Emodnetbio__cal_fin_19582016_L1_err" downloaded succesfully as a
-#>        terra <SpatRaster>
+#> terra <SpatRaster> .
 
 cov
 #> class       : SpatRaster 
