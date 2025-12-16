@@ -1,3 +1,11 @@
+# extract_coverage_resp() emits success message
+
+    Code
+      result <- extract_coverage_resp(mock_raster, type = "", coverage_id = "test__coverage")
+    Message
+      v Coverage "test__coverage" downloaded succesfully as a
+      terra <SpatRaster> .
+
 # emdn_get_coverage() works
 
     Code

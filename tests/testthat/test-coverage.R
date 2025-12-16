@@ -3,13 +3,12 @@ test_that("extract_coverage_resp() emits success message", {
   withr::local_options(emodnet.wcs.quiet = FALSE)
   mock_raster <- terra::rast(nrows = 10, ncols = 10)
 
-  expect_message(
+  expect_snapshot(
     result <- extract_coverage_resp(
       mock_raster,
       type = "",
       coverage_id = "test__coverage"
-    ),
-    "downloaded succesfully"
+    )
   )
   expect_s4_class(result, "SpatRaster")
 })
