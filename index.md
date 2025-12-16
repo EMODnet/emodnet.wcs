@@ -246,17 +246,17 @@ cov <- emdn_get_coverage(
   coverage_id = "emodnet__vesseldensity_all",
   nil_values_as_na = FALSE
 )
-#> ── Downloading coverage "emodnet__vesseldensity_all" ───────────────────────────
 #> No encoding supplied: defaulting to UTF-8.
+#> ── Downloading coverage "emodnet__vesseldensity_all" ───────────────────────────
 #> <GMLEnvelope>
 #> ....|-- lowerCorner: 484177.9 6957617.3 "2017-01-01T00:00:00"
 #> ....|-- upperCorner: 1035747 7308616.2 "2023-12-01T00:00:00"
 #> ✔ Coverage "emodnet__vesseldensity_all" downloaded succesfully as a
-#>        terra <SpatRaster>
+#> terra <SpatRaster> .
 ```
 
 ``` r
-terra::plot(cov)
+terra::plot(log(cov))
 ```
 
 ![](reference/figures/README-unnamed-chunk-3-1.png)
@@ -275,7 +275,7 @@ citation(package = "emodnet.wcs")
 #> To cite package 'emodnet.wcs' in publications use:
 #> 
 #>   Krystalli A (2025). _emodnet.wcs: Access EMODnet Web Coverage Service
-#>   data through R_. R package version 0.0.0.9012. Integrated data
+#>   data through R_. R package version 0.0.1.9000. Integrated data
 #>   products created under the European Marine Observation Data Network
 #>   (EMODnet) Biology project (EASME/EMFF/2017/1.3.1.2/02/SI2.789013),
 #>   funded by the European Union under Regulation (EU) No 508/2014 of the
@@ -289,7 +289,7 @@ citation(package = "emodnet.wcs")
 #>     title = {{emodnet.wcs}: Access EMODnet Web Coverage Service data through R},
 #>     author = {Anna Krystalli},
 #>     year = {2025},
-#>     note = {R package version 0.0.0.9012. Integrated data products created under the European Marine Observation Data Network (EMODnet) Biology project (EASME/EMFF/2017/1.3.1.2/02/SI2.789013), funded by the European Union under Regulation (EU) No 508/2014 of the European Parliament and of the Council of 15 May 2014 on the European Maritime and Fisheries Fund},
+#>     note = {R package version 0.0.1.9000. Integrated data products created under the European Marine Observation Data Network (EMODnet) Biology project (EASME/EMFF/2017/1.3.1.2/02/SI2.789013), funded by the European Union under Regulation (EU) No 508/2014 of the European Parliament and of the Council of 15 May 2014 on the European Maritime and Fisheries Fund},
 #>     url = {https://github.com/EMODnet/emodnet.wcs},
 #>   }
 ```

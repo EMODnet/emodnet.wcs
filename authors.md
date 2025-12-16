@@ -22,7 +22,7 @@
 ## Citation
 
 Source:
-[`inst/CITATION`](https://github.com/EMODnet/emodnet.wcs/blob/v0.0.1/inst/CITATION)
+[`inst/CITATION`](https://github.com/EMODnet/emodnet.wcs/blob/main/inst/CITATION)
 
 Krystalli A (2025). *emodnet.wcs: Access EMODnet Web Coverage Service
 data through R*. R package version 0.0.1. Integrated data products
