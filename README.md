@@ -346,7 +346,6 @@ retrieve datasets on vessel density.
 ``` r
 # install.packages("rerrdap")
 library(rerddap)
-#> Warning: package 'rerddap' was built under R version 4.5.2
 #> Registered S3 method overwritten by 'hoardr':
 #>   method           from
 #>   print.cache_info httr
