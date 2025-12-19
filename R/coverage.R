@@ -254,7 +254,7 @@ conv_nil_to_na <- function(cov_raster, summary, rangesubset) {
 conv_band_nil_value <- function(band, cov_raster, summary, rangesubset) {
   nil_val <- emdn_get_band_nil_values(summary, band)[rangesubset]
 
-  band_idx <- which(emdn_get_band_descriptions(summary) == field)
+  band_idx <- which(emdn_get_band_descriptions(summary) == band)
 
   if (is.nan(nil_val)) {
     terra::values(cov_raster[[band_idx]])[is.nan(terra::values(cov_raster[[
