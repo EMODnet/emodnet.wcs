@@ -251,8 +251,8 @@ conv_nil_to_na <- function(cov_raster, summary, rangesubset) {
   )
 }
 
-conv_band_nil_value <- function(field, cov_raster, summary, rangesubset) {
-  nil_val <- emdn_get_band_nil_values(summary, field)[rangesubset]
+conv_band_nil_value <- function(band, cov_raster, summary, rangesubset) {
+  nil_val <- emdn_get_band_nil_values(summary, band)[rangesubset]
 
   band_idx <- which(emdn_get_band_descriptions(summary) == field)
 
@@ -261,7 +261,7 @@ conv_band_nil_value <- function(field, cov_raster, summary, rangesubset) {
       band_idx
     ]]))] <- NA
     cli_alert_success(
-      "nil values {.val NaN} converted to {.field NA} on {.field} band."
+      "nil values {.val NaN} converted to {.field NA} on {band} band."
     )
     return(cov_raster)
   }
@@ -271,13 +271,13 @@ conv_band_nil_value <- function(field, cov_raster, summary, rangesubset) {
       terra::values(cov_raster[[band_idx]]) >= nil_val
     ] <- NA
     cli_alert_success(
-      "nil values {.val {uniq_nil_val}} converted to {.field NA} on {.field} band."
+      "nil values {.val {uniq_nil_val}} converted to {.field NA} on {band} band."
     )
     return(cov_raster)
   }
 
   cli::cli_warn(
-    "!" = "Cannot convert non numeric nil value {.val {nil_val}} to NA."
+    "!" = "Cannot convert non numeric nil value {.val {nil_val}} to NA on {.field} band."
   )
   return(cov_raster)
 }
