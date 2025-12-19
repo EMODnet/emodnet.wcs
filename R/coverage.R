@@ -271,7 +271,7 @@ conv_band_nil_value <- function(band, cov_raster, summary, rangesubset) {
       terra::values(cov_raster[[band_idx]]) >= nil_val
     ] <- NA
     cli_alert_success(
-      "nil values {.val {uniq_nil_val}} converted to {.field NA} on {band} band."
+      "nil values {.val {nil_val}} converted to {.field NA} on {band} band."
     )
     return(cov_raster)
   }
