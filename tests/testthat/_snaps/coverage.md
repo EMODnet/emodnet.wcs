@@ -36,3 +36,15 @@
     Output
       NULL
 
+# `nil_values_as_na = TRUE` converts NaN nil values to NA
+
+    Code
+      r <- emdn_get_coverage(wcs = hab_wcs, coverage_id = coverage_id, bbox = test_bbox,
+        nil_values_as_na = TRUE)
+    Message
+      No encoding supplied: defaulting to UTF-8.
+    Output
+      <GMLEnvelope>
+      ....|-- lowerCorner: 0 7361866.11305119
+      ....|-- upperCorner: 222638.981586547 7760118.67290245
+

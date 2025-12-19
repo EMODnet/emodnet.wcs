@@ -237,52 +237,49 @@ emdn_get_coverage <- function(
 
 # Convert coverage nil values to NA
 conv_nil_to_na <- function(cov_raster, summary, rangesubset) {
-  nil_values <- emdn_get_band_nil_values(summary)[rangesubset]
-  uniq_nil_val <- unique(nil_values)
-
-  # For efficiency, replace nil_values across entire coverage if all bands have
-  # the same nil_values. Return early.
-  if (length(uniq_nil_val) == 1L) {
-    if (is.numeric(uniq_nil_val)) {
-      terra::values(cov_raster)[
-        terra::values(cov_raster) >= uniq_nil_val
-      ] <- NA
-
-      cli_alert_success(
-        "nil values {.val {uniq_nil_val}} converted to {.field NA} on all bands."
+  purrr::reduce(
+    emdn_get_band_descriptions(summary),
+    \(cov_raster, x) {
+      conv_band_nil_value(
+        x,
+        cov_raster,
+        summary = summary,
+        rangesubset = rangesubset
       )
-    } else {
-      cli::cli_warn(
-        "!" = "Cannot convert non numeric nil value {.val {uniq_nil_val}} to NA"
-      )
-    }
+    },
+    .init = cov_raster
+  )
+}
+
+conv_band_nil_value <- function(field, cov_raster, summary, rangesubset) {
+  nil_val <- emdn_get_band_nil_values(summary, field)[rangesubset]
+
+  band_idx <- which(emdn_get_band_descriptions(summary) == field)
+
+  if (is.nan(nil_val)) {
+    terra::values(cov_raster[[band_idx]])[is.nan(terra::values(cov_raster[[
+      band_idx
+    ]]))] <- NA
+    cli_alert_success(
+      "nil values {.val NaN} converted to {.field NA} on {.field} band."
+    )
     return(cov_raster)
   }
 
-  # If nil_values differ between bands, replace nil_values individually.
-  n_bands <- terra::nlyr(cov_raster)
-  nil_values <- rep(nil_values, times = n_bands / length(nil_values))
-
-  for (band_idx in seq_len(n_bands)) {
-    nil_value <- nil_values[[band_idx]]
-    band_name <- names(nil_values)[band_idx]
-
-    if (is.numeric(nil_value)) {
-      cov_raster[[band_idx]][cov_raster[[band_idx]] >= nil_value] <- NA
-
-      cli_alert_success(
-        "nil values {.val {nil_value}} converted to
-        {.field NA} on band {.val {band_name}}"
-      )
-    } else {
-      cli::cli_warn(
-        "!" = "Cannot convert non numeric nil value {.val {nil_value}} to NA
-          on band {.val {band_name}}"
-      )
-    }
+  if (is.numeric(nil_val)) {
+    terra::values(cov_raster[[band_idx]])[
+      terra::values(cov_raster[[band_idx]]) >= nil_val
+    ] <- NA
+    cli_alert_success(
+      "nil values {.val {uniq_nil_val}} converted to {.field NA} on {.field} band."
+    )
+    return(cov_raster)
   }
 
-  cov_raster
+  cli::cli_warn(
+    "!" = "Cannot convert non numeric nil value {.val {nil_val}} to NA."
+  )
+  return(cov_raster)
 }
 
 extract_coverage_resp <- function(cov_try, type, coverage_id) {
