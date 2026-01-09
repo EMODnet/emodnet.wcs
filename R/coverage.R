@@ -189,33 +189,28 @@ emdn_get_coverage <- function(
 
   if (nil_values_as_na) {
     # convert nil_values to NA
-    cov_raster <- conv_nil_to_na(
-      cov_raster,
-      summary,
-      rangesubset
-    )
+    cov_raster <- conv_nil_to_na(cov_raster, summary)
   }
 
   cov_raster
 }
 
 # Convert coverage nil values to NA
-conv_nil_to_na <- function(cov_raster, summary, rangesubset) {
+conv_nil_to_na <- function(cov_raster, summary) {
   purrr::reduce(
     emdn_get_band_descriptions(summary),
     \(cov_raster, x) {
       conv_band_nil_value(
         x,
         cov_raster,
-        summary = summary,
-        rangesubset = rangesubset
+        summary = summary
       )
     },
     .init = cov_raster
   )
 }
 
-conv_band_nil_value <- function(band, cov_raster, summary, rangesubset) {
+conv_band_nil_value <- function(band, cov_raster, summary) {
   nil_val <- emdn_get_band_nil_values(summary, band)
 
   band_idx <- which(emdn_get_band_descriptions(summary) == band)
