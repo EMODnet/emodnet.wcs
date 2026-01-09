@@ -254,7 +254,7 @@ emdn_get_WGS84bbox <- function(summary) {
 
 #' @describeIn emdn_get_bbox Get the value representing nil values in a
 #' coverage.
-#' @param band Which band. By default all bands.
+#' @param band Character vector of bands. By default all bands.
 #' @export
 emdn_get_band_nil_values <- function(summary, band = NULL) {
   band <- band %||% emdn_get_band_descriptions(summary)
