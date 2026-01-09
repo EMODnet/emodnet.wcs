@@ -267,9 +267,7 @@ conv_band_nil_value <- function(band, cov_raster, summary, rangesubset) {
   }
 
   if (is.numeric(nil_val)) {
-    terra::values(cov_raster[[band_idx]])[
-      terra::values(cov_raster[[band_idx]]) == nil_val
-    ] <- NA
+    terra::NAflag(cov_raster[[band_idx]]) <- nil_val
     cli_alert_success(
       "nil values {.val {nil_val}} converted to {.field NA} on {band} band."
     )
