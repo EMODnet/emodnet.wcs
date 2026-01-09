@@ -272,11 +272,7 @@ emdn_get_band_nil_values <- function(summary, band = NULL) {
   nil_val <- nil_val |>
     purrr::map_dbl(
       \(x) {
-        ifelse(
-          is.null(x),
-          NA,
-          as.numeric(x)
-        )
+        x %||% NA |> as.numeric()
       }
     )
 
