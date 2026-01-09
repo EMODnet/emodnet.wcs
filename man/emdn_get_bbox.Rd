@@ -55,7 +55,7 @@ emdn_get_dimension_types(summary)
 \arguments{
 \item{summary}{a \verb{<WCSCoverageSummary>} object.}
 
-\item{band}{Which band. By default all bands.}
+\item{band}{Character vector of bands. By default all bands.}
 
 \item{format}{character string. Coverage dimension info output format.
 One of \code{"character"} (default), \code{"list"} or \code{"tibble"}.}
