@@ -22,7 +22,7 @@ emdn_get_bbox(summary)
 
 emdn_get_WGS84bbox(summary)
 
-emdn_get_band_nil_values(summary)
+emdn_get_band_nil_values(summary, band = NULL)
 
 emdn_get_band_descriptions(summary)
 
@@ -54,6 +54,8 @@ emdn_get_dimension_types(summary)
 }
 \arguments{
 \item{summary}{a \verb{<WCSCoverageSummary>} object.}
+
+\item{band}{Character vector of bands. By default all bands.}
 
 \item{format}{character string. Coverage dimension info output format.
 One of \code{"character"} (default), \code{"list"} or \code{"tibble"}.}
