@@ -192,7 +192,7 @@ First let's check the available bands in our coverage.
 emdn_get_band_descriptions(cov_summary)
 ```
 
-To download a specifc band we use the `rangesubset` argument:
+To download a specific band we use the `rangesubset` argument:
 ```{r, eval=FALSE}
 #| label: get-subset
 emdn_get_coverage(
