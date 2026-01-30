@@ -12,14 +12,16 @@ navbar:
    intro:
     text: Get started
     href: articles/emodnet.wcs.html
-    articles:
-      text: Articles
-      menu:
-      - text: Getting metadata about Services & Coverages
-        href: articles/metadata.html
-      - text: -------
-      - text: Downloading Coverages
-        href: articles/coverages.html
+
+articles:
+- title: Getting metadata about Services & Coverages
+  navbar: ~
+  contents:
+  - articles/metadata
+- title: Downloading Coverages
+  navbar: ~
+  contents:
+  - articles/coverages
 
 
 reference:
