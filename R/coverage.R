@@ -155,6 +155,8 @@ emdn_get_coverage <- function(
       ymin = bbox["ymin"],
       ymax = bbox["ymax"]
     )
+  } else {
+    ows_bbox <- NULL
   }
 
   if (length(time) > 1L || length(elevation) > 1L) {
