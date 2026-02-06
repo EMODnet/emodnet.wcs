@@ -200,11 +200,14 @@ emdn_get_coverage <- function(
 
   one_band_only <- (length(rangesubset) == 1)
   if (one_band_only) {
+    names(cov_raster) <- paste(names(cov_raster), rangesubset, sep = "_")
     return(cov_raster)
   }
   layer_numbers <- unique(sub(".*_([0-9]+)$", "\\1", names(cov_raster)))
   if (length(layer_numbers) != length(rangesubset)) {
-    return(cov_raster)
+    cli::cli_abort(
+      "Can't identify received ranges. Please open an issue."
+    )
   }
 
   cov_raster <- purrr::reduce(
