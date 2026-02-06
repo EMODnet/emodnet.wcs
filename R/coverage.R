@@ -189,6 +189,11 @@ emdn_get_coverage <- function(
     cov_raster <- extract_coverage_resp(cov_try, type = "", coverage_id)
   }
 
+  no_data <- is.null(cov_raster)
+  if (no_data) {
+    return(cov_raster)
+  }
+
   if (nil_values_as_na) {
     # convert nil_values to NA
     cov_raster <- conv_nil_to_na(
@@ -314,5 +319,5 @@ extract_coverage_resp <- function(cov_try, type, coverage_id) {
 }
 
 kebabcase <- function(x) {
-  tolower(gsub("[^a-zA-Z0-9]+", "-", bands))
+  tolower(gsub("[^a-zA-Z0-9]+", "-", x))
 }
