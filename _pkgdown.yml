@@ -17,7 +17,7 @@ articles:
 - title: Getting started
   navbar: ~
   contents:
-  - articles/emodnet.wcs
+  - emodnet.wcs
 - title: Getting metadata about Services & Coverages
   navbar: ~
   contents:
