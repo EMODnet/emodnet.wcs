@@ -99,3 +99,35 @@ test_that("emdn_get_coverage() works -- stack", {
     )
   )
 })
+
+test_that("`nil_values_as_na = TRUE` converts NaN nil values to NA", {
+  # https://github.com/EMODnet/emodnet.wcs/issues/121
+  vcr::local_cassette("nil-values")
+  withr::local_options(emodnet.wcs.quiet = FALSE)
+
+  hab_wcs <- emdn_init_wcs_client(service = "seabed_habitats")
+  coverage_id <- "emodnet_open_maplibrary__GB000050_EFH_Whiting_SpawningGrounds"
+  test_bbox <- c(xmin = 0, ymin = 55, xmax = 2, ymax = 57)
+
+  # no conversion
+  summary <- emdn_get_coverage_summaries(hab_wcs, coverage_id)[[1]]
+  expect_equal(emdn_get_band_nil_values(summary), c(GRAY_INDEX = NaN))
+  r0 <- emdn_get_coverage(
+    wcs = hab_wcs,
+    coverage_id = coverage_id,
+    bbox = test_bbox,
+    nil_values_as_na = FALSE
+  )
+  expect_equal(sum(is.nan(terra::values(r0))), 4)
+
+  # conversion
+  expect_snapshot(
+    r <- emdn_get_coverage(
+      wcs = hab_wcs,
+      coverage_id = coverage_id,
+      bbox = test_bbox,
+      nil_values_as_na = TRUE
+    )
+  )
+  expect_equal(sum(is.nan(terra::values(r))), 0)
+})

@@ -254,23 +254,29 @@ emdn_get_WGS84bbox <- function(summary) {
 
 #' @describeIn emdn_get_bbox Get the value representing nil values in a
 #' coverage.
+#' @param band Character vector of bands. By default all bands.
 #' @export
-emdn_get_band_nil_values <- function(summary) {
+emdn_get_band_nil_values <- function(summary, band = NULL) {
+  band <- band %||% emdn_get_band_descriptions(summary)
+  if (!all(band %in% emdn_get_band_descriptions(summary))) {
+    cli::cli_abort(
+      "Can't find band {band[!(band %in% emdn_get_band_descriptions())]}."
+    )
+  }
+
   fields <- summary$getDescription()$rangeType$field
+  fields <- purrr::keep(fields, \(x) x$description$value %in% band)
+
   nil_val <- purrr::map(fields, \(x) x$nilValues$nilValue[[1L]]$value)
 
   nil_val <- nil_val |>
     purrr::map_dbl(
-      ~ ifelse(
-        is.null(.x),
-        NA,
-        as.numeric(.x)
-      )
+      \(x) {
+        x %||% NA |> as.numeric()
+      }
     )
 
-  names(nil_val) <- purrr::map_chr(fields, \(x) x$description$value)
-
-  nil_val
+  rlang::set_names(nil_val, band)
 }
 
 #' @describeIn emdn_get_bbox Get the band descriptions of a coverage.
