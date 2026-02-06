@@ -72,6 +72,15 @@ test_that("emdn_get_coverage() works -- stack", {
     )
   )
   expect_s4_class(cov, "SpatRaster")
+  expect_setequal(
+    names(cov),
+    c(
+      "Emodnetbio__cal_fin_19582016_L1_err_1958-02-16T01_00_00_40,0,45,5_relative-abundance",
+      "Emodnetbio__cal_fin_19582016_L1_err_1958-02-16T01_00_00_40,0,45,5_relative-error",
+      "Emodnetbio__cal_fin_19582016_L1_err_1962-11-16T01_00_00_40,0,45,5_relative-abundance",
+      "Emodnetbio__cal_fin_19582016_L1_err_1962-11-16T01_00_00_40,0,45,5_relative-error"
+    )
+  )
 
   expect_snapshot(
     emdn_get_coverage(
