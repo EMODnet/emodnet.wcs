@@ -241,7 +241,7 @@ conv_nil_to_na <- function(cov_raster, nil_values) {
       conv_band_nil_value(
         x,
         cov_raster,
-        nil_value = nil_values
+        nil_values = nil_values
       )
     },
     .init = cov_raster
