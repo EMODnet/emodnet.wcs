@@ -278,7 +278,7 @@ emdn_get_band_descriptions(cov_summary)
 #> [1] "W.m-2.Sr-1"
 ```
 
-To download a specifc band we use the `rangesubset` argument:
+To download a specific band we use the `rangesubset` argument:
 
 ``` r
 emdn_get_coverage(
