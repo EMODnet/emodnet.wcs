@@ -194,11 +194,6 @@ emdn_get_coverage <- function(
     return(cov_raster)
   }
 
-  if (nil_values_as_na) {
-    nil_values <- emdn_get_band_nil_values(summary, rangesubset)
-    cov_raster <- conv_nil_to_na(cov_raster, nil_values)
-  }
-
   one_band_only <- (length(rangesubset) == 1)
   if (one_band_only) {
     names(cov_raster) <- paste(
@@ -206,52 +201,64 @@ emdn_get_coverage <- function(
       kebabcase(rangesubset),
       sep = "_"
     )
-    return(cov_raster)
-  }
-  layer_numbers <- unique(sub(".*_([0-9]+)$", "\\1", names(cov_raster)))
-  if (length(layer_numbers) != length(rangesubset)) {
-    cli::cli_abort(
-      "Can't identify received ranges. Please open an issue."
+  } else {
+    layer_numbers <- unique(sub(".*_([0-9]+)$", "\\1", names(cov_raster)))
+    if (length(layer_numbers) != length(rangesubset)) {
+      cli::cli_abort(
+        "Can't identify received ranges. Please open an issue."
+      )
+    }
+
+    cov_raster <- purrr::reduce(
+      layer_numbers,
+      \(cov_raster, number, bands = rangesubset) {
+        pattern <- sprintf("_%s$", number)
+        bands <- kebabcase(bands)
+        names(cov_raster) <- gsub(
+          pattern,
+          sprintf("_%s", bands[as.numeric(number)]),
+          names(cov_raster)
+        )
+        cov_raster
+      },
+      .init = cov_raster
     )
   }
 
-  cov_raster <- purrr::reduce(
-    layer_numbers,
-    \(cov_raster, number, bands = rangesubset) {
-      pattern <- sprintf("_%s$", number)
-      bands <- kebabcase(bands)
-      names(cov_raster) <- gsub(
-        pattern,
-        sprintf("_%s", bands[as.numeric(number)]),
-        names(cov_raster)
-      )
-      cov_raster
-    },
-    .init = cov_raster
-  )
+  if (nil_values_as_na) {
+    nil_values <- emdn_get_band_nil_values(summary, rangesubset)
+    cov_raster <- conv_nil_to_na(cov_raster, nil_values)
+  }
+
+  cov_raster
 }
 
 # Convert coverage nil values to NA
 conv_nil_to_na <- function(cov_raster, nil_values) {
   purrr::reduce(
-    names(nil_values),
+    names(cov_raster),
     \(cov_raster, x) {
       conv_band_nil_value(
         x,
         cov_raster,
-        nil_value = nil_values[x]
+        nil_value = nil_values
       )
     },
     .init = cov_raster
   )
 }
 
-conv_band_nil_value <- function(band, cov_raster, nil_value) {
-  band_idx <- which(emdn_get_band_descriptions(summary) == band)
+conv_band_nil_value <- function(band, cov_raster, nil_values) {
+  nil_value <- nil_values[endsWith(
+    kebabcase(band),
+    kebabcase(
+      names(nil_values)
+    )
+  )]
 
   if (is.nan(nil_value)) {
-    terra::values(cov_raster[[band_idx]])[is.nan(terra::values(cov_raster[[
-      band_idx
+    terra::values(cov_raster[[band]])[is.nan(terra::values(cov_raster[[
+      band
     ]]))] <- NA
     cli_alert_success(
       "nil values {.val NaN} converted to {.field NA} on {band} band."
@@ -260,7 +267,7 @@ conv_band_nil_value <- function(band, cov_raster, nil_value) {
   }
 
   if (is.numeric(nil_value)) {
-    terra::NAflag(cov_raster[[band_idx]]) <- nil_value
+    terra::NAflag(cov_raster[[band]]) <- nil_value
     cli_alert_success(
       "nil values {.val {nil_value}} converted to {.field NA} on {band} band."
     )
