@@ -162,7 +162,7 @@ cov_nil_to_na <- emdn_get_coverage(
 #> ....|-- upperCorner: 58 6.5 "2016-11-16T01:00:00"
 #> ✔ Coverage "Emodnetbio__aca_spp_19582016_L1" downloaded succesfully as a
 #> terra <SpatRaster> .
-#> ✔ nil values 9.96920996838687e+36 converted to NA on all bands.
+#> ✔ nil values 9.96920996838687e+36 converted to NA on Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5_relative-abundance band.
 
 cov_nil_to_na
 #> class       : SpatRaster 
@@ -170,11 +170,8 @@ cov_nil_to_na
 #> resolution  : 0.1, 0.1  (x, y)
 #> extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)
 #> coord. ref. : lon/lat WGS 84 (EPSG:4326) 
-#> source(s)   : memory
-#> varname     : Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5 
-#> name        : Emodnetbio__aca_spp_19582016_L~,1.5,58,6.5_relative-abundance 
-#> min value   :                                                     0.3589122 
-#> max value   :                                                     2.5854254
+#> source      : Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5.tif 
+#> name        : Emodnetbio__aca_spp_19582016_L~,1.5,58,6.5_relative-abundance
 ```
 
 Now, nil values are encoded as `NA` and if there are such nil values,
@@ -237,7 +234,9 @@ cov_2 <- emdn_get_coverage(
 #> ....|-- upperCorner: 58 6.5 "2016-11-16T01:00:00"
 #> ✔ Coverage "Emodnetbio__aca_spp_19582016_L1" downloaded succesfully as a
 #> terra <SpatRaster> Stack.
-#> ✔ nil values 9.96920996838687e+36 converted to NA on all bands.
+#> ✔ nil values 9.96920996838687e+36 converted to NA on Emodnetbio__aca_spp_19582016_L1_1958-02-16T01_00_00_53,1.5,58,6.5_relative-abundance band.
+#> ✔ nil values 9.96920996838687e+36 converted to NA on Emodnetbio__aca_spp_19582016_L1_1958-05-16T01_00_00_53,1.5,58,6.5_relative-abundance band.
+#> ✔ nil values 9.96920996838687e+36 converted to NA on Emodnetbio__aca_spp_19582016_L1_1958-08-16T01_00_00_53,1.5,58,6.5_relative-abundance band.
 ```
 
 ``` r
@@ -247,10 +246,10 @@ cov_2
 #> resolution  : 0.1, 0.1  (x, y)
 #> extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)
 #> coord. ref. : lon/lat WGS 84 (EPSG:4326) 
-#> source(s)   : memory
-#> names       : Emodnetbio~-abundance, Emodnetbio~-abundance, Emodnetbio~-abundance 
-#> min values  :            0.04643106,              1.409593,             0.9628803 
-#> max values  :            0.66525388,              6.222499,             3.8682909
+#> sources     : Emodnetbio__aca_spp_19582016_L1_1958-02-16T01_00_00_53,1.5,58,6.5.tif  
+#>               Emodnetbio__aca_spp_19582016_L1_1958-05-16T01_00_00_53,1.5,58,6.5.tif  
+#>               Emodnetbio__aca_spp_19582016_L1_1958-08-16T01_00_00_53,1.5,58,6.5.tif  
+#> names       : Emodnetbio~-abundance, Emodnetbio~-abundance, Emodnetbio~-abundance
 ```
 
 Note that this returns a `<SpatRaster>` Stack instead of a single

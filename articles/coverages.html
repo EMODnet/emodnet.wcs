@@ -202,7 +202,7 @@ download, you can use the <code>nil_values_as_na</code> argument.</p>
 <span><span class="co">#&gt; ....|-- <span style="font-style: italic;">upperCorner</span>: <span style="background-color: #BBBBBB;">58 6.5 "2016-11-16T01:00:00"</span></span></span>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> Coverage <span style="color: #0000BB;">"Emodnetbio__aca_spp_19582016_L1"</span> downloaded succesfully as a</span></span>
 <span><span class="co">#&gt; <span style="color: #0000BB;">terra</span> <span style="color: #0000BB;">&lt;SpatRaster&gt;</span> .</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> nil values <span style="color: #0000BB;">9.96920996838687e+36</span> converted to <span style="color: #00BB00;">NA</span> on all bands.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> nil values <span style="color: #0000BB;">9.96920996838687e+36</span> converted to <span style="color: #00BB00;">NA</span> on Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5_relative-abundance band.</span></span>
 <span></span>
 <span><span class="va">cov_nil_to_na</span></span>
 <span><span class="co">#&gt; class       : SpatRaster </span></span>
@@ -210,11 +210,8 @@ download, you can use the <code>nil_values_as_na</code> argument.</p>
 <span><span class="co">#&gt; resolution  : 0.1, 0.1  (x, y)</span></span>
 <span><span class="co">#&gt; extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)</span></span>
 <span><span class="co">#&gt; coord. ref. : lon/lat WGS 84 (EPSG:4326) </span></span>
-<span><span class="co">#&gt; source(s)   : memory</span></span>
-<span><span class="co">#&gt; varname     : Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5 </span></span>
-<span><span class="co">#&gt; name        : Emodnetbio__aca_spp_19582016_L~,1.5,58,6.5_relative-abundance </span></span>
-<span><span class="co">#&gt; min value   :                                                     0.3589122 </span></span>
-<span><span class="co">#&gt; max value   :                                                     2.5854254</span></span></code></pre></div>
+<span><span class="co">#&gt; source      : Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5.tif </span></span>
+<span><span class="co">#&gt; name        : Emodnetbio__aca_spp_19582016_L~,1.5,58,6.5_relative-abundance</span></span></code></pre></div>
 <p>Now, nil values are encoded as <code>NA</code> and if there are such
 nil values, plotting is much more informative as the range of values
 within the raster is now constrained to valid values of interest.</p>
@@ -265,7 +262,9 @@ timepoints to the <code>time</code> argument.</p>
 <span><span class="co">#&gt; ....|-- <span style="font-style: italic;">upperCorner</span>: <span style="background-color: #BBBBBB;">58 6.5 "2016-11-16T01:00:00"</span></span></span>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> Coverage <span style="color: #0000BB;">"Emodnetbio__aca_spp_19582016_L1"</span> downloaded succesfully as a</span></span>
 <span><span class="co">#&gt; <span style="color: #0000BB;">terra</span> <span style="color: #0000BB;">&lt;SpatRaster&gt;</span> Stack.</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> nil values <span style="color: #0000BB;">9.96920996838687e+36</span> converted to <span style="color: #00BB00;">NA</span> on all bands.</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> nil values <span style="color: #0000BB;">9.96920996838687e+36</span> converted to <span style="color: #00BB00;">NA</span> on Emodnetbio__aca_spp_19582016_L1_1958-02-16T01_00_00_53,1.5,58,6.5_relative-abundance band.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> nil values <span style="color: #0000BB;">9.96920996838687e+36</span> converted to <span style="color: #00BB00;">NA</span> on Emodnetbio__aca_spp_19582016_L1_1958-05-16T01_00_00_53,1.5,58,6.5_relative-abundance band.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> nil values <span style="color: #0000BB;">9.96920996838687e+36</span> converted to <span style="color: #00BB00;">NA</span> on Emodnetbio__aca_spp_19582016_L1_1958-08-16T01_00_00_53,1.5,58,6.5_relative-abundance band.</span></span></code></pre></div>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cov_2</span></span>
 <span><span class="co">#&gt; class       : SpatRaster </span></span>
@@ -273,10 +272,10 @@ timepoints to the <code>time</code> argument.</p>
 <span><span class="co">#&gt; resolution  : 0.1, 0.1  (x, y)</span></span>
 <span><span class="co">#&gt; extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)</span></span>
 <span><span class="co">#&gt; coord. ref. : lon/lat WGS 84 (EPSG:4326) </span></span>
-<span><span class="co">#&gt; source(s)   : memory</span></span>
-<span><span class="co">#&gt; names       : Emodnetbio~-abundance, Emodnetbio~-abundance, Emodnetbio~-abundance </span></span>
-<span><span class="co">#&gt; min values  :            0.04643106,              1.409593,             0.9628803 </span></span>
-<span><span class="co">#&gt; max values  :            0.66525388,              6.222499,             3.8682909</span></span></code></pre></div>
+<span><span class="co">#&gt; sources     : Emodnetbio__aca_spp_19582016_L1_1958-02-16T01_00_00_53,1.5,58,6.5.tif  </span></span>
+<span><span class="co">#&gt;               Emodnetbio__aca_spp_19582016_L1_1958-05-16T01_00_00_53,1.5,58,6.5.tif  </span></span>
+<span><span class="co">#&gt;               Emodnetbio__aca_spp_19582016_L1_1958-08-16T01_00_00_53,1.5,58,6.5.tif  </span></span>
+<span><span class="co">#&gt; names       : Emodnetbio~-abundance, Emodnetbio~-abundance, Emodnetbio~-abundance</span></span></code></pre></div>
 <p>Note that this returns a <code>&lt;SpatRaster&gt;</code> Stack
 instead of a single <code>&lt;SpatRaster&gt;</code>.</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
