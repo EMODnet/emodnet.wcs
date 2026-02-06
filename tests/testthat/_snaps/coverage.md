@@ -42,9 +42,14 @@
       r <- emdn_get_coverage(wcs = hab_wcs, coverage_id = coverage_id, bbox = test_bbox,
         nil_values_as_na = TRUE)
     Message
-      No encoding supplied: defaulting to UTF-8.
+      ! Error in `NaN` Returning NA
+      -- Downloading coverage "emodnet_open_maplibrary__GB000050_EFH_Whiting_SpawningG
     Output
       <GMLEnvelope>
       ....|-- lowerCorner: 0 7361866.11305119
       ....|-- upperCorner: 222638.981586547 7760118.67290245
+    Message
+      v Coverage "emodnet_open_maplibrary__GB000050_EFH_Whiting_SpawningGrounds" downloaded succesfully as a
+      terra <SpatRaster> .
+      v nil values "NaN" converted to NA on emodnet_open_maplibrary__GB000050_EFH_Whiting_SpawningGrounds_0,7361866.11305119,222638.981586547,7760118.67290245_gray-index band.
 
