@@ -198,7 +198,29 @@ emdn_get_coverage <- function(
     )
   }
 
-  cov_raster
+  one_band_only <- (length(rangesubset) == 1)
+  if (one_band_only) {
+    return(cov_raster)
+  }
+  layer_numbers <- unique(sub(".*_([0-9]+)$", "\\1", names(cov_raster)))
+  if (length(layer_numbers) != length(rangesubset)) {
+    return(cov_raster)
+  }
+
+  cov_raster <- purrr::reduce(
+    layer_numbers,
+    \(cov_raster, number, bands = rangesubset) {
+      pattern <- sprintf("_%s$", number)
+      bands <- tolower(gsub("[^a-zA-Z0-9]+", "-", bands))
+      names(cov_raster) <- gsub(
+        pattern,
+        sprintf("_%s", bands[as.numeric(number)]),
+        names(cov_raster)
+      )
+      cov_raster
+    },
+    .init = cov_raster
+  )
 }
 
 # Convert coverage nil values to NA
