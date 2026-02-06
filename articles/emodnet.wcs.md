@@ -254,7 +254,7 @@ cov
 #> extent      : 0.05, 5.05, 39.95, 44.95  (xmin, xmax, ymin, ymax)
 #> coord. ref. : lon/lat WGS 84 (EPSG:4326) 
 #> source      : Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif 
-#> names       : Emodnetbio__cal~_00_40,0,45,5_1, Emodnetbio__cal~_00_40,0,45,5_2
+#> names       : Emodnetbio__cal~ative-abundance, Emodnetbio__cal~_relative-error
 ```
 
 ``` r

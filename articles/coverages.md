@@ -125,7 +125,7 @@ cov_1
 #> extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)
 #> coord. ref. : lon/lat WGS 84 (EPSG:4326) 
 #> source      : Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5.tif 
-#> name        : Emodnetbio__aca_spp_19582016_L~6-11-16T01_00_00_53,1.5,58,6.5
+#> name        : Emodnetbio__aca_spp_19582016_L~,1.5,58,6.5_relative-abundance
 ```
 
 ``` r
@@ -172,7 +172,7 @@ cov_nil_to_na
 #> coord. ref. : lon/lat WGS 84 (EPSG:4326) 
 #> source(s)   : memory
 #> varname     : Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5 
-#> name        : Emodnetbio__aca_spp_19582016_L~6-11-16T01_00_00_53,1.5,58,6.5 
+#> name        : Emodnetbio__aca_spp_19582016_L~,1.5,58,6.5_relative-abundance 
 #> min value   :                                                     0.3589122 
 #> max value   :                                                     2.5854254
 ```
@@ -248,7 +248,7 @@ cov_2
 #> extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)
 #> coord. ref. : lon/lat WGS 84 (EPSG:4326) 
 #> source(s)   : memory
-#> names       : Emodnetbio~1.5,58,6.5, Emodnetbio~1.5,58,6.5, Emodnetbio~1.5,58,6.5 
+#> names       : Emodnetbio~-abundance, Emodnetbio~-abundance, Emodnetbio~-abundance 
 #> min values  :            0.04643106,              1.409593,             0.9628803 
 #> max values  :            0.66525388,              6.222499,             3.8682909
 ```
@@ -321,5 +321,5 @@ emdn_get_coverage(
 #> extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)
 #> coord. ref. : lon/lat WGS 84 (EPSG:4326) 
 #> source      : relative_abundance.tif 
-#> name        : relative_abundance
+#> name        : relative_abundance_relative-abundance
 ```

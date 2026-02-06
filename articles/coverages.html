@@ -175,7 +175,7 @@ box we created to the <code>bbox</code> argument.</p>
 <span><span class="co">#&gt; extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)</span></span>
 <span><span class="co">#&gt; coord. ref. : lon/lat WGS 84 (EPSG:4326) </span></span>
 <span><span class="co">#&gt; source      : Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5.tif </span></span>
-<span><span class="co">#&gt; name        : Emodnetbio__aca_spp_19582016_L~6-11-16T01_00_00_53,1.5,58,6.5</span></span></code></pre></div>
+<span><span class="co">#&gt; name        : Emodnetbio__aca_spp_19582016_L~,1.5,58,6.5_relative-abundance</span></span></code></pre></div>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">cov_1</span><span class="op">)</span></span></code></pre></div>
 <p><img src="coverages_files/figure-html/unnamed-chunk-3-1.png" class="r-plt" alt="" width="700"></p>
@@ -212,7 +212,7 @@ download, you can use the <code>nil_values_as_na</code> argument.</p>
 <span><span class="co">#&gt; coord. ref. : lon/lat WGS 84 (EPSG:4326) </span></span>
 <span><span class="co">#&gt; source(s)   : memory</span></span>
 <span><span class="co">#&gt; varname     : Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5 </span></span>
-<span><span class="co">#&gt; name        : Emodnetbio__aca_spp_19582016_L~6-11-16T01_00_00_53,1.5,58,6.5 </span></span>
+<span><span class="co">#&gt; name        : Emodnetbio__aca_spp_19582016_L~,1.5,58,6.5_relative-abundance </span></span>
 <span><span class="co">#&gt; min value   :                                                     0.3589122 </span></span>
 <span><span class="co">#&gt; max value   :                                                     2.5854254</span></span></code></pre></div>
 <p>Now, nil values are encoded as <code>NA</code> and if there are such
@@ -274,7 +274,7 @@ timepoints to the <code>time</code> argument.</p>
 <span><span class="co">#&gt; extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)</span></span>
 <span><span class="co">#&gt; coord. ref. : lon/lat WGS 84 (EPSG:4326) </span></span>
 <span><span class="co">#&gt; source(s)   : memory</span></span>
-<span><span class="co">#&gt; names       : Emodnetbio~1.5,58,6.5, Emodnetbio~1.5,58,6.5, Emodnetbio~1.5,58,6.5 </span></span>
+<span><span class="co">#&gt; names       : Emodnetbio~-abundance, Emodnetbio~-abundance, Emodnetbio~-abundance </span></span>
 <span><span class="co">#&gt; min values  :            0.04643106,              1.409593,             0.9628803 </span></span>
 <span><span class="co">#&gt; max values  :            0.66525388,              6.222499,             3.8682909</span></span></code></pre></div>
 <p>Note that this returns a <code>&lt;SpatRaster&gt;</code> Stack
@@ -338,7 +338,7 @@ argument.</p>
 <span><span class="co">#&gt; extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)</span></span>
 <span><span class="co">#&gt; coord. ref. : lon/lat WGS 84 (EPSG:4326) </span></span>
 <span><span class="co">#&gt; source      : relative_abundance.tif </span></span>
-<span><span class="co">#&gt; name        : relative_abundance</span></span></code></pre></div>
+<span><span class="co">#&gt; name        : relative_abundance_relative-abundance</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
