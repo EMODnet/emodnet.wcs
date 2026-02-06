@@ -200,7 +200,11 @@ emdn_get_coverage <- function(
 
   one_band_only <- (length(rangesubset) == 1)
   if (one_band_only) {
-    names(cov_raster) <- paste(names(cov_raster), rangesubset, sep = "_")
+    names(cov_raster) <- paste(
+      names(cov_raster),
+      kebabcase(rangesubset),
+      sep = "_"
+    )
     return(cov_raster)
   }
   layer_numbers <- unique(sub(".*_([0-9]+)$", "\\1", names(cov_raster)))
@@ -214,7 +218,7 @@ emdn_get_coverage <- function(
     layer_numbers,
     \(cov_raster, number, bands = rangesubset) {
       pattern <- sprintf("_%s$", number)
-      bands <- tolower(gsub("[^a-zA-Z0-9]+", "-", bands))
+      bands <- kebabcase(bands)
       names(cov_raster) <- gsub(
         pattern,
         sprintf("_%s", bands[as.numeric(number)]),
@@ -307,4 +311,8 @@ extract_coverage_resp <- function(cov_try, type, coverage_id) {
       cli::cli_abort(cov_try$getText())
     }
   }
+}
+
+kebabcase <- function(x) {
+  tolower(gsub("[^a-zA-Z0-9]+", "-", bands))
 }
