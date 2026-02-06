@@ -189,6 +189,11 @@ emdn_get_coverage <- function(
     cov_raster <- extract_coverage_resp(cov_try, type = "", coverage_id)
   }
 
+  no_data <- is.null(cov_raster)
+  if (no_data) {
+    return(cov_raster)
+  }
+
   if (nil_values_as_na) {
     # convert nil_values to NA
     cov_raster <- conv_nil_to_na(
@@ -198,7 +203,36 @@ emdn_get_coverage <- function(
     )
   }
 
-  cov_raster
+  one_band_only <- (length(rangesubset) == 1)
+  if (one_band_only) {
+    names(cov_raster) <- paste(
+      names(cov_raster),
+      kebabcase(rangesubset),
+      sep = "_"
+    )
+    return(cov_raster)
+  }
+  layer_numbers <- unique(sub(".*_([0-9]+)$", "\\1", names(cov_raster)))
+  if (length(layer_numbers) != length(rangesubset)) {
+    cli::cli_abort(
+      "Can't identify received ranges. Please open an issue."
+    )
+  }
+
+  cov_raster <- purrr::reduce(
+    layer_numbers,
+    \(cov_raster, number, bands = rangesubset) {
+      pattern <- sprintf("_%s$", number)
+      bands <- kebabcase(bands)
+      names(cov_raster) <- gsub(
+        pattern,
+        sprintf("_%s", bands[as.numeric(number)]),
+        names(cov_raster)
+      )
+      cov_raster
+    },
+    .init = cov_raster
+  )
 }
 
 # Convert coverage nil values to NA
@@ -282,4 +316,8 @@ extract_coverage_resp <- function(cov_try, type, coverage_id) {
       cli::cli_abort(cov_try$getText())
     }
   }
+}
+
+kebabcase <- function(x) {
+  tolower(gsub("[^a-zA-Z0-9]+", "-", x))
 }
