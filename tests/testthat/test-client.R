@@ -10,11 +10,13 @@ test_that("Default connection works", {
 })
 
 test_that("Error when wrong service", {
+  skip_if_offline()
   expect_snapshot(emdn_init_wcs_client("blop"), error = TRUE)
 })
 
 
 test_that("Error when wrong service version", {
+  skip_if_offline()
   expect_snapshot(
     emdn_init_wcs_client(
       service = "human_activities",
@@ -40,12 +42,14 @@ test_that("No internet handled", {
 })
 
 test_that("Error behavior", {
+  skip_if_offline()
   local_mocked_bindings(create_client = function(...) stop("bla"))
   expect_snapshot(emdn_init_wcs_client("biology"), error = TRUE)
 })
 
 
 test_that("Services down handled", {
+  skip_if_offline()
   rlang::local_interactive()
   service_url <- "https://geo.vliz.be/geoserver/Emodnetbio/wcs"
   expect_snapshot(check_service(service_url), error = TRUE)
