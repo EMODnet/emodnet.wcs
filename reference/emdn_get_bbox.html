@@ -180,8 +180,7 @@ range (in tibble format).</p></li>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> WCS client created succesfully</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Service: <span style="color: #0000BB; font-style: italic;">&lt;https://geo.vliz.be/geoserver/Emodnetbio/wcs&gt;</span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Service: <span style="color: #0000BB;">"2.0.1"</span></span>
-<span class="r-in"><span><span class="va">summaries</span> <span class="op">&lt;-</span> <span class="fu"><a href="emdn_get_coverage_summaries.html">emdn_get_coverage_summaries_all</a></span><span class="op">(</span><span class="va">wcs</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">summary</span> <span class="op">&lt;-</span> <span class="va">summaries</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span></span>
+<span class="r-in"><span><span class="va">summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="emdn_get_coverage_summaries.html">emdn_get_coverage_summaries</a></span><span class="op">(</span><span class="va">wcs</span>, <span class="st">"Emodnetbio__ratio_large_to_small_19582016_L1_err"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span></span>
 <span class="r-in"><span><span class="co"># get bbox</span></span></span>
 <span class="r-in"><span><span class="fu">emdn_get_bbox</span><span class="op">(</span><span class="va">summary</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   xmin   ymin   xmax   ymax </span>

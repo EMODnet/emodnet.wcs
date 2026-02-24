@@ -130,7 +130,8 @@ is returned.</p></dd>
 
 
 <dt id="arg-rangesubset">rangesubset<a class="anchor" aria-label="anchor" href="#arg-rangesubset"></a></dt>
-<dd><p>character vector of band descriptions to subset.</p></dd>
+<dd><p>character vector of band descriptions to subset.
+Can work better if you use a bounding box (https://github.com/eblondel/ows4R/issues/147).</p></dd>
 
 
 <dt id="arg-filename">filename<a class="anchor" aria-label="anchor" href="#arg-filename"></a></dt>
@@ -149,8 +150,10 @@ writes the coverage to a local file.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
-<span class="r-in"><span><span class="va">wcs</span> <span class="op">&lt;-</span> <span class="fu"><a href="emdn_init_wcs_client.html">emdn_init_wcs_client</a></span><span class="op">(</span>service <span class="op">=</span> <span class="st">"biology"</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">wcs</span> <span class="op">&lt;-</span> <span class="fu"><a href="emdn_init_wcs_client.html">emdn_init_wcs_client</a></span><span class="op">(</span>service <span class="op">=</span> <span class="st">"biology"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> WCS client created succesfully</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Service: <span style="color: #0000BB; font-style: italic;">&lt;https://geo.vliz.be/geoserver/Emodnetbio/wcs&gt;</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Service: <span style="color: #0000BB;">"2.0.1"</span></span>
 <span class="r-in"><span><span class="va">coverage_id</span> <span class="op">&lt;-</span> <span class="st">"Emodnetbio__cal_fin_19582016_L1_err"</span></span></span>
 <span class="r-in"><span><span class="co"># Subset using a bounding box</span></span></span>
 <span class="r-in"><span><span class="fu">emdn_get_coverage</span><span class="op">(</span><span class="va">wcs</span>,</span></span>
@@ -160,6 +163,20 @@ writes the coverage to a local file.</p>
 <span class="r-in"><span>    xmax <span class="op">=</span> <span class="fl">5</span>, ymax <span class="op">=</span> <span class="fl">45</span></span></span>
 <span class="r-in"><span>  <span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> No encoding supplied: defaulting to UTF-8.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Downloading coverage <span style="color: #0000BB;">"Emodnetbio__cal_fin_19582016_L1_err"</span> ──────────────────</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">GMLEnvelope</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">lowerCorner</span>: <span style="background-color: #BBBBBB;">40 0 "1958-02-16T01:00:00"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">upperCorner</span>: <span style="background-color: #BBBBBB;">45 5 "2016-11-16T01:00:00"</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> Coverage <span style="color: #0000BB;">"Emodnetbio__cal_fin_19582016_L1_err"</span> downloaded succesfully as a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #0000BB;">terra</span> <span style="color: #0000BB;">&lt;SpatRaster&gt;</span> .</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> size        : 50, 50, 2  (nrow, ncol, nlyr)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> resolution  : 0.1, 0.1  (x, y)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> extent      : 0.05, 5.05, 39.95, 44.95  (xmin, xmax, ymin, ymax)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : lon/lat WGS 84 (EPSG:4326) </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> source      : Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> names       : Emodnetbio__cal~ative-abundance, Emodnetbio__cal~_relative-error </span>
 <span class="r-in"><span><span class="co"># Subset using a bounding box and specific timepoints</span></span></span>
 <span class="r-in"><span><span class="fu">emdn_get_coverage</span><span class="op">(</span><span class="va">wcs</span>,</span></span>
 <span class="r-in"><span>  coverage_id <span class="op">=</span> <span class="va">coverage_id</span>,</span></span>
@@ -168,20 +185,46 @@ writes the coverage to a local file.</p>
 <span class="r-in"><span>    xmax <span class="op">=</span> <span class="fl">5</span>, ymax <span class="op">=</span> <span class="fl">45</span></span></span>
 <span class="r-in"><span>  <span class="op">)</span>,</span></span>
 <span class="r-in"><span>  time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>    <span class="st">"1963-11-16T00:00:00.000Z"</span>,</span></span>
-<span class="r-in"><span>    <span class="st">"1964-02-16T00:00:00.000Z"</span></span></span>
+<span class="r-in"><span>    <span class="st">"1958-02-16T01:00:00"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"1958-05-16T01:00:00"</span></span></span>
 <span class="r-in"><span>  <span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Downloading coverage <span style="color: #0000BB;">"Emodnetbio__cal_fin_19582016_L1_err"</span> ──────────────────</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">GMLEnvelope</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">lowerCorner</span>: <span style="background-color: #BBBBBB;">40 0 "1958-02-16T01:00:00"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">upperCorner</span>: <span style="background-color: #BBBBBB;">45 5 "2016-11-16T01:00:00"</span><span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">GMLEnvelope</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">lowerCorner</span>: <span style="background-color: #BBBBBB;">40 0 "1958-02-16T01:00:00"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">upperCorner</span>: <span style="background-color: #BBBBBB;">45 5 "2016-11-16T01:00:00"</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> Coverage <span style="color: #0000BB;">"Emodnetbio__cal_fin_19582016_L1_err"</span> downloaded succesfully as a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #0000BB;">terra</span> <span style="color: #0000BB;">&lt;SpatRaster&gt;</span> Stack.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> size        : 50, 50, 4  (nrow, ncol, nlyr)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> resolution  : 0.1, 0.1  (x, y)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> extent      : 0.05, 5.05, 39.95, 44.95  (xmin, xmax, ymin, ymax)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : lon/lat WGS 84 (EPSG:4326) </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> sources     : Emodnetbio__cal_fin_19582016_L1_err_1958-02-16T01_00_00_40,0,45,5.tif  (2 layers) </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>               Emodnetbio__cal_fin_19582016_L1_err_1958-05-16T01_00_00_40,0,45,5.tif  (2 layers) </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> names       : Emodnet~undance, Emodnet~e-error, Emodnet~undance, Emodnet~e-error </span>
 <span class="r-in"><span><span class="co"># Subset using a bounding box and a specific band</span></span></span>
+<span class="r-in"><span><span class="va">north_sea_bbox</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>xmin <span class="op">=</span> <span class="op">-</span><span class="fl">4</span>, ymin <span class="op">=</span> <span class="fl">50</span>, xmax <span class="op">=</span> <span class="fl">10</span>, ymax <span class="op">=</span> <span class="fl">62</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">emdn_get_coverage</span><span class="op">(</span><span class="va">wcs</span>,</span></span>
 <span class="r-in"><span>  coverage_id <span class="op">=</span> <span class="va">coverage_id</span>,</span></span>
-<span class="r-in"><span>  bbox <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>    xmin <span class="op">=</span> <span class="fl">0</span>, ymin <span class="op">=</span> <span class="fl">40</span>,</span></span>
-<span class="r-in"><span>    xmax <span class="op">=</span> <span class="fl">5</span>, ymax <span class="op">=</span> <span class="fl">45</span></span></span>
-<span class="r-in"><span>  <span class="op">)</span>,</span></span>
+<span class="r-in"><span>  bbox <span class="op">=</span> <span class="va">north_sea_bbox</span>,</span></span>
 <span class="r-in"><span>  rangesubset <span class="op">=</span> <span class="st">"Relative abundance"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Downloading coverage <span style="color: #0000BB;">"Emodnetbio__cal_fin_19582016_L1_err"</span> ──────────────────</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBBBB;">&lt;</span><span style="color: #BBBBBB; text-decoration: underline;">GMLEnvelope</span><span style="color: #BBBBBB;">&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">lowerCorner</span>: <span style="background-color: #BBBBBB;">50 -4 "1958-02-16T01:00:00"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ....|-- <span style="font-style: italic;">upperCorner</span>: <span style="background-color: #BBBBBB;">62 10 "2016-11-16T01:00:00"</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> Coverage <span style="color: #0000BB;">"Emodnetbio__cal_fin_19582016_L1_err"</span> downloaded succesfully as a</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #0000BB;">terra</span> <span style="color: #0000BB;">&lt;SpatRaster&gt;</span> .</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> class       : SpatRaster </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> size        : 120, 140, 1  (nrow, ncol, nlyr)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> resolution  : 0.1, 0.1  (x, y)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> extent      : -4.05, 9.95, 49.95, 61.95  (xmin, xmax, ymin, ymax)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> coord. ref. : lon/lat WGS 84 (EPSG:4326) </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> source      : Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_50,-4,62,10.tif </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> name        : Emodnetbio__cal_fin_19582016_L~50,-4,62,10_relative-abundance </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

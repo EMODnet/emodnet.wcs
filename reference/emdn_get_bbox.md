@@ -179,8 +179,7 @@ wcs <- emdn_init_wcs_client(service = "biology")
 #> ✔ WCS client created succesfully
 #> ℹ Service: <https://geo.vliz.be/geoserver/Emodnetbio/wcs>
 #> ℹ Service: "2.0.1"
-summaries <- emdn_get_coverage_summaries_all(wcs)
-summary <- summaries[[1]]
+summary <- emdn_get_coverage_summaries(wcs, "Emodnetbio__ratio_large_to_small_19582016_L1_err")[[1]]
 # get bbox
 emdn_get_bbox(summary)
 #>   xmin   ymin   xmax   ymax 

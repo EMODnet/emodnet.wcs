@@ -88,7 +88,8 @@ emdn_get_coverage(
 
 - rangesubset:
 
-  character vector of band descriptions to subset.
+  character vector of band descriptions to subset. Can work better if
+  you use a bounding box (https://github.com/eblondel/ows4R/issues/147).
 
 - filename:
 
@@ -107,8 +108,10 @@ The function also writes the coverage to a local file.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
 wcs <- emdn_init_wcs_client(service = "biology")
+#> ✔ WCS client created succesfully
+#> ℹ Service: <https://geo.vliz.be/geoserver/Emodnetbio/wcs>
+#> ℹ Service: "2.0.1"
 coverage_id <- "Emodnetbio__cal_fin_19582016_L1_err"
 # Subset using a bounding box
 emdn_get_coverage(wcs,
@@ -118,6 +121,20 @@ emdn_get_coverage(wcs,
     xmax = 5, ymax = 45
   )
 )
+#> No encoding supplied: defaulting to UTF-8.
+#> ── Downloading coverage "Emodnetbio__cal_fin_19582016_L1_err" ──────────────────
+#> <GMLEnvelope>
+#> ....|-- lowerCorner: 40 0 "1958-02-16T01:00:00"
+#> ....|-- upperCorner: 45 5 "2016-11-16T01:00:00"
+#> ✔ Coverage "Emodnetbio__cal_fin_19582016_L1_err" downloaded succesfully as a
+#> terra <SpatRaster> .
+#> class       : SpatRaster 
+#> size        : 50, 50, 2  (nrow, ncol, nlyr)
+#> resolution  : 0.1, 0.1  (x, y)
+#> extent      : 0.05, 5.05, 39.95, 44.95  (xmin, xmax, ymin, ymax)
+#> coord. ref. : lon/lat WGS 84 (EPSG:4326) 
+#> source      : Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif 
+#> names       : Emodnetbio__cal~ative-abundance, Emodnetbio__cal~_relative-error 
 # Subset using a bounding box and specific timepoints
 emdn_get_coverage(wcs,
   coverage_id = coverage_id,
@@ -126,18 +143,44 @@ emdn_get_coverage(wcs,
     xmax = 5, ymax = 45
   ),
   time = c(
-    "1963-11-16T00:00:00.000Z",
-    "1964-02-16T00:00:00.000Z"
+    "1958-02-16T01:00:00",
+    "1958-05-16T01:00:00"
   )
 )
+#> ── Downloading coverage "Emodnetbio__cal_fin_19582016_L1_err" ──────────────────
+#> <GMLEnvelope>
+#> ....|-- lowerCorner: 40 0 "1958-02-16T01:00:00"
+#> ....|-- upperCorner: 45 5 "2016-11-16T01:00:00"<GMLEnvelope>
+#> ....|-- lowerCorner: 40 0 "1958-02-16T01:00:00"
+#> ....|-- upperCorner: 45 5 "2016-11-16T01:00:00"
+#> ✔ Coverage "Emodnetbio__cal_fin_19582016_L1_err" downloaded succesfully as a
+#> terra <SpatRaster> Stack.
+#> class       : SpatRaster 
+#> size        : 50, 50, 4  (nrow, ncol, nlyr)
+#> resolution  : 0.1, 0.1  (x, y)
+#> extent      : 0.05, 5.05, 39.95, 44.95  (xmin, xmax, ymin, ymax)
+#> coord. ref. : lon/lat WGS 84 (EPSG:4326) 
+#> sources     : Emodnetbio__cal_fin_19582016_L1_err_1958-02-16T01_00_00_40,0,45,5.tif  (2 layers) 
+#>               Emodnetbio__cal_fin_19582016_L1_err_1958-05-16T01_00_00_40,0,45,5.tif  (2 layers) 
+#> names       : Emodnet~undance, Emodnet~e-error, Emodnet~undance, Emodnet~e-error 
 # Subset using a bounding box and a specific band
+north_sea_bbox <- c(xmin = -4, ymin = 50, xmax = 10, ymax = 62)
 emdn_get_coverage(wcs,
   coverage_id = coverage_id,
-  bbox = c(
-    xmin = 0, ymin = 40,
-    xmax = 5, ymax = 45
-  ),
+  bbox = north_sea_bbox,
   rangesubset = "Relative abundance"
 )
-} # }
+#> ── Downloading coverage "Emodnetbio__cal_fin_19582016_L1_err" ──────────────────
+#> <GMLEnvelope>
+#> ....|-- lowerCorner: 50 -4 "1958-02-16T01:00:00"
+#> ....|-- upperCorner: 62 10 "2016-11-16T01:00:00"
+#> ✔ Coverage "Emodnetbio__cal_fin_19582016_L1_err" downloaded succesfully as a
+#> terra <SpatRaster> .
+#> class       : SpatRaster 
+#> size        : 120, 140, 1  (nrow, ncol, nlyr)
+#> resolution  : 0.1, 0.1  (x, y)
+#> extent      : -4.05, 9.95, 49.95, 61.95  (xmin, xmax, ymin, ymax)
+#> coord. ref. : lon/lat WGS 84 (EPSG:4326) 
+#> source      : Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_50,-4,62,10.tif 
+#> name        : Emodnetbio__cal_fin_19582016_L~50,-4,62,10_relative-abundance 
 ```

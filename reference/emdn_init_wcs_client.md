@@ -41,7 +41,12 @@ R6 object with methods for interfacing an OGC Web Coverage Service.
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
-wcs <- emdn_init_wcs_client(service = "bathymetry")
-}
+(wcs <- emdn_init_wcs_client(service = "bathymetry"))
+#> ✔ WCS client created succesfully
+#> ℹ Service: <https://ows.emodnet-bathymetry.eu/wcs>
+#> ℹ Service: "2.0.1"
+#> <WCSClient>
+#> ....|-- url: https://ows.emodnet-bathymetry.eu/wcs
+#> ....|-- version: 2.0.1
+#> ....|-- capabilities <WCSCapabilities>
 ```
