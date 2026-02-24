@@ -204,114 +204,6 @@ wcs <- emdn_init_wcs_client(service = "seabed_habitats")
 #> ℹ Service: <https://ows.emodnet-seabedhabitats.eu/geoserver/emodnet_open_maplibrary/wcs>
 #> ℹ Service: "2.0.1"
 emdn_get_wcs_info(wcs)
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `length` and `suppressMessages(.x$getDimensions())` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `emdn_get_dimensions_info`, `.x`, and `character` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_temporal_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
-#> ! Error in `paste`, `emdn_get_vertical_extent(.x)`, and ` - ` Returning NA
 #> $data_source
 #> [1] "emodnet_wcs"
 #> 
@@ -353,11 +245,6 @@ emdn_get_wcs_info(wcs)
 #> # ℹ 65 more rows
 #> # ℹ 2 more variables: vertical_extent <chr>, subtype <chr>
 #> 
-# Get information using a service name.
-emdn_get_wcs_info(service = "seabed_habitats")
-#> Error in RequestHandlerHttr2$new(req)$handle(): Failed to find matching request in active cassette, "info".
-#> ℹ Use `local_vcr_configure_log()` to get more details.
-#> ℹ Learn more in `vignette(vcr::debugging)`.
 # Get detailed info for specific coverages from wcs object
 coverage_ids <- c(
   "emodnet_open_maplibrary__mediseh_cora",
