@@ -162,6 +162,7 @@ emdn_get_coverage <- function(
         bbox = ows_bbox,
         crs = crs,
         time = time,
+        elevation = elevation,
         format = format,
         rangesubset = rangesubset_encoded,
         filename = filename
