@@ -156,9 +156,9 @@ range (in tibble format).
 
 }}
 \examples{
+\dontshow{vcr::insert_example_cassette('utils', package = 'emodnet.wcs')}
 wcs <- emdn_init_wcs_client(service = "biology")
-summaries <- emdn_get_coverage_summaries_all(wcs)
-summary <- summaries[[1]]
+summary <- emdn_get_coverage_summaries(wcs, "Emodnetbio__ratio_large_to_small_19582016_L1_err")[[1]]
 # get bbox
 emdn_get_bbox(summary)
 # get WGS84 bbox
@@ -191,4 +191,5 @@ emdn_get_dimensions_names(summary)
 emdn_get_dimensions_n(summary)
 # get dimensions types
 emdn_get_dimension_types(summary)
+\dontshow{vcr::eject_cassette()}
 }

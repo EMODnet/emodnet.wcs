@@ -31,6 +31,7 @@
 #' is returned.
 #' @param format the format of the file the coverage should be written out to.
 #' @param rangesubset character vector of band descriptions to subset.
+#' Can work better if you use a bounding box (https://github.com/eblondel/ows4R/issues/147).
 #' @param filename the file name to write to.
 #' @param nil_values_as_na logical. Should raster nil values be converted to `NA`?
 #'
@@ -38,8 +39,7 @@
 #' writes the coverage to a local file.
 #' @export
 #'
-#' @examples
-#' \dontrun{
+#' @examplesVCR coverage-bio
 #' wcs <- emdn_init_wcs_client(service = "biology")
 #' coverage_id <- "Emodnetbio__cal_fin_19582016_L1_err"
 #' # Subset using a bounding box
@@ -58,20 +58,17 @@
 #'     xmax = 5, ymax = 45
 #'   ),
 #'   time = c(
-#'     "1963-11-16T00:00:00.000Z",
-#'     "1964-02-16T00:00:00.000Z"
+#'     "1958-02-16T01:00:00",
+#'     "1958-05-16T01:00:00"
 #'   )
 #' )
 #' # Subset using a bounding box and a specific band
+#' north_sea_bbox <- c(xmin = -4, ymin = 50, xmax = 10, ymax = 62)
 #' emdn_get_coverage(wcs,
 #'   coverage_id = coverage_id,
-#'   bbox = c(
-#'     xmin = 0, ymin = 40,
-#'     xmax = 5, ymax = 45
-#'   ),
+#'   bbox = north_sea_bbox,
 #'   rangesubset = "Relative abundance"
 #' )
-#' }
 emdn_get_coverage <- function(
   wcs = NULL,
   service = NULL,

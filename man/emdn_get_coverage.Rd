@@ -64,7 +64,8 @@ is returned.}
 
 \item{format}{the format of the file the coverage should be written out to.}
 
-\item{rangesubset}{character vector of band descriptions to subset.}
+\item{rangesubset}{character vector of band descriptions to subset.
+Can work better if you use a bounding box (https://github.com/eblondel/ows4R/issues/147).}
 
 \item{filename}{the file name to write to.}
 
@@ -78,7 +79,7 @@ writes the coverage to a local file.
 Get a coverage from an EMODnet WCS Service
 }
 \examples{
-\dontrun{
+\dontshow{vcr::insert_example_cassette('coverage-bio', package = 'emodnet.wcs')}
 wcs <- emdn_init_wcs_client(service = "biology")
 coverage_id <- "Emodnetbio__cal_fin_19582016_L1_err"
 # Subset using a bounding box
@@ -97,18 +98,16 @@ emdn_get_coverage(wcs,
     xmax = 5, ymax = 45
   ),
   time = c(
-    "1963-11-16T00:00:00.000Z",
-    "1964-02-16T00:00:00.000Z"
+    "1958-02-16T01:00:00",
+    "1958-05-16T01:00:00"
   )
 )
 # Subset using a bounding box and a specific band
+north_sea_bbox <- c(xmin = -4, ymin = 50, xmax = 10, ymax = 62)
 emdn_get_coverage(wcs,
   coverage_id = coverage_id,
-  bbox = c(
-    xmin = 0, ymin = 40,
-    xmax = 5, ymax = 45
-  ),
+  bbox = north_sea_bbox,
   rangesubset = "Relative abundance"
 )
-}
+\dontshow{vcr::eject_cassette()}
 }

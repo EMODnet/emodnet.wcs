@@ -140,12 +140,12 @@ coverages from each service.
 
 }}
 \examples{
-\dontrun{
+\dontshow{vcr::insert_example_cassette('info', package = 'emodnet.wcs')}
 # Get information from a wcs object.
 wcs <- emdn_init_wcs_client(service = "seabed_habitats")
 emdn_get_wcs_info(wcs)
 # Get information using a service name.
-emdn_get_wcs_info(service = "biology")
+emdn_get_wcs_info(service = "seabed_habitats")
 # Get detailed info for specific coverages from wcs object
 coverage_ids <- c(
   "emodnet_open_maplibrary__mediseh_cora",
@@ -155,5 +155,5 @@ emdn_get_coverage_info(
   wcs = wcs,
   coverage_ids = coverage_ids
 )
-}
+\dontshow{vcr::eject_cassette()}
 }

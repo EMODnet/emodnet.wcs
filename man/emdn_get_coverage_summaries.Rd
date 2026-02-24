@@ -66,7 +66,7 @@ vertical coefficients for a coverage.
 
 }}
 \examples{
-\dontrun{
+\dontshow{vcr::insert_example_cassette('coverage-utils', package = 'emodnet.wcs')}
 wcs <- emdn_init_wcs_client(service = "biology")
 cov_ids <- emdn_get_coverage_ids(wcs)
 cov_ids
@@ -84,5 +84,5 @@ emdn_get_coverage_dim_coefs(wcs,
   cov_ids[1:2],
   type = "temporal"
 )
-}
+\dontshow{vcr::eject_cassette()}
 }

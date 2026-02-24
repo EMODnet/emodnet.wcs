@@ -41,6 +41,7 @@ Suggests:
     huxtable,
     knitr,
     rmarkdown,
+    roxygen2,
     testthat (>= 3.0.0),
     vcr (>= 2.0.0),
     webmockr,

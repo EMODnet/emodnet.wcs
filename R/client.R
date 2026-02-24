@@ -14,8 +14,8 @@
 #' @export
 #'
 #' @seealso `WCSClient` in package `ows4R`.
-#' @examplesIf interactive()
-#' wcs <- emdn_init_wcs_client(service = "bathymetry")
+#' @examplesVCR bathymetry
+#' (wcs <- emdn_init_wcs_client(service = "bathymetry"))
 emdn_init_wcs_client <- function(
   service,
   service_version = c(
@@ -27,7 +27,7 @@ emdn_init_wcs_client <- function(
   ),
   logger = c("NONE", "INFO", "DEBUG")
 ) {
-  if (!has_internet()) {
+  if (!has_internet() && !as.logical(Sys.getenv("VCR_IS_REPLAYING", "FALSE"))) {
     cli::cli_abort("There is no internet connection.")
   }
   check_service_name(service)
