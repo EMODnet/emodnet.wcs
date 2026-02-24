@@ -131,3 +131,21 @@ test_that("`nil_values_as_na = TRUE` converts NaN nil values to NA", {
   )
   expect_equal(sum(is.nan(terra::values(r))), 0)
 })
+
+test_that("rangesubset", {
+  vcr::local_cassette("rangesubset")
+  wcs <- emdn_init_wcs_client(service = "biology")
+  coverage_id <- "Emodnetbio__cal_fin_19582016_L1_err"
+  north_sea_bbox <- c(xmin = -4, ymin = 50, xmax = 10, ymax = 62)
+  cov <- emdn_get_coverage(
+    wcs,
+    coverage_id = coverage_id,
+    bbox = north_sea_bbox,
+    rangesubset = "Relative abundance"
+  )
+  expect_s4_class(cov, "SpatRaster")
+  expect_identical(
+    names(cov),
+    "Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_50,-4,62,10_relative-abundance"
+  )
+})
