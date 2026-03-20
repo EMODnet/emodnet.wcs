@@ -1,5 +1,6 @@
 service_name,service_url
 bathymetry,https://ows.emodnet-bathymetry.eu/wcs
 biology,https://geo.vliz.be/geoserver/Emodnetbio/wcs
+new_biology,https://ows.emodnet.eu/geoserver/biology/ows
 human_activities,https://ows.emodnet-humanactivities.eu/wcs
 seabed_habitats,https://ows.emodnet-seabedhabitats.eu/geoserver/emodnet_open_maplibrary/wcs

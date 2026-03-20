@@ -408,13 +408,17 @@ emdn_get_coverage_function <- function(summary) {
 emdn_get_temporal_extent <- function(summary) {
   dim_df <- emdn_get_dimensions_info(summary, format = "tibble")
 
-  if (any(dim_df$type == "temporal")) {
-    dim_df$range[dim_df$type == "temporal"] |>
-      strsplit(" - ", fixed = TRUE) |>
-      unlist()
-  } else {
-    NA
+  if (!any(dim_df$type == "temporal")) {
+    return(NA)
   }
+
+  if (all(is.na(dim_df$range[dim_df$type == "temporal"]))) {
+    return(NA)
+  }
+
+  dim_df$range[dim_df$type == "temporal"] |>
+    strsplit(" - ", fixed = TRUE) |>
+    unlist()
 }
 
 #' @describeIn emdn_get_bbox Get the vertical (elevation) extent of a coverage.
@@ -524,7 +528,9 @@ emdn_get_dimensions_names <- function(summary) {
 #' @describeIn emdn_get_bbox Get number of coverage dimensions.
 #' @export
 emdn_get_dimensions_n <- function(summary) {
-  summary$getDimensions() |> length()
+  # https://github.com/eblondel/ows4R/discussions/149
+  # "No encoding supplied: defaulting to UTF-8."
+  suppressMessages(summary$getDimensions()) |> length()
 }
 
 #' @describeIn emdn_get_bbox Get dimensions types of a coverage.
