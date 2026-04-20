@@ -16,11 +16,12 @@ Tibble of available EMODnet Web Coverage Services
 
 ``` r
 emdn_wcs()
-#> # A tibble: 4 × 2
+#> # A tibble: 5 × 2
 #>   service_name     service_url                                                  
 #>   <chr>            <chr>                                                        
 #> 1 bathymetry       https://ows.emodnet-bathymetry.eu/wcs                        
 #> 2 biology          https://geo.vliz.be/geoserver/Emodnetbio/wcs                 
-#> 3 human_activities https://ows.emodnet-humanactivities.eu/wcs                   
-#> 4 seabed_habitats  https://ows.emodnet-seabedhabitats.eu/geoserver/emodnet_open…
+#> 3 new_biology      https://ows.emodnet.eu/geoserver/biology/ows                 
+#> 4 human_activities https://ows.emodnet-humanactivities.eu/wcs                   
+#> 5 seabed_habitats  https://ows.emodnet-seabedhabitats.eu/geoserver/emodnet_open…
 ```

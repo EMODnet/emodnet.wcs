@@ -58,6 +58,7 @@ All available services are contained in the tibble returned by
 |:-----------------|:------------------------------------------------------------------------------|
 | bathymetry       | <https://ows.emodnet-bathymetry.eu/wcs>                                       |
 | biology          | <https://geo.vliz.be/geoserver/Emodnetbio/wcs>                                |
+| new_biology      | <https://ows.emodnet.eu/geoserver/biology/ows>                                |
 | human_activities | <https://ows.emodnet-humanactivities.eu/wcs>                                  |
 | seabed_habitats  | <https://ows.emodnet-seabedhabitats.eu/geoserver/emodnet_open_maplibrary/wcs> |
 
@@ -250,7 +251,7 @@ cov <- emdn_get_coverage(
 #> ── Downloading coverage "emodnet__vesseldensity_all" ───────────────────────────
 #> <GMLEnvelope>
 #> ....|-- lowerCorner: 484177.9 6957617.3 "2017-01-01T00:00:00"
-#> ....|-- upperCorner: 1035747 7308616.2 "2023-12-01T00:00:00"
+#> ....|-- upperCorner: 1035747 7308616.2 "2024-12-01T00:00:00"
 #> ✔ Coverage "emodnet__vesseldensity_all" downloaded succesfully as a
 #> terra <SpatRaster> .
 ```
@@ -274,7 +275,7 @@ To cite emodnet.wcs, please use the output from
 citation(package = "emodnet.wcs")
 #> To cite package 'emodnet.wcs' in publications use:
 #> 
-#>   Krystalli A (2025). _emodnet.wcs: Access EMODnet Web Coverage Service
+#>   Krystalli A (2026). _emodnet.wcs: Access EMODnet Web Coverage Service
 #>   data through R_. R package version 0.0.1.9000. Integrated data
 #>   products created under the European Marine Observation Data Network
 #>   (EMODnet) Biology project (EASME/EMFF/2017/1.3.1.2/02/SI2.789013),
@@ -288,7 +289,7 @@ citation(package = "emodnet.wcs")
 #>   @Manual{,
 #>     title = {{emodnet.wcs}: Access EMODnet Web Coverage Service data through R},
 #>     author = {Anna Krystalli},
-#>     year = {2025},
+#>     year = {2026},
 #>     note = {R package version 0.0.1.9000. Integrated data products created under the European Marine Observation Data Network (EMODnet) Biology project (EASME/EMFF/2017/1.3.1.2/02/SI2.789013), funded by the European Union under Regulation (EU) No 508/2014 of the European Parliament and of the Council of 15 May 2014 on the European Maritime and Fisheries Fund},
 #>     url = {https://github.com/EMODnet/emodnet.wcs},
 #>   }
