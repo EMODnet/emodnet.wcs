@@ -7,8 +7,6 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/emodnet.wcs)](https://CRAN.R-project.org/package=emodnet.wcs)
 [![R-CMD-check](https://github.com/EMODnet/emodnet.wcs/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EMODnet/emodnet.wcs/actions/workflows/R-CMD-check.yaml)
 [![codecov](https://codecov.io/gh/EMODnet/emodnet.wcs/branch/main/graph/badge.svg)](https://codecov.io/gh/EMODnet/emodnet.wcs)
 <!-- badges: end -->
