@@ -84,12 +84,12 @@ coverages.<a class="anchor" aria-label="anchor" href="#downloading-extracting-co
 <p>First let’s load the package and initiate a client to the
 <code>"biology"</code> EMODnet WCS server.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/EMODnet/emodnet.wcs" class="external-link">emodnet.wcs</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; Loading ISO 19139 XML schemas...</span></span>
-<span><span class="co">#&gt; Loading ISO 19115-3 XML schemas...</span></span>
-<span><span class="co">#&gt; Loading ISO 19139 codelists...</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/EMODnet/emodnet.wcs" class="external-link">emodnet.wcs</a></span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wcs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/emdn_init_wcs_client.html">emdn_init_wcs_client</a></span><span class="op">(</span>service <span class="op">=</span> <span class="st">"biology"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading ISO 19139 XML schemas...</span></span>
+<span><span class="co">#&gt; Loading ISO 19115-3 XML schemas...</span></span>
+<span><span class="co">#&gt; Loading ISO 19139 codelists...</span></span>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> WCS client created succesfully</span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Service: <span style="color: #0000BB; font-style: italic;">&lt;https://geo.vliz.be/geoserver/Emodnetbio/wcs&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Service: <span style="color: #0000BB;">"2.0.1"</span></span></span></code></pre></div>

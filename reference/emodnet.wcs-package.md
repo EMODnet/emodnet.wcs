@@ -14,16 +14,19 @@ Useful links:
 
 ## Author
 
-**Maintainer**: Salvador Fernández-Bejarano <salvador.fernandez@vliz.be>
-([ORCID](https://orcid.org/0000-0003-0535-7677))
+**Maintainer**: Maëlle Salmon <maelle.salmon@gmail.com>
+([ORCID](https://orcid.org/0000-0002-2815-0399))
 
 Authors:
+
+- Maëlle Salmon <maelle.salmon@gmail.com>
+  ([ORCID](https://orcid.org/0000-0002-2815-0399))
 
 - Anna Krystalli <annakrystalli@googlemail.com>
   ([ORCID](https://orcid.org/0000-0002-2378-4915))
 
-- Maëlle Salmon <maelle.salmon@gmail.com>
-  ([ORCID](https://orcid.org/0000-0002-2815-0399))
+- Salvador Fernández-Bejarano <salvador.fernandez@vliz.be>
+  ([ORCID](https://orcid.org/0000-0003-0535-7677))
 
 Other contributors:
 

@@ -48,9 +48,6 @@ To view the available services and their endpoints, you can use
 ``` r
 
 library(emodnet.wcs)
-#> Loading ISO 19139 XML schemas...
-#> Loading ISO 19115-3 XML schemas...
-#> Loading ISO 19139 codelists...
 ```
 
 ``` r
@@ -78,6 +75,9 @@ using the `service` argument.
 ``` r
 
 wcs <- emdn_init_wcs_client("biology")
+#> Loading ISO 19139 XML schemas...
+#> Loading ISO 19115-3 XML schemas...
+#> Loading ISO 19139 codelists...
 #> ✔ WCS client created succesfully
 #> ℹ Service: <https://geo.vliz.be/geoserver/Emodnetbio/wcs>
 #> ℹ Service: "2.0.1"

@@ -176,6 +176,9 @@ emdn_get_dimension_types(summary)
 
 ``` r
 wcs <- emdn_init_wcs_client(service = "biology")
+#> Loading ISO 19139 XML schemas...
+#> Loading ISO 19115-3 XML schemas...
+#> Loading ISO 19139 codelists...
 #> ✔ WCS client created succesfully
 #> ℹ Service: <https://geo.vliz.be/geoserver/Emodnetbio/wcs>
 #> ℹ Service: "2.0.1"
