@@ -10,7 +10,6 @@
 #'
 #' @return An [`ows4R::WCSClient`] R6 object with methods for interfacing an OGC
 #' Web Coverage Service.
-#' @import ows4R
 #' @export
 #'
 #' @seealso `WCSClient` in package `ows4R`.

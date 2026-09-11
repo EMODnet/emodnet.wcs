@@ -32,6 +32,8 @@
 #' @param format the format of the file the coverage should be written out to.
 #' @param rangesubset character vector of band descriptions to subset.
 #' Can work better if you use a bounding box (https://github.com/eblondel/ows4R/issues/147).
+#' In some cases, a Geoserver bug prevents the use of this parameter,
+#' see <https://github.com/EMODnet/emodnet.wcs/issues/79>.
 #' @param filename the file name to write to.
 #' @param nil_values_as_na logical. Should raster nil values be converted to `NA`?
 #'

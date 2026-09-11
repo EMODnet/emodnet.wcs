@@ -87,7 +87,7 @@
 #'
 #' @param wcs A `WCSClient` R6 object, created with function [`emdn_init_wcs_client`].
 #' @inheritParams emdn_init_wcs_client
-#' @importFrom rlang .data `%||%`
+#' @importFrom rlang .data %||%
 #' @return `emdn_get_wcs_info` & `emdn_get_wcs_info` return a list of service
 #' level metadata, including a tibble containing coverage level metadata for each
 #' coverage available from the service. `emdn_get_coverage_info` returns a list

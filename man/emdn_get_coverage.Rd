@@ -65,14 +65,16 @@ is returned.}
 \item{format}{the format of the file the coverage should be written out to.}
 
 \item{rangesubset}{character vector of band descriptions to subset.
-Can work better if you use a bounding box (https://github.com/eblondel/ows4R/issues/147).}
+Can work better if you use a bounding box (https://github.com/eblondel/ows4R/issues/147).
+In some cases, a Geoserver bug prevents the use of this parameter,
+see \url{https://github.com/EMODnet/emodnet.wcs/issues/79}.}
 
 \item{filename}{the file name to write to.}
 
 \item{nil_values_as_na}{logical. Should raster nil values be converted to \code{NA}?}
 }
 \value{
-an object of class \code{\link[terra:SpatRaster-class]{terra::SpatRaster}}. The function also
+an object of class \code{\link[terra:SpatRaster]{terra::SpatRaster}}. The function also
 writes the coverage to a local file.
 }
 \description{

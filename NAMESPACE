@@ -26,9 +26,9 @@ export(emdn_get_wcs_info_all)
 export(emdn_has_dimension)
 export(emdn_init_wcs_client)
 export(emdn_wcs)
-import(ows4R)
 importFrom(memoise,memoise)
-importFrom(rlang,"%||%")
-importFrom(rlang,.data)
-importFrom(rlang,`%||%`)
+importFrom(rlang,
+  "%||%",
+  .data
+)
 importFrom(utils,read.csv)

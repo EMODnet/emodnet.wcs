@@ -18,12 +18,13 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Salvador Fernández-Bejarano \email{salvador.fernandez@vliz.be} (\href{https://orcid.org/0000-0003-0535-7677}{ORCID})
+\strong{Maintainer}: Maëlle Salmon \email{maelle.salmon@gmail.com} (\href{https://orcid.org/0000-0002-2815-0399}{ORCID})
 
 Authors:
 \itemize{
-  \item Anna Krystalli \email{annakrystalli@googlemail.com} (\href{https://orcid.org/0000-0002-2378-4915}{ORCID})
   \item Maëlle Salmon \email{maelle.salmon@gmail.com} (\href{https://orcid.org/0000-0002-2815-0399}{ORCID})
+  \item Anna Krystalli \email{annakrystalli@googlemail.com} (\href{https://orcid.org/0000-0002-2378-4915}{ORCID})
+  \item Salvador Fernández-Bejarano \email{salvador.fernandez@vliz.be} (\href{https://orcid.org/0000-0003-0535-7677}{ORCID})
 }
 
 Other contributors:
