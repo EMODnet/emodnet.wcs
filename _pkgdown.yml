@@ -1,10 +1,6 @@
 url: https://emodnet.github.io/emodnet.wcs/
 template:
   bootstrap: 5
-  bslib:
-    primary: "#3471B4"
-    secondary: "#F5B333"
-    text-muted: "#F5B333"
 
 navbar:
   bg: primary
