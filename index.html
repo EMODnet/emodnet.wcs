@@ -295,20 +295,20 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">"emodnet.wcs"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; To cite package 'emodnet.wcs' in publications use:</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;   Krystalli A (2026). _emodnet.wcs: Access EMODnet Web Coverage Service</span></span>
-<span><span class="co">#&gt;   data through R_. R package version 0.0.1.9000. Integrated data</span></span>
-<span><span class="co">#&gt;   products created under the European Marine Observation Data Network</span></span>
-<span><span class="co">#&gt;   (EMODnet) Biology project (EASME/EMFF/2017/1.3.1.2/02/SI2.789013),</span></span>
-<span><span class="co">#&gt;   funded by the European Union under Regulation (EU) No 508/2014 of the</span></span>
-<span><span class="co">#&gt;   European Parliament and of the Council of 15 May 2014 on the European</span></span>
-<span><span class="co">#&gt;   Maritime and Fisheries Fund,</span></span>
-<span><span class="co">#&gt;   &lt;https://github.com/EMODnet/emodnet.wcs&gt;.</span></span>
+<span><span class="co">#&gt;   Krystalli A, Fernández-Bejarano S, Salmon M (2026). _emodnet.wcs:</span></span>
+<span><span class="co">#&gt;   Access EMODnet Web Coverage Service data through R_. R package</span></span>
+<span><span class="co">#&gt;   version 0.0.1.9000. Integrated data products created under the</span></span>
+<span><span class="co">#&gt;   European Marine Observation Data Network (EMODnet) Biology project</span></span>
+<span><span class="co">#&gt;   (EASME/EMFF/2017/1.3.1.2/02/SI2.789013), funded by the European Union</span></span>
+<span><span class="co">#&gt;   under Regulation (EU) No 508/2014 of the European Parliament and of</span></span>
+<span><span class="co">#&gt;   the Council of 15 May 2014 on the European Maritime and Fisheries</span></span>
+<span><span class="co">#&gt;   Fund, &lt;https://github.com/EMODnet/emodnet.wcs&gt;.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; A BibTeX entry for LaTeX users is</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;   @Manual{,</span></span>
 <span><span class="co">#&gt;     title = {{emodnet.wcs}: Access EMODnet Web Coverage Service data through R},</span></span>
-<span><span class="co">#&gt;     author = {Anna Krystalli},</span></span>
+<span><span class="co">#&gt;     author = {Anna Krystalli and Salvador Fernández-Bejarano and Maëlle Salmon},</span></span>
 <span><span class="co">#&gt;     year = {2026},</span></span>
 <span><span class="co">#&gt;     note = {R package version 0.0.1.9000. Integrated data products created under the European Marine Observation Data Network (EMODnet) Biology project (EASME/EMFF/2017/1.3.1.2/02/SI2.789013), funded by the European Union under Regulation (EU) No 508/2014 of the European Parliament and of the Council of 15 May 2014 on the European Maritime and Fisheries Fund},</span></span>
 <span><span class="co">#&gt;     url = {https://github.com/EMODnet/emodnet.wcs},</span></span>
@@ -339,7 +339,7 @@
 <span></span>
 <span><span class="co"># Inspect all available datasets</span></span>
 <span><span class="fu">ed_datasets</span><span class="op">(</span>url <span class="op">=</span> <span class="va">erddap_url</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 8 × 16</span></span>
+<span><span class="co">#&gt; # A tibble: 7 × 16</span></span>
 <span><span class="co">#&gt;   griddap Subset tabledap Make.A.Graph wms   files Title Summary FGDC  ISO.19115</span></span>
 <span><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;    </span></span>
 <span><span class="co">#&gt; 1 ""      "/erd… /erddap… /erddap/tab… ""    ""    * Th… "This … ""    ""       </span></span>
@@ -349,7 +349,6 @@
 <span><span class="co">#&gt; 5 ""      ""     /erddap… /erddap/tab… ""    "/er… Pres… "The p… "/er… "/erddap…</span></span>
 <span><span class="co">#&gt; 6 ""      ""     /erddap… /erddap/tab… ""    ""    PSMS… "Perma… ""    ""       </span></span>
 <span><span class="co">#&gt; 7 ""      ""     /erddap… /erddap/tab… ""    "/er… PSMS… "Perma… ""    ""       </span></span>
-<span><span class="co">#&gt; 8 ""      "/erd… /erddap… /erddap/tab… ""    "/er… TAO/… "This … "/er… "/erddap…</span></span>
 <span><span class="co">#&gt; # ℹ 6 more variables: Info &lt;chr&gt;, Background.Info &lt;chr&gt;, RSS &lt;chr&gt;,</span></span>
 <span><span class="co">#&gt; #   Email &lt;chr&gt;, Institution &lt;chr&gt;, Dataset.ID &lt;chr&gt;</span></span>
 <span></span>
@@ -381,7 +380,7 @@
 <span>  url <span class="op">=</span> <span class="va">erddap_url</span></span>
 <span><span class="op">)</span></span>
 <span><span class="va">human_activities_data_info</span></span>
-<span><span class="co">#&gt; &lt;ERDDAP info&gt; humanactivities_9f8a_3389_f08a </span></span>
+<span><span class="co">#&gt; &lt;ERDDAP(TM) info&gt; humanactivities_9f8a_3389_f08a </span></span>
 <span><span class="co">#&gt;  Base URL: https://erddap.emodnet.eu/erddap </span></span>
 <span><span class="co">#&gt;  Dataset Type: griddap </span></span>
 <span><span class="co">#&gt;  Dimensions (range):  </span></span>

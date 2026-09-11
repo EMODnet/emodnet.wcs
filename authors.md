@@ -25,17 +25,18 @@
 Source:
 [`inst/CITATION`](https://github.com/EMODnet/emodnet.wcs/blob/main/inst/CITATION)
 
-Krystalli A (2026). *emodnet.wcs: Access EMODnet Web Coverage Service
-data through R*. R package version 0.0.1.9000. Integrated data products
-created under the European Marine Observation Data Network (EMODnet)
-Biology project (EASME/EMFF/2017/1.3.1.2/02/SI2.789013), funded by the
-European Union under Regulation (EU) No 508/2014 of the European
-Parliament and of the Council of 15 May 2014 on the European Maritime
-and Fisheries Fund, <https://github.com/EMODnet/emodnet.wcs>.
+Krystalli A, Fernández-Bejarano S, Salmon M (2026). *emodnet.wcs: Access
+EMODnet Web Coverage Service data through R*. R package version
+0.0.1.9000. Integrated data products created under the European Marine
+Observation Data Network (EMODnet) Biology project
+(EASME/EMFF/2017/1.3.1.2/02/SI2.789013), funded by the European Union
+under Regulation (EU) No 508/2014 of the European Parliament and of the
+Council of 15 May 2014 on the European Maritime and Fisheries Fund,
+<https://github.com/EMODnet/emodnet.wcs>.
 
     @Manual{,
       title = {{emodnet.wcs}: Access EMODnet Web Coverage Service data through R},
-      author = {Anna Krystalli},
+      author = {Anna Krystalli and Salvador Fernández-Bejarano and Maëlle Salmon},
       year = {2026},
       note = {R package version 0.0.1.9000. Integrated data products created under the European Marine Observation Data Network (EMODnet) Biology project (EASME/EMFF/2017/1.3.1.2/02/SI2.789013), funded by the European Union under Regulation (EU) No 508/2014 of the European Parliament and of the Council of 15 May 2014 on the European Maritime and Fisheries Fund},
       url = {https://github.com/EMODnet/emodnet.wcs},
