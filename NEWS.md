@@ -1,3 +1,5 @@
+# emodnet.wcs (development version)
+
 # emodnet.wcs 0.0.2
 
 * Feature: add band names to the names of the layers in output rasters (#125).
