@@ -14,7 +14,7 @@
     Output
       <GMLEnvelope>
       ....|-- lowerCorner: -13358338.8951928 -2154935.91508589 "2017-01-01T00:00:00"
-      ....|-- upperCorner: -13247019.4043996 -2037548.5447506 "2023-12-01T00:00:00"
+      ....|-- upperCorner: -13247019.4043996 -2037548.5447506 "2024-12-01T00:00:00"
     Condition
       Warning:
       Can't find any data in the `bbox`.
@@ -42,7 +42,6 @@
       r <- emdn_get_coverage(wcs = hab_wcs, coverage_id = coverage_id, bbox = test_bbox,
         nil_values_as_na = TRUE)
     Message
-      ! Error in `NaN` Returning NA
       -- Downloading coverage "emodnet_open_maplibrary__GB000050_EFH_Whiting_SpawningG
     Output
       <GMLEnvelope>

@@ -10,18 +10,17 @@ http_interactions:
       content-security-policy: base-uri 'self'; default-src 'none'; child-src 'self';
         connect-src 'self'; font-src 'self'; img-src 'self' data:; style-src 'self'
         'unsafe-inline'; script-src 'self'; form-action 'self'; frame-ancestors 'self';
-      access-control-allow-origin: '*'
       cache-control: max-age=0, must-revalidate
       content-disposition: inline; filename=geoserver-GetCapabilities.application
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Tue, 24 Feb 2026 12:54:59 GMT
+      date: Fri, 11 Sep 2026 10:43:29 GMT
     body:
       string: <?xml version="1.0" encoding="UTF-8"?><wcs:Capabilities xmlns:wcs="http://www.opengis.net/wcs/2.0"
         xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2"
         xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0.1" updateSequence="107591"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0.1" updateSequence="117402"
         xmlns:int="https://www.opengis.net/wcs/interpolation/1.0" xmlns:crs="http://www.opengis.net/wcs/crs/1.0"
         xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" xmlns:inspire_dls="http://inspire.ec.europa.eu/schemas/inspire_dls/1.0"
         xsi:schemaLocation=" http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsGetCapabilities.xsd
@@ -175,7 +174,7 @@ http_interactions:
         xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0">33388e9718d07e8171ea43735e71e549f0173231</inspire_common:Code></inspire_dls:SpatialDataSetIdentifier><inspire_dls:SpatialDataSetIdentifier
         metadataURL="http://geonetwork.vliz.be/geonetwork/srv/eng/xml.metadata.get?uuid=b1d3b444a111c94e69e6853a83957f1d2ebaa387"><inspire_common:Code
         xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0">b1d3b444a111c94e69e6853a83957f1d2ebaa387</inspire_common:Code></inspire_dls:SpatialDataSetIdentifier></inspire_dls:ExtendedCapabilities></ows:ExtendedCapabilities></wcs:Extension></wcs:Contents></wcs:Capabilities>
-  recorded_at: 2026-02-24 12:54:59
+  recorded_at: 2026-09-11 10:43:29
 - request:
     method: GET
     uri: https://geo.vliz.be/geoserver/Emodnetbio/wcs?service=WCS&version=2.0.1&coverageId=Emodnetbio__cal_fin_19582016_L1_err&request=DescribeCoverage
@@ -191,7 +190,7 @@ http_interactions:
       content-encoding: gzip
       content-type: application/xml
       transfer-encoding: chunked
-      date: Tue, 24 Feb 2026 12:54:59 GMT
+      date: Fri, 11 Sep 2026 10:43:29 GMT
     body:
       string: |
         <?xml version="1.0" encoding="UTF-8"?><wcs:CoverageDescriptions xmlns:wcs="http://www.opengis.net/wcs/2.0" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:wcsgs="http://www.geoserver.org/wcsgs/2.0" xsi:schemaLocation=" http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsDescribeCoverage.xsd http://www.geoserver.org/wcsgs/2.0 https://geo.vliz.be/geoserver/schemas/wcs/2.0/wcsgs.xsd">
@@ -1000,18 +999,20 @@ http_interactions:
             </wcs:ServiceParameters>
           </wcs:CoverageDescription>
         </wcs:CoverageDescriptions>
-  recorded_at: 2026-02-24 12:54:59
+  recorded_at: 2026-09-11 10:43:29
 - request:
     method: GET
     uri: https://www.opengis.net/def/crs/EPSG/0/4326
   response:
     status: 200
     headers:
-      date: Tue, 24 Feb 2026 12:55:07 GMT
-      server: Apache/2.4.66 (Debian)
+      date: Fri, 11 Sep 2026 10:43:34 GMT
+      server: cloudflare
       content-length: '2057'
       cache-control: max-age=86400
       strict-transport-security: max-age=31536000; includeSubDomains
+      cf-cache-status: DYNAMIC
+      cf-ray: a396127cd961761f-TXL
     body:
       raw_gzip: |-
         eJy1Vclu2zAQvecrCN1FSpTjWIKtHOzC7aFAEKHomZBGMltxAUnHSr++ECUnVlYXqI/kvNne
@@ -1036,7 +1037,7 @@ http_interactions:
         H/6XI33Tjj/hjlcgHa85GFSqCgrNSlgFvTAHeb9MBvdn1JOjZALyn9sCLWYDxl9cnb6LoT
         B/
         hrbl2ipesXb9D72Pjc9nlL7buI/fjHt3w9xenBXfI8k8oe994KGrk4We/wUWC6IF
-  recorded_at: 2026-02-24 12:55:07
+  recorded_at: 2026-09-11 10:43:34
 - request:
     method: GET
     uri: https://geo.vliz.be/geoserver/Emodnetbio/wcs?service=WCS&version=2.0.1&coverageId=Emodnetbio__cal_fin_19582016_L1_err&subset=Lat%2850%2C62%29&format=image%2Ftiff&Rangesubset=Relative+abundance&request=GetCoverage
@@ -1048,11 +1049,10 @@ http_interactions:
       content-security-policy: base-uri 'self'; default-src 'none'; child-src 'self';
         connect-src 'self'; font-src 'self'; img-src 'self' data:; style-src 'self'
         'unsafe-inline'; script-src 'self'; form-action 'self'; frame-ancestors 'self';
-      access-control-allow-origin: '*'
       content-disposition: inline; filename=Emodnetbio__cal_fin_19582016_L1_err.tif
       content-type: image/tiff
       transfer-encoding: chunked
-      date: Tue, 24 Feb 2026 12:55:07 GMT
+      date: Fri, 11 Sep 2026 10:43:35 GMT
     body:
       raw_gzip: |-
         eJzcumV0F9m27p3gwd1dm+CkgSCZP9whSKAJLp0QLAQIhJAE4p4Qd3d3d9w1uLsEd2vgre6z
@@ -2352,5 +2352,5 @@ http_interactions:
         PjxsgMWHWCwtU2B51Hj
         w4o5CcO0ARHZFCP1hhjbipOPl6KSTTjrppJNOOumkk0466aSTTjrp
         9Hbpnz0QyUA=
-  recorded_at: 2026-02-24 12:55:07
-recorded_with: VCR-vcr/2.1.1.91
+  recorded_at: 2026-09-11 10:43:35
+recorded_with: VCR-vcr/2.1.0
