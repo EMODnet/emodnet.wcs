@@ -278,3 +278,9 @@ terra::plot(cov)
 For more details on downloading coverages, please refer to the [Download
 Coverages](https://emodnet.github.io/emodnet.wcs/articles/coverages.html)
 article in the emodnet.wcs online documentation.
+
+## Further resources
+
+For more examples of use of EMODnet data in R, refer to the [EMODnet
+Biology Geospatial R
+Tutorials](https://emodnet.github.io/emodnet-bio-r-geo-tutorials/).
