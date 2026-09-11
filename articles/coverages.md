@@ -15,6 +15,7 @@ The first step to downloading coverages is to initiate a connection with
 one of the EMODnet WCS servers.
 
 ``` r
+
 library(emodnet.wcs)
 #> Loading ISO 19139 XML schemas...
 #> Loading ISO 19115-3 XML schemas...
@@ -22,6 +23,7 @@ library(emodnet.wcs)
 ```
 
 ``` r
+
 wcs <- emdn_init_wcs_client(service = "biology")
 #> ✔ WCS client created succesfully
 #> ℹ Service: <https://geo.vliz.be/geoserver/Emodnetbio/wcs>
@@ -32,6 +34,7 @@ You can get a list of available coverages from the service with
 [`emdn_get_coverage_ids()`](https://emodnet.github.io/emodnet.wcs/reference/emdn_get_coverage_summaries.md)
 
 ``` r
+
 coverage_ids <- emdn_get_coverage_ids(wcs)
 coverage_ids
 #>  [1] "Emodnetbio__ratio_large_to_small_19582016_L1_err"
@@ -49,6 +52,7 @@ coverage_ids
 Let’s focus on the `Emodnetbio__aca_spp_19582016_L1`.
 
 ``` r
+
 coverage_id <- "Emodnetbio__aca_spp_19582016_L1"
 coverage_id
 #> [1] "Emodnetbio__aca_spp_19582016_L1"
@@ -86,6 +90,7 @@ subset bounding box lies within. Note that this bounding box is
 approximate and might *overestimate* the actual coverage.
 
 ``` r
+
 cov_summary <- emdn_get_coverage_summaries(
   wcs,
   coverage_id
@@ -100,6 +105,7 @@ We can then create a bounding ensuring it lies within the coverage’s
 bounding box.
 
 ``` r
+
 bbox <- c(xmin = 1.5, ymin = 53, xmax = 6.5, ymax = 58)
 ```
 
@@ -107,6 +113,7 @@ Now we are ready to download the coverage and provide the bounding box
 we created to the `bbox` argument.
 
 ``` r
+
 cov_1 <- emdn_get_coverage(wcs, coverage_id = coverage_id, bbox = bbox)
 #> Loading required package: sf
 #> Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.4.0; sf_use_s2() is FALSE
@@ -119,16 +126,17 @@ cov_1 <- emdn_get_coverage(wcs, coverage_id = coverage_id, bbox = bbox)
 #> terra <SpatRaster> .
 
 cov_1
-#> class       : SpatRaster 
+#> class       : SpatRaster
 #> size        : 50, 50, 1  (nrow, ncol, nlyr)
 #> resolution  : 0.1, 0.1  (x, y)
 #> extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)
-#> coord. ref. : lon/lat WGS 84 (EPSG:4326) 
-#> source      : Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5.tif 
+#> coord. ref. : lon/lat WGS 84 (EPSG:4326)
+#> source      : Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5.tif
 #> name        : Emodnetbio__aca_spp_19582016_L~,1.5,58,6.5_relative-abundance
 ```
 
 ``` r
+
 terra::plot(cov_1)
 ```
 
@@ -141,6 +149,7 @@ You can access nil values for each band from a `summary` object using
 [`emdn_get_band_nil_values()`](https://emodnet.github.io/emodnet.wcs/reference/emdn_get_bbox.md)
 
 ``` r
+
 emdn_get_band_nil_values(cov_summary)
 #> relative_abundance 
 #>        9.96921e+36
@@ -150,6 +159,7 @@ If you wish to encode nil values as `NA` during coverage download, you
 can use the `nil_values_as_na` argument.
 
 ``` r
+
 cov_nil_to_na <- emdn_get_coverage(
   wcs,
   coverage_id = coverage_id,
@@ -165,12 +175,12 @@ cov_nil_to_na <- emdn_get_coverage(
 #> ✔ nil values 9.96920996838687e+36 converted to NA on Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5_relative-abundance band.
 
 cov_nil_to_na
-#> class       : SpatRaster 
+#> class       : SpatRaster
 #> size        : 50, 50, 1  (nrow, ncol, nlyr)
 #> resolution  : 0.1, 0.1  (x, y)
 #> extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)
-#> coord. ref. : lon/lat WGS 84 (EPSG:4326) 
-#> source      : Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5.tif 
+#> coord. ref. : lon/lat WGS 84 (EPSG:4326)
+#> source      : Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5.tif
 #> name        : Emodnetbio__aca_spp_19582016_L~,1.5,58,6.5_relative-abundance
 ```
 
@@ -187,6 +197,7 @@ returned if none are specified through the request.
 Coverage Emodnetbio\_\_aca_spp_19582016_L1 indeed has a temporal extent:
 
 ``` r
+
 emdn_get_dimension_types(cov_summary)
 #> [1] "geographic" "geographic" "temporal"
 ```
@@ -198,6 +209,7 @@ However we can request specific timepoints. First, let’s get a list of
 all available timepoints.
 
 ``` r
+
 temp_coefs <- emdn_get_coverage_dim_coefs(
   wcs = wcs,
   coverage_ids = coverage_id,
@@ -208,6 +220,7 @@ temp_coefs <- emdn_get_coverage_dim_coefs(
 Next, let’s select the first 3 available timepoints.
 
 ``` r
+
 timepoints <- head(temp_coefs[[1]], 3)
 timepoints
 #> [1] "1958-02-16T01:00:00" "1958-05-16T01:00:00" "1958-08-16T01:00:00"
@@ -217,6 +230,7 @@ We can request the specific timepoints by supplying our vector of
 timepoints to the `time` argument.
 
 ``` r
+
 cov_2 <- emdn_get_coverage(
   wcs,
   coverage_id = coverage_id,
@@ -240,15 +254,16 @@ cov_2 <- emdn_get_coverage(
 ```
 
 ``` r
+
 cov_2
-#> class       : SpatRaster 
+#> class       : SpatRaster
 #> size        : 50, 50, 3  (nrow, ncol, nlyr)
 #> resolution  : 0.1, 0.1  (x, y)
 #> extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)
-#> coord. ref. : lon/lat WGS 84 (EPSG:4326) 
-#> sources     : Emodnetbio__aca_spp_19582016_L1_1958-02-16T01_00_00_53,1.5,58,6.5.tif  
-#>               Emodnetbio__aca_spp_19582016_L1_1958-05-16T01_00_00_53,1.5,58,6.5.tif  
-#>               Emodnetbio__aca_spp_19582016_L1_1958-08-16T01_00_00_53,1.5,58,6.5.tif  
+#> coord. ref. : lon/lat WGS 84 (EPSG:4326)
+#> sources     : Emodnetbio__aca_spp_19582016_L1_1958-02-16T01_00_00_53,1.5,58,6.5.tif
+#>               Emodnetbio__aca_spp_19582016_L1_1958-05-16T01_00_00_53,1.5,58,6.5.tif
+#>               Emodnetbio__aca_spp_19582016_L1_1958-08-16T01_00_00_53,1.5,58,6.5.tif
 #> names       : Emodnetbio~-abundance, Emodnetbio~-abundance, Emodnetbio~-abundance
 ```
 
@@ -256,6 +271,7 @@ Note that this returns a `<SpatRaster>` Stack instead of a single
 `<SpatRaster>`.
 
 ``` r
+
 terra::plot(cov_2)
 ```
 
@@ -271,6 +287,7 @@ We can also request specific bands from a coverage.
 First let’s check the available bands in our coverage.
 
 ``` r
+
 emdn_get_band_descriptions(cov_summary)
 #> [1] "relative_abundance"
 #> attr(,"uom")
@@ -280,6 +297,7 @@ emdn_get_band_descriptions(cov_summary)
 To download a specific band we use the `rangesubset` argument:
 
 ``` r
+
 emdn_get_coverage(
   wcs,
   coverage_id = coverage_id,
@@ -301,6 +319,7 @@ However, it is possible to override this as well as the location the
 file is written to by supplying a file path to the `filename` argument.
 
 ``` r
+
 emdn_get_coverage(
   wcs,
   coverage_id = coverage_id,
@@ -314,11 +333,11 @@ emdn_get_coverage(
 #> ....|-- upperCorner: 58 6.5 "2016-11-16T01:00:00"
 #> ✔ Coverage "Emodnetbio__aca_spp_19582016_L1" downloaded succesfully as a
 #> terra <SpatRaster> .
-#> class       : SpatRaster 
+#> class       : SpatRaster
 #> size        : 50, 50, 1  (nrow, ncol, nlyr)
 #> resolution  : 0.1, 0.1  (x, y)
 #> extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)
-#> coord. ref. : lon/lat WGS 84 (EPSG:4326) 
-#> source      : relative_abundance.tif 
+#> coord. ref. : lon/lat WGS 84 (EPSG:4326)
+#> source      : relative_abundance.tif
 #> name        : relative_abundance_relative-abundance
 ```

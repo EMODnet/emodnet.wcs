@@ -19,6 +19,7 @@ First let’s load the package and initiate a client to the `"biology"`
 EMODnet WCS server.
 
 ``` r
+
 library(emodnet.wcs)
 #> Loading ISO 19139 XML schemas...
 #> Loading ISO 19115-3 XML schemas...
@@ -26,6 +27,7 @@ library(emodnet.wcs)
 ```
 
 ``` r
+
 wcs <- emdn_init_wcs_client(service = "biology")
 #> ✔ WCS client created succesfully
 #> ℹ Service: <https://geo.vliz.be/geoserver/Emodnetbio/wcs>
@@ -44,6 +46,7 @@ object through the `wcs` argument to get compiled metadata from the
 server.
 
 ``` r
+
 wcs_info <- emdn_get_wcs_info(wcs = wcs)
 
 wcs_info
@@ -92,6 +95,7 @@ You can get the same information by supplying a service name to the
 `service` argument instead of a `<WCSClient>` object to argument `wcs`.
 
 ``` r
+
 emdn_get_wcs_info(service = "biology")
 #> ✔ WCS client created succesfully
 #> ℹ Service: <https://geo.vliz.be/geoserver/Emodnetbio/wcs>
@@ -148,24 +152,25 @@ help page (or use
 [`?emdn_get_wcs_info`](https://emodnet.github.io/emodnet.wcs/reference/emdn_get_wcs_info.md)
 in R).
 
-| coverage_id                                        | dim_n | dim_names                                                   | extent                      | crs       | wgs84_bbox                  | temporal_extent                           | vertical_extent | subtype               |
-|----------------------------------------------------|------:|-------------------------------------------------------------|-----------------------------|-----------|-----------------------------|-------------------------------------------|-----------------|-----------------------|
-| Emodnetbio\_\_ratio_large_to_small_19582016_L1_err |     3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA              | RectifiedGridCoverage |
-| Emodnetbio\_\_aca_spp_19582016_L1                  |     3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA              | RectifiedGridCoverage |
-| Emodnetbio\_\_cal_fin_19582016_L1_err              |     3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA              | RectifiedGridCoverage |
-| Emodnetbio\_\_cal_hel_19582016_L1_err              |     3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA              | RectifiedGridCoverage |
-| Emodnetbio\_\_met_luc_19582016_L1_err              |     3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA              | RectifiedGridCoverage |
-| Emodnetbio\_\_oit_spp_19582016_L1_err              |     3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA              | RectifiedGridCoverage |
-| Emodnetbio\_\_tem_lon_19582016_L1_err              |     3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA              | RectifiedGridCoverage |
-| Emodnetbio\_\_chli_19582016_L1_err                 |     3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA              | RectifiedGridCoverage |
-| Emodnetbio\_\_tot_lar_19582016_L1_err              |     3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA              | RectifiedGridCoverage |
-| Emodnetbio\_\_tot_sma_19582016_L1_err              |     3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA              | RectifiedGridCoverage |
+| coverage_id | dim_n | dim_names | extent | crs | wgs84_bbox | temporal_extent | vertical_extent | subtype |
+|----|---:|----|----|----|----|----|----|----|
+| Emodnetbio\_\_ratio_large_to_small_19582016_L1_err | 3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA | RectifiedGridCoverage |
+| Emodnetbio\_\_aca_spp_19582016_L1 | 3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA | RectifiedGridCoverage |
+| Emodnetbio\_\_cal_fin_19582016_L1_err | 3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA | RectifiedGridCoverage |
+| Emodnetbio\_\_cal_hel_19582016_L1_err | 3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA | RectifiedGridCoverage |
+| Emodnetbio\_\_met_luc_19582016_L1_err | 3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA | RectifiedGridCoverage |
+| Emodnetbio\_\_oit_spp_19582016_L1_err | 3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA | RectifiedGridCoverage |
+| Emodnetbio\_\_tem_lon_19582016_L1_err | 3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA | RectifiedGridCoverage |
+| Emodnetbio\_\_chli_19582016_L1_err | 3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA | RectifiedGridCoverage |
+| Emodnetbio\_\_tot_lar_19582016_L1_err | 3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA | RectifiedGridCoverage |
+| Emodnetbio\_\_tot_sma_19582016_L1_err | 3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA | RectifiedGridCoverage |
 
 You can get metadata for all EMODnet WCS services using
 [`emdn_get_wcs_info_all()`](https://emodnet.github.io/emodnet.wcs/reference/emdn_get_wcs_info.md).
 Note however that this can take a long time to execute.
 
 ``` r
+
 emdn_get_wcs_info_all()
 ```
 
@@ -179,6 +184,7 @@ the same information by supplying a service name to the `service`
 argument instead of a `<WCSClient>` object to the `wcs` argument.
 
 ``` r
+
 cov_info <- emdn_get_coverage_info(
   wcs,
   coverage_ids = "Emodnetbio__aca_spp_19582016_L1"
@@ -189,12 +195,13 @@ The function returns a tibble of detailed coverage level metadata. Let’s
 take a closer look.
 
 ``` r
+
 cov_info
 ```
 
-| data_source | service_name                                 | service_url | coverage_id                       | band_description   | band_uom   | constraint                   | nil_value | dim_n | dim_names                                                   | grid_size | resolution        | extent                      | crs       | wgs84_extent                | temporal_extent                           | vertical_extent | subtype               | fn_seq_rule | fn_start_point | fn_axis_order |
-|-------------|----------------------------------------------|-------------|-----------------------------------|--------------------|------------|------------------------------|----------:|------:|-------------------------------------------------------------|-----------|-------------------|-----------------------------|-----------|-----------------------------|-------------------------------------------|-----------------|-----------------------|-------------|----------------|---------------|
-| emodnet_wcs | https://geo.vliz.be/geoserver/Emodnetbio/wcs | biology     | Emodnetbio\_\_aca_spp_19582016_L1 | relative_abundance | W.m-2.Sr-1 | -3.4028235e+38-3.4028235e+38 |  9.97e+36 |     3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | 951x401   | 0.1 Deg x 0.1 Deg | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA              | RectifiedGridCoverage | Linear      | 0,0            | +2,+1         |
+| data_source | service_name | service_url | coverage_id | band_description | band_uom | constraint | nil_value | dim_n | dim_names | grid_size | resolution | extent | crs | wgs84_extent | temporal_extent | vertical_extent | subtype | fn_seq_rule | fn_start_point | fn_axis_order |
+|----|----|----|----|----|----|----|---:|---:|----|----|----|----|----|----|----|----|----|----|----|----|
+| emodnet_wcs | https://geo.vliz.be/geoserver/Emodnetbio/wcs | biology | Emodnetbio\_\_aca_spp_19582016_L1 | relative_abundance | W.m-2.Sr-1 | -3.4028235e+38-3.4028235e+38 | 9.97e+36 | 3 | lat(deg):geographic; long(deg):geographic; time(s):temporal | 951x401 | 0.1 Deg x 0.1 Deg | -75.05, 34.95, 20.05, 75.05 | EPSG:4326 | -75.05, 34.95, 20.05, 75.05 | 1958-02-16T01:00:00 - 2016-11-16T01:00:00 | NA | RectifiedGridCoverage | Linear | 0,0 | +2,+1 |
 
 For details on these metadata, have a look at the
 [`emdn_get_coverage_info()`](https://emodnet.github.io/emodnet.wcs/reference/emdn_get_wcs_info.md)
@@ -226,6 +233,7 @@ service with function
 [`emdn_get_coverage_ids()`](https://emodnet.github.io/emodnet.wcs/reference/emdn_get_coverage_summaries.md)
 
 ``` r
+
 emdn_get_coverage_ids(wcs)
 #>  [1] "Emodnetbio__ratio_large_to_small_19582016_L1_err"
 #>  [2] "Emodnetbio__aca_spp_19582016_L1"                 
@@ -242,6 +250,7 @@ emdn_get_coverage_ids(wcs)
 You can also check whether a coverage has a given type of dimension.
 
 ``` r
+
 # Check for temporal dimension
 emdn_has_dimension(
   wcs,
@@ -265,6 +274,7 @@ Or get the coefficients (points in a given dimension) at which data are
 available for specific coverages.
 
 ``` r
+
 emdn_get_coverage_dim_coefs(
   wcs,
   coverage_ids = "Emodnetbio__aca_spp_19582016_L1",
@@ -363,6 +373,7 @@ You can use
 to get `<WCSCoverageSummary>` objects for specific coverages.
 
 ``` r
+
 summaries <- emdn_get_coverage_summaries(
   wcs,
   coverage_ids = "Emodnetbio__aca_spp_19582016_L1"
@@ -385,6 +396,7 @@ Alternativelly you can request `<WCSCoverageSummary>` objects for all
 coverages available from a service.
 
 ``` r
+
 emdn_get_coverage_summaries_all(wcs)
 ```
 
@@ -403,6 +415,7 @@ Let’s work with a single `<WCSCoverageSummary>` object returned in the
 previous step for coverage `"Emodnetbio__aca_spp_19582016_L1"`.
 
 ``` r
+
 summary <- summaries[[1]]
 ```
 
@@ -413,6 +426,7 @@ given in the same Coordinate Reference System as the coverage. The
 bounding box is approximate and might overestimate coverage.
 
 ``` r
+
 emdn_get_bbox(summary)
 #>   xmin   ymin   xmax   ymax 
 #> -75.05  34.95  20.05  75.05
@@ -425,6 +439,7 @@ System 1984 (WGS84) Coordinate Reference System (or EPSG:4326). The
 bounding box is approximate and might overestimate coverage.
 
 ``` r
+
 emdn_get_WGS84bbox(summary)
 #>   xmin   ymin   xmax   ymax 
 #> -75.05  34.95  20.05  75.05
@@ -437,6 +452,7 @@ convert them to NA (see also `nil_values_as_na` argument of
 [`emdn_get_coverage()`](https://emodnet.github.io/emodnet.wcs/reference/emdn_get_coverage.md)).
 
 ``` r
+
 emdn_get_band_nil_values(summary)
 #> relative_abundance 
 #>        9.96921e+36
@@ -447,6 +463,7 @@ emdn_get_band_nil_values(summary)
 Get the band descriptions of a coverage.
 
 ``` r
+
 emdn_get_band_descriptions(summary)
 #> [1] "relative_abundance"
 #> attr(,"uom")
@@ -459,6 +476,7 @@ Get the units of measurement of the data contained in the bands values
 of a coverage.
 
 ``` r
+
 emdn_get_band_uom(summary)
 #> relative_abundance 
 #>       "W.m-2.Sr-1"
@@ -470,6 +488,7 @@ Get the range of values of the data allowed in the bands of the coverage
 (for requests).
 
 ``` r
+
 emdn_get_band_constraints(summary)
 #> $relative_abundance
 #> [1] -3.402823e+38  3.402823e+38
@@ -480,6 +499,7 @@ emdn_get_band_constraints(summary)
 Get the grid size of a coverage.
 
 ``` r
+
 emdn_get_grid_size(summary)
 #> ncol nrow 
 #>  951  401
@@ -490,6 +510,7 @@ emdn_get_grid_size(summary)
 Get the resolution of a coverage.
 
 ``` r
+
 emdn_get_resolution(summary)
 #>   x   y 
 #> 0.1 0.1 
@@ -502,6 +523,7 @@ emdn_get_resolution(summary)
 Get the grid function of a coverage.
 
 ``` r
+
 emdn_get_coverage_function(summary)
 #> $sequence_rule
 #> [1] "Linear"
@@ -518,6 +540,7 @@ emdn_get_coverage_function(summary)
 Get the temporal extent of a coverage.
 
 ``` r
+
 emdn_get_temporal_extent(summary)
 #> [1] "1958-02-16T01:00:00" "2016-11-16T01:00:00"
 ```
@@ -527,6 +550,7 @@ emdn_get_temporal_extent(summary)
 Get the vertical (elevation) extent of a coverage.
 
 ``` r
+
 emdn_get_vertical_extent(summary)
 #> [1] NA
 ```
@@ -538,6 +562,7 @@ Information includes dimension label, type, unit and range (in tibble
 format).
 
 ``` r
+
 emdn_get_dimensions_info(summary)
 #> lat(deg):geographic; long(deg):geographic; time(s):temporal
 emdn_get_dimensions_info(summary, format = "list")
@@ -586,6 +611,7 @@ emdn_get_dimensions_info(summary, format = "tibble")
 Get coverage dimension names (labels) and units.
 
 ``` r
+
 emdn_get_dimensions_names(summary)
 #> [1] "Lat (Deg), Long (Deg), time (s)"
 ```
@@ -595,6 +621,7 @@ emdn_get_dimensions_names(summary)
 Get number of coverage dimensions.
 
 ``` r
+
 emdn_get_dimensions_n(summary)
 #> [1] 3
 ```
@@ -604,6 +631,7 @@ emdn_get_dimensions_n(summary)
 Get dimensions types of a coverage.
 
 ``` r
+
 emdn_get_dimension_types(summary)
 #> [1] "geographic" "geographic" "temporal"
 ```

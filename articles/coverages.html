@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Downloading Coverages • emodnet.wcs</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Downloading Coverages">
 </head>
@@ -169,12 +169,12 @@ box we created to the <code>bbox</code> argument.</p>
 <span><span class="co">#&gt; <span style="color: #0000BB;">terra</span> <span style="color: #0000BB;">&lt;SpatRaster&gt;</span> .</span></span>
 <span></span>
 <span><span class="va">cov_1</span></span>
-<span><span class="co">#&gt; class       : SpatRaster </span></span>
+<span><span class="co">#&gt; class       : SpatRaster</span></span>
 <span><span class="co">#&gt; size        : 50, 50, 1  (nrow, ncol, nlyr)</span></span>
 <span><span class="co">#&gt; resolution  : 0.1, 0.1  (x, y)</span></span>
 <span><span class="co">#&gt; extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)</span></span>
-<span><span class="co">#&gt; coord. ref. : lon/lat WGS 84 (EPSG:4326) </span></span>
-<span><span class="co">#&gt; source      : Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5.tif </span></span>
+<span><span class="co">#&gt; coord. ref. : lon/lat WGS 84 (EPSG:4326)</span></span>
+<span><span class="co">#&gt; source      : Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5.tif</span></span>
 <span><span class="co">#&gt; name        : Emodnetbio__aca_spp_19582016_L~,1.5,58,6.5_relative-abundance</span></span></code></pre></div>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">cov_1</span><span class="op">)</span></span></code></pre></div>
@@ -205,12 +205,12 @@ download, you can use the <code>nil_values_as_na</code> argument.</p>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> nil values <span style="color: #0000BB;">9.96920996838687e+36</span> converted to <span style="color: #00BB00;">NA</span> on Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5_relative-abundance band.</span></span>
 <span></span>
 <span><span class="va">cov_nil_to_na</span></span>
-<span><span class="co">#&gt; class       : SpatRaster </span></span>
+<span><span class="co">#&gt; class       : SpatRaster</span></span>
 <span><span class="co">#&gt; size        : 50, 50, 1  (nrow, ncol, nlyr)</span></span>
 <span><span class="co">#&gt; resolution  : 0.1, 0.1  (x, y)</span></span>
 <span><span class="co">#&gt; extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)</span></span>
-<span><span class="co">#&gt; coord. ref. : lon/lat WGS 84 (EPSG:4326) </span></span>
-<span><span class="co">#&gt; source      : Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5.tif </span></span>
+<span><span class="co">#&gt; coord. ref. : lon/lat WGS 84 (EPSG:4326)</span></span>
+<span><span class="co">#&gt; source      : Emodnetbio__aca_spp_19582016_L1_2016-11-16T01_00_00_53,1.5,58,6.5.tif</span></span>
 <span><span class="co">#&gt; name        : Emodnetbio__aca_spp_19582016_L~,1.5,58,6.5_relative-abundance</span></span></code></pre></div>
 <p>Now, nil values are encoded as <code>NA</code> and if there are such
 nil values, plotting is much more informative as the range of values
@@ -267,14 +267,14 @@ timepoints to the <code>time</code> argument.</p>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> nil values <span style="color: #0000BB;">9.96920996838687e+36</span> converted to <span style="color: #00BB00;">NA</span> on Emodnetbio__aca_spp_19582016_L1_1958-08-16T01_00_00_53,1.5,58,6.5_relative-abundance band.</span></span></code></pre></div>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cov_2</span></span>
-<span><span class="co">#&gt; class       : SpatRaster </span></span>
+<span><span class="co">#&gt; class       : SpatRaster</span></span>
 <span><span class="co">#&gt; size        : 50, 50, 3  (nrow, ncol, nlyr)</span></span>
 <span><span class="co">#&gt; resolution  : 0.1, 0.1  (x, y)</span></span>
 <span><span class="co">#&gt; extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)</span></span>
-<span><span class="co">#&gt; coord. ref. : lon/lat WGS 84 (EPSG:4326) </span></span>
-<span><span class="co">#&gt; sources     : Emodnetbio__aca_spp_19582016_L1_1958-02-16T01_00_00_53,1.5,58,6.5.tif  </span></span>
-<span><span class="co">#&gt;               Emodnetbio__aca_spp_19582016_L1_1958-05-16T01_00_00_53,1.5,58,6.5.tif  </span></span>
-<span><span class="co">#&gt;               Emodnetbio__aca_spp_19582016_L1_1958-08-16T01_00_00_53,1.5,58,6.5.tif  </span></span>
+<span><span class="co">#&gt; coord. ref. : lon/lat WGS 84 (EPSG:4326)</span></span>
+<span><span class="co">#&gt; sources     : Emodnetbio__aca_spp_19582016_L1_1958-02-16T01_00_00_53,1.5,58,6.5.tif</span></span>
+<span><span class="co">#&gt;               Emodnetbio__aca_spp_19582016_L1_1958-05-16T01_00_00_53,1.5,58,6.5.tif</span></span>
+<span><span class="co">#&gt;               Emodnetbio__aca_spp_19582016_L1_1958-08-16T01_00_00_53,1.5,58,6.5.tif</span></span>
 <span><span class="co">#&gt; names       : Emodnetbio~-abundance, Emodnetbio~-abundance, Emodnetbio~-abundance</span></span></code></pre></div>
 <p>Note that this returns a <code>&lt;SpatRaster&gt;</code> Stack
 instead of a single <code>&lt;SpatRaster&gt;</code>.</p>
@@ -331,12 +331,12 @@ argument.</p>
 <span><span class="co">#&gt; ....|-- <span style="font-style: italic;">upperCorner</span>: <span style="background-color: #BBBBBB;">58 6.5 "2016-11-16T01:00:00"</span></span></span>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> Coverage <span style="color: #0000BB;">"Emodnetbio__aca_spp_19582016_L1"</span> downloaded succesfully as a</span></span>
 <span><span class="co">#&gt; <span style="color: #0000BB;">terra</span> <span style="color: #0000BB;">&lt;SpatRaster&gt;</span> .</span></span>
-<span><span class="co">#&gt; class       : SpatRaster </span></span>
+<span><span class="co">#&gt; class       : SpatRaster</span></span>
 <span><span class="co">#&gt; size        : 50, 50, 1  (nrow, ncol, nlyr)</span></span>
 <span><span class="co">#&gt; resolution  : 0.1, 0.1  (x, y)</span></span>
 <span><span class="co">#&gt; extent      : 1.55, 6.55, 52.95, 57.95  (xmin, xmax, ymin, ymax)</span></span>
-<span><span class="co">#&gt; coord. ref. : lon/lat WGS 84 (EPSG:4326) </span></span>
-<span><span class="co">#&gt; source      : relative_abundance.tif </span></span>
+<span><span class="co">#&gt; coord. ref. : lon/lat WGS 84 (EPSG:4326)</span></span>
+<span><span class="co">#&gt; source      : relative_abundance.tif</span></span>
 <span><span class="co">#&gt; name        : relative_abundance_relative-abundance</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
@@ -350,7 +350,7 @@ argument.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>

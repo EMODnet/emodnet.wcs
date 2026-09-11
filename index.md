@@ -28,6 +28,7 @@ against multi-dimensional backend formats.
 You can install the development version of emodnet.wcs from GitHub with:
 
 ``` r
+
 # install.packages("pak")
 pak::pak("EMODnet/emodnet.wcs")
 ```
@@ -35,6 +36,7 @@ pak::pak("EMODnet/emodnet.wcs")
 Load the library
 
 ``` r
+
 library(emodnet.wcs)
 #> Loading ISO 19139 XML schemas...
 #> Loading ISO 19115-3 XML schemas...
@@ -46,6 +48,7 @@ client created successfully”, set the `"emodnet.wcs.quiet"` option to
 `TRUE`.
 
 ``` r
+
 options("emodnet.wcs.quiet" = TRUE)
 ```
 
@@ -54,13 +57,13 @@ options("emodnet.wcs.quiet" = TRUE)
 All available services are contained in the tibble returned by
 [`emdn_wcs()`](https://emodnet.github.io/emodnet.wcs/reference/emdn_wcs.md).
 
-| service_name     | service_url                                                                   |
-|:-----------------|:------------------------------------------------------------------------------|
-| bathymetry       | <https://ows.emodnet-bathymetry.eu/wcs>                                       |
-| biology          | <https://geo.vliz.be/geoserver/Emodnetbio/wcs>                                |
-| new_biology      | <https://ows.emodnet.eu/geoserver/biology/ows>                                |
-| human_activities | <https://ows.emodnet-humanactivities.eu/wcs>                                  |
-| seabed_habitats  | <https://ows.emodnet-seabedhabitats.eu/geoserver/emodnet_open_maplibrary/wcs> |
+| service_name | service_url |
+|:---|:---|
+| bathymetry | <https://ows.emodnet-bathymetry.eu/wcs> |
+| biology | <https://geo.vliz.be/geoserver/Emodnetbio/wcs> |
+| new_biology | <https://ows.emodnet.eu/geoserver/biology/ows> |
+| human_activities | <https://ows.emodnet-humanactivities.eu/wcs> |
+| seabed_habitats | <https://ows.emodnet-seabedhabitats.eu/geoserver/emodnet_open_maplibrary/wcs> |
 
 To explore available services you can use
 [`View()`](https://rdrr.io/r/utils/View.html) or your usual way to
@@ -71,6 +74,7 @@ explore `data.frames`.
 Create new WCS Client. Specify the service using the `service` argument.
 
 ``` r
+
 wcs <- emdn_init_wcs_client(service = "biology")
 #> ✔ WCS client created succesfully
 #> ℹ Service: <https://geo.vliz.be/geoserver/Emodnetbio/wcs>
@@ -83,6 +87,7 @@ Get service level and a subset of coverage level metadata, compiled for
 easy review by supplying a `WCSClient` object to `emdn_get_wcs_info`.
 
 ``` r
+
 emdn_get_wcs_info(wcs)
 #> $data_source
 #> [1] "emodnet_wcs"
@@ -129,6 +134,7 @@ Info can also be extracted using a service name instead of a `WCSClient`
 object.
 
 ``` r
+
 emdn_get_wcs_info(service = "biology")
 #> ✔ WCS client created succesfully
 #> ℹ Service: <https://geo.vliz.be/geoserver/Emodnetbio/wcs>
@@ -177,6 +183,7 @@ emdn_get_wcs_info(service = "biology")
 Get more detailed coverage metadata about specific coverage.
 
 ``` r
+
 emdn_get_coverage_info(
   wcs,
   coverage_ids = "Emodnetbio__aca_spp_19582016_L1"
@@ -203,6 +210,7 @@ The package also offers a number of functions for extracting individual
 metadata in more usable forms. e.g.
 
 ``` r
+
 emdn_get_coverage_ids(wcs)
 #>  [1] "Emodnetbio__ratio_large_to_small_19582016_L1_err"
 #>  [2] "Emodnetbio__aca_spp_19582016_L1"                 
@@ -229,6 +237,7 @@ The following example downloads a spatial subset of a coverage using a
 bounding box.
 
 ``` r
+
 wcs <- emdn_init_wcs_client(service = "human_activities")
 #> ✔ WCS client created succesfully
 #> ℹ Service: <https://ows.emodnet-humanactivities.eu/wcs>
@@ -257,6 +266,7 @@ cov <- emdn_get_coverage(
 ```
 
 ``` r
+
 terra::plot(log(cov))
 ```
 
@@ -272,6 +282,7 @@ To cite emodnet.wcs, please use the output from
 `citation(package = "emodnet.wcs")`.
 
 ``` r
+
 citation(package = "emodnet.wcs")
 #> To cite package 'emodnet.wcs' in publications use:
 #> 
@@ -333,6 +344,7 @@ analysis and integration into workflows. For example, researchers can
 retrieve datasets on vessel density.
 
 ``` r
+
 # install.packages("rerrdap")
 library(rerddap)
 #> Registered S3 method overwritten by 'hoardr':

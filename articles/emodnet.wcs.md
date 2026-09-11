@@ -46,6 +46,7 @@ To view the available services and their endpoints, you can use
 [`emdn_wcs()`](https://emodnet.github.io/emodnet.wcs/reference/emdn_wcs.md)
 
 ``` r
+
 library(emodnet.wcs)
 #> Loading ISO 19139 XML schemas...
 #> Loading ISO 19115-3 XML schemas...
@@ -53,6 +54,7 @@ library(emodnet.wcs)
 ```
 
 ``` r
+
 emdn_wcs()
 #> # A tibble: 5 × 2
 #>   service_name     service_url                                                  
@@ -74,6 +76,7 @@ create a new WCS Client. We specify the service we want to connect to
 using the `service` argument.
 
 ``` r
+
 wcs <- emdn_init_wcs_client("biology")
 #> ✔ WCS client created succesfully
 #> ℹ Service: <https://geo.vliz.be/geoserver/Emodnetbio/wcs>
@@ -93,6 +96,7 @@ There are 3 levels of potential logging:
 The following example sets the logger to `"DEBUG"`.
 
 ``` r
+
 debug_wcs <- emdn_init_wcs_client("biology", logger = "DEBUG")
 #> [ows4R][INFO] OWSGetCapabilities - Fetching https://geo.vliz.be/geoserver/Emodnetbio/wcs?service=WCS&version=2.0.1&request=GetCapabilities
 #> ✔ WCS client created succesfully
@@ -106,6 +110,7 @@ functions returns an R6 object of class
 [`<WCSClient>`](https://eblondel.github.io/ows4R/reference/WCSClient.html).
 
 ``` r
+
 debug_wcs
 #> <WCSClient>
 #> ....|-- url: https://geo.vliz.be/geoserver/Emodnetbio/wcs
@@ -119,6 +124,7 @@ documentation](https://eblondel.github.io/ows4R/articles/wcs.html) for
 details).
 
 ``` r
+
 debug_wcs$getUrl()
 #> [1] "https://geo.vliz.be/geoserver/Emodnetbio/wcs"
 
@@ -140,6 +146,7 @@ Get service level and a subset of coverage level metadata, compiled for
 easy review.
 
 ``` r
+
 emdn_get_wcs_info(wcs = wcs)
 #> $data_source
 #> [1] "emodnet_wcs"
@@ -185,6 +192,7 @@ emdn_get_wcs_info(wcs = wcs)
 Get more detailed coverage metadata about specific coverage.
 
 ``` r
+
 emdn_get_coverage_info(
   wcs,
   coverage_ids = "Emodnetbio__cal_fin_19582016_L1_err"
@@ -204,6 +212,7 @@ The package offers a number of functions for extracting individual
 metadata in more usable forms, for instance:
 
 ``` r
+
 emdn_get_coverage_ids(wcs)
 #>  [1] "Emodnetbio__ratio_large_to_small_19582016_L1_err"
 #>  [2] "Emodnetbio__aca_spp_19582016_L1"                 
@@ -230,6 +239,7 @@ The following example downloads a spatial subset of a coverage using a
 bounding box.
 
 ``` r
+
 coverage_id <- "Emodnetbio__cal_fin_19582016_L1_err"
 cov <- emdn_get_coverage(
   wcs,
@@ -249,16 +259,17 @@ cov <- emdn_get_coverage(
 #> terra <SpatRaster> .
 
 cov
-#> class       : SpatRaster 
+#> class       : SpatRaster
 #> size        : 50, 50, 2  (nrow, ncol, nlyr)
 #> resolution  : 0.1, 0.1  (x, y)
 #> extent      : 0.05, 5.05, 39.95, 44.95  (xmin, xmax, ymin, ymax)
-#> coord. ref. : lon/lat WGS 84 (EPSG:4326) 
-#> source      : Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif 
+#> coord. ref. : lon/lat WGS 84 (EPSG:4326)
+#> source      : Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_40,0,45,5.tif
 #> names       : Emodnetbio__cal~ative-abundance, Emodnetbio__cal~_relative-error
 ```
 
 ``` r
+
 terra::plot(cov)
 ```
 

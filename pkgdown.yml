@@ -1,11 +1,11 @@
-pandoc: 3.1.11
-pkgdown: 2.2.0
+pandoc: 3.8.3
+pkgdown: 2.2.1
 pkgdown_sha: ~
 articles:
   articles/coverages: coverages.html
   emodnet.wcs: emodnet.wcs.html
   articles/metadata: metadata.html
-last_built: 2026-04-20T12:23Z
+last_built: 2026-09-11T10:58Z
 urls:
   reference: https://emodnet.github.io/emodnet.wcs/reference
   article: https://emodnet.github.io/emodnet.wcs/articles
