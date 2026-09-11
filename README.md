@@ -307,6 +307,8 @@ citation(package = "emodnet.wcs")
 
 ## Unlock the Full Potential of the EMODnet Web Services: Access Feature and Gridded datasets.
 
+For more examples of use of EMODnet data in R, refer to the [EMODnet Biology Geospatial R Tutorials](https://emodnet.github.io/emodnet-bio-r-geo-tutorials/).
+
 ### Access EMODnet’s Web Feature Service data through emodnet.wfs
 
 The goal of [emodnet.wfs](https://docs.ropensci.org/emodnet.wfs) is to
