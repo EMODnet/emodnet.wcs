@@ -285,20 +285,20 @@ To cite emodnet.wcs, please use the output from
 citation(package = "emodnet.wcs")
 #> To cite package 'emodnet.wcs' in publications use:
 #> 
-#>   Krystalli A (2026). _emodnet.wcs: Access EMODnet Web Coverage Service
-#>   data through R_. R package version 0.0.1.9000. Integrated data
-#>   products created under the European Marine Observation Data Network
-#>   (EMODnet) Biology project (EASME/EMFF/2017/1.3.1.2/02/SI2.789013),
-#>   funded by the European Union under Regulation (EU) No 508/2014 of the
-#>   European Parliament and of the Council of 15 May 2014 on the European
-#>   Maritime and Fisheries Fund,
-#>   <https://github.com/EMODnet/emodnet.wcs>.
+#>   Krystalli A, Fernández-Bejarano S, Salmon M (2026). _emodnet.wcs:
+#>   Access EMODnet Web Coverage Service data through R_. R package
+#>   version 0.0.1.9000. Integrated data products created under the
+#>   European Marine Observation Data Network (EMODnet) Biology project
+#>   (EASME/EMFF/2017/1.3.1.2/02/SI2.789013), funded by the European Union
+#>   under Regulation (EU) No 508/2014 of the European Parliament and of
+#>   the Council of 15 May 2014 on the European Maritime and Fisheries
+#>   Fund, <https://github.com/EMODnet/emodnet.wcs>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
 #>   @Manual{,
 #>     title = {{emodnet.wcs}: Access EMODnet Web Coverage Service data through R},
-#>     author = {Anna Krystalli},
+#>     author = {Anna Krystalli and Salvador Fernández-Bejarano and Maëlle Salmon},
 #>     year = {2026},
 #>     note = {R package version 0.0.1.9000. Integrated data products created under the European Marine Observation Data Network (EMODnet) Biology project (EASME/EMFF/2017/1.3.1.2/02/SI2.789013), funded by the European Union under Regulation (EU) No 508/2014 of the European Parliament and of the Council of 15 May 2014 on the European Maritime and Fisheries Fund},
 #>     url = {https://github.com/EMODnet/emodnet.wcs},
@@ -354,7 +354,7 @@ erddap_url <- "https://erddap.emodnet.eu/erddap/"
 
 # Inspect all available datasets
 ed_datasets(url = erddap_url)
-#> # A tibble: 8 × 16
+#> # A tibble: 7 × 16
 #>   griddap Subset tabledap Make.A.Graph wms   files Title Summary FGDC  ISO.19115
 #>   <chr>   <chr>  <chr>    <chr>        <chr> <chr> <chr> <chr>   <chr> <chr>    
 #> 1 ""      "/erd… /erddap… /erddap/tab… ""    ""    * Th… "This … ""    ""       
@@ -364,7 +364,6 @@ ed_datasets(url = erddap_url)
 #> 5 ""      ""     /erddap… /erddap/tab… ""    "/er… Pres… "The p… "/er… "/erddap…
 #> 6 ""      ""     /erddap… /erddap/tab… ""    ""    PSMS… "Perma… ""    ""       
 #> 7 ""      ""     /erddap… /erddap/tab… ""    "/er… PSMS… "Perma… ""    ""       
-#> 8 ""      "/erd… /erddap… /erddap/tab… ""    "/er… TAO/… "This … "/er… "/erddap…
 #> # ℹ 6 more variables: Info <chr>, Background.Info <chr>, RSS <chr>,
 #> #   Email <chr>, Institution <chr>, Dataset.ID <chr>
 
@@ -396,7 +395,7 @@ human_activities_data_info <- info(
   url = erddap_url
 )
 human_activities_data_info
-#> <ERDDAP info> humanactivities_9f8a_3389_f08a 
+#> <ERDDAP(TM) info> humanactivities_9f8a_3389_f08a 
 #>  Base URL: https://erddap.emodnet.eu/erddap 
 #>  Dataset Type: griddap 
 #>  Dimensions (range):  

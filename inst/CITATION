@@ -13,7 +13,9 @@ bibentry(
   bibtype = "Manual",
   title = "{emodnet.wcs}: Access EMODnet Web Coverage Service data through R",
   author = c(
-    person("Anna", "Krystalli")
+    person("Anna", "Krystalli"),
+    person("Salvador", "Fernández-Bejarano"),
+    person("Maëlle", "Salmon")
   ),
   year = year,
   note = note,
