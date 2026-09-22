@@ -11,7 +11,7 @@ Authors@R: c(
            comment = c(ROR = "0496vr396")),
     person("Pepijn", "de Vries", , "pepijn.devries@outlook.com", role = "ctb",
            comment = c(ORCID = "0000-0002-7961-6646")),
-    person("Maëlle", "Salmon", , "maelle.salmon@gmail.com", role = c("cre", "aut"),
+    person("Maëlle", "Salmon", , "msmaellesalmon@gmail.com", role = c("cre", "aut"),
            comment = c(ORCID = "0000-0002-2815-0399"))
   )
 Description: Access and interrogate EMODnet Web Coverage Service data
