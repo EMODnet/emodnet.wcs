@@ -10,7 +10,7 @@ environmental modeling. See below for available Services (data sources).
 This package was developed by Sheffield University as part of EMODnet
 Biology WP4.
 
-[Web Coverage services (WCS)](https://www.ogc.org/standards/wcs) is a
+[Web Coverage services (WCS)](https://www.ogc.org/standards/wcs/) is a
 standard created by the OGC that refers to the receiving of geospatial
 information as ‘coverages’: digital geospatial information representing
 space-varying phenomena. One can think of it as Web Feature Service
@@ -314,7 +314,7 @@ Tutorials](https://emodnet.github.io/emodnet-bio-r-geo-tutorials/).
 
 ### Access EMODnet’s Web Feature Service data through emodnet.wfs
 
-The goal of [emodnet.wfs](https://docs.ropensci.org/emodnet.wfs) is to
+The goal of [emodnet.wfs](https://docs.ropensci.org/emodnet.wfs/) is to
 allow interrogation of and access to [EMODnet’s, European Marine
 Observation and Data Network, geographic vector
 data](https://emodnet.ec.europa.eu/en/emodnet-web-service-documentation#inline-nav-3)

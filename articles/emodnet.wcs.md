@@ -2,7 +2,7 @@
 
 ## WCS Basics
 
-The [Web Coverage Service (WCS)](https://www.ogc.org/standards/wcs)is a
+The [Web Coverage Service (WCS)](https://www.ogc.org/standards/wcs/)is a
 standard issued by the Open Geospatial Consortium (OGC). It is designed
 to simplify remote access to coverages, commonly known as raster maps in
 GIS. WCS functions over the HTTP protocol, setting out how to obtain
