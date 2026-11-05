@@ -117,7 +117,6 @@ we created to the `bbox` argument.
 cov_1 <- emdn_get_coverage(wcs, coverage_id = coverage_id, bbox = bbox)
 #> Loading required package: sf
 #> Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.4.0; sf_use_s2() is FALSE
-#> No encoding supplied: defaulting to UTF-8.
 #> ── Downloading coverage "Emodnetbio__aca_spp_19582016_L1" ──────────────────────
 #> <GMLEnvelope>
 #> ....|-- lowerCorner: 53 1.5 "1958-02-16T01:00:00"

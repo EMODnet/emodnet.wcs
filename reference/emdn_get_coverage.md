@@ -123,7 +123,6 @@ emdn_get_coverage(wcs,
     xmax = 5, ymax = 45
   )
 )
-#> No encoding supplied: defaulting to UTF-8.
 #> ── Downloading coverage "Emodnetbio__cal_fin_19582016_L1_err" ──────────────────
 #> <GMLEnvelope>
 #> ....|-- lowerCorner: 40 0 "1958-02-16T01:00:00"
