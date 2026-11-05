@@ -111,14 +111,14 @@ test_that("`nil_values_as_na = TRUE` converts NaN nil values to NA", {
 
   # no conversion
   summary <- emdn_get_coverage_summaries(hab_wcs, coverage_id)[[1]]
-  expect_equal(emdn_get_band_nil_values(summary), c(GRAY_INDEX = NaN))
+  expect_identical(emdn_get_band_nil_values(summary), c(GRAY_INDEX = NaN))
   r0 <- emdn_get_coverage(
     wcs = hab_wcs,
     coverage_id = coverage_id,
     bbox = test_bbox,
     nil_values_as_na = FALSE
   )
-  expect_equal(sum(is.nan(terra::values(r0))), 4)
+  expect_identical(sum(is.nan(terra::values(r0))), 4L)
 
   # conversion
   expect_snapshot(
@@ -129,7 +129,7 @@ test_that("`nil_values_as_na = TRUE` converts NaN nil values to NA", {
       nil_values_as_na = TRUE
     )
   )
-  expect_equal(sum(is.nan(terra::values(r))), 0)
+  expect_identical(sum(is.nan(terra::values(r))), 0L)
 })
 
 test_that("rangesubset", {
@@ -144,8 +144,8 @@ test_that("rangesubset", {
     rangesubset = "Relative abundance"
   )
   expect_s4_class(cov, "SpatRaster")
-  expect_identical(
-    names(cov),
+  expect_named(
+    cov,
     "Emodnetbio__cal_fin_19582016_L1_err_2016-11-16T01_00_00_50,-4,62,10_relative-abundance"
   )
 })
