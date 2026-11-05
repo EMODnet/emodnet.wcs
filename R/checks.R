@@ -197,6 +197,7 @@ error_wrap <- function(expr) {
         " Returning {.emph {cli::col_br_magenta('NA')}}"
       )
     )
+    return(NA)
   }
 
   out
