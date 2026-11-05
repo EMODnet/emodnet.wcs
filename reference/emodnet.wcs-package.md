@@ -14,12 +14,12 @@ Useful links:
 
 ## Author
 
-**Maintainer**: Maëlle Salmon <maelle.salmon@gmail.com>
+**Maintainer**: Maëlle Salmon <msmaellesalmon@gmail.com>
 ([ORCID](https://orcid.org/0000-0002-2815-0399))
 
 Authors:
 
-- Maëlle Salmon <maelle.salmon@gmail.com>
+- Maëlle Salmon <msmaellesalmon@gmail.com>
   ([ORCID](https://orcid.org/0000-0002-2815-0399))
 
 - Anna Krystalli <annakrystalli@googlemail.com>

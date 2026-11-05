@@ -1,6 +1,6 @@
 # Downloading Coverages
 
-emodnet.wcs provides functionalitly for downloading coverage data from
+emodnet.wcs provides functionality for downloading coverage data from
 EMODnet WCS services as
 [`<spatRaster>`](https://rspatial.github.io/terra/reference/SpatRaster-class.html)
 class objects from the terra package. It also allows subsetting along

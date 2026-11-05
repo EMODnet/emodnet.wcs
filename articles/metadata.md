@@ -392,7 +392,7 @@ summaries
 #> ........|-- UpperCorner: 20.05 75.05
 ```
 
-Alternativelly you can request `<WCSCoverageSummary>` objects for all
+Alternatively you can request `<WCSCoverageSummary>` objects for all
 coverages available from a service.
 
 ``` r
