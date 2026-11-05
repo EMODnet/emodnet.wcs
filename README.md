@@ -9,6 +9,8 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/EMODnet/emodnet.wcs/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EMODnet/emodnet.wcs/actions/workflows/R-CMD-check.yaml)
 [![codecov](https://app.codecov.io/gh/EMODnet/emodnet.wcs/branch/main/graph/badge.svg)](https://app.codecov.io/gh/EMODnet/emodnet.wcs)
+[![Status at rOpenSci Software Peer
+Review](https://badges.ropensci.org/809_status.svg)](https://github.com/ropensci/software-review/issues/809)
 <!-- badges: end -->
 
 The goal of emodnet.wcs is to allow interrogation of and access to
@@ -47,9 +49,6 @@ Load the library
 
 ``` r
 library(emodnet.wcs)
-#> Loading ISO 19139 XML schemas...
-#> Loading ISO 19115-3 XML schemas...
-#> Loading ISO 19139 codelists...
 ```
 
 If you want to avoid reading messages from emodnet.wcs such as “WCS
@@ -82,6 +81,9 @@ Create new WCS Client. Specify the service using the `service` argument.
 
 ``` r
 wcs <- emdn_init_wcs_client(service = "biology")
+#> Loading ISO 19139 XML schemas...
+#> Loading ISO 19115-3 XML schemas...
+#> Loading ISO 19139 codelists...
 #> ✔ WCS client created succesfully
 #> ℹ Service: <https://geo.vliz.be/geoserver/Emodnetbio/wcs>
 #> ℹ Service: "2.0.1"
@@ -287,7 +289,7 @@ citation(package = "emodnet.wcs")
 #> 
 #>   Krystalli A, Fernández-Bejarano S, Salmon M (2026). _emodnet.wcs:
 #>   Access EMODnet Web Coverage Service data through R_. R package
-#>   version 0.0.1.9000. Integrated data products created under the
+#>   version 0.0.2.9000. Integrated data products created under the
 #>   European Marine Observation Data Network (EMODnet) Biology project
 #>   (EASME/EMFF/2017/1.3.1.2/02/SI2.789013), funded by the European Union
 #>   under Regulation (EU) No 508/2014 of the European Parliament and of
@@ -300,14 +302,16 @@ citation(package = "emodnet.wcs")
 #>     title = {{emodnet.wcs}: Access EMODnet Web Coverage Service data through R},
 #>     author = {Anna Krystalli and Salvador Fernández-Bejarano and Maëlle Salmon},
 #>     year = {2026},
-#>     note = {R package version 0.0.1.9000. Integrated data products created under the European Marine Observation Data Network (EMODnet) Biology project (EASME/EMFF/2017/1.3.1.2/02/SI2.789013), funded by the European Union under Regulation (EU) No 508/2014 of the European Parliament and of the Council of 15 May 2014 on the European Maritime and Fisheries Fund},
+#>     note = {R package version 0.0.2.9000. Integrated data products created under the European Marine Observation Data Network (EMODnet) Biology project (EASME/EMFF/2017/1.3.1.2/02/SI2.789013), funded by the European Union under Regulation (EU) No 508/2014 of the European Parliament and of the Council of 15 May 2014 on the European Maritime and Fisheries Fund},
 #>     url = {https://github.com/EMODnet/emodnet.wcs},
 #>   }
 ```
 
 ## Unlock the Full Potential of the EMODnet Web Services: Access Feature and Gridded datasets.
 
-For more examples of use of EMODnet data in R, refer to the [EMODnet Biology Geospatial R Tutorials](https://emodnet.github.io/emodnet-bio-r-geo-tutorials/).
+For more examples of use of EMODnet data in R, refer to the [EMODnet
+Biology Geospatial R
+Tutorials](https://emodnet.github.io/emodnet-bio-r-geo-tutorials/).
 
 ### Access EMODnet’s Web Feature Service data through emodnet.wfs
 
@@ -356,7 +360,7 @@ erddap_url <- "https://erddap.emodnet.eu/erddap/"
 
 # Inspect all available datasets
 ed_datasets(url = erddap_url)
-#> # A tibble: 7 × 16
+#> # A tibble: 8 × 16
 #>   griddap Subset tabledap Make.A.Graph wms   files Title Summary FGDC  ISO.19115
 #>   <chr>   <chr>  <chr>    <chr>        <chr> <chr> <chr> <chr>   <chr> <chr>    
 #> 1 ""      "/erd… /erddap… /erddap/tab… ""    ""    * Th… "This … ""    ""       
@@ -366,6 +370,7 @@ ed_datasets(url = erddap_url)
 #> 5 ""      ""     /erddap… /erddap/tab… ""    "/er… Pres… "The p… "/er… "/erddap…
 #> 6 ""      ""     /erddap… /erddap/tab… ""    ""    PSMS… "Perma… ""    ""       
 #> 7 ""      ""     /erddap… /erddap/tab… ""    "/er… PSMS… "Perma… ""    ""       
+#> 8 ""      "/erd… /erddap… /erddap/tab… ""    "/er… TAO/… "This … "/er… "/erddap…
 #> # ℹ 6 more variables: Info <chr>, Background.Info <chr>, RSS <chr>,
 #> #   Email <chr>, Institution <chr>, Dataset.ID <chr>
 
