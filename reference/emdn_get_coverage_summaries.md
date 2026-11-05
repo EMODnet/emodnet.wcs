@@ -92,16 +92,6 @@ emdn_has_dimension(wcs,
   cov_ids,
   type = "temporal"
 )
-#> No encoding supplied: defaulting to UTF-8.
-#> No encoding supplied: defaulting to UTF-8.
-#> No encoding supplied: defaulting to UTF-8.
-#> No encoding supplied: defaulting to UTF-8.
-#> No encoding supplied: defaulting to UTF-8.
-#> No encoding supplied: defaulting to UTF-8.
-#> No encoding supplied: defaulting to UTF-8.
-#> No encoding supplied: defaulting to UTF-8.
-#> No encoding supplied: defaulting to UTF-8.
-#> No encoding supplied: defaulting to UTF-8.
 #> Emodnetbio__ratio_large_to_small_19582016_L1_err 
 #>                                             TRUE 
 #>                  Emodnetbio__aca_spp_19582016_L1 

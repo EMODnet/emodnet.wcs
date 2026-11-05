@@ -216,7 +216,6 @@ emdn_get_band_constraints(summary)
 #> 
 # get coverage grid size
 emdn_get_grid_size(summary)
-#> No encoding supplied: defaulting to UTF-8.
 #> ncol nrow 
 #>  951  401 
 # get coverage resolution
