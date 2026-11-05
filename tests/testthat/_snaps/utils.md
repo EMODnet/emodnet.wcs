@@ -14,8 +14,6 @@
 
     Code
       emdn_get_coverage_dim_coefs(wcs, coverage_ids = "Emodnetbio__aca_spp_19582016_L1")
-    Message
-      No encoding supplied: defaulting to UTF-8.
     Output
       $Emodnetbio__aca_spp_19582016_L1
         [1] "1958-02-16T01:00:00" "1958-05-16T01:00:00" "1958-08-16T01:00:00"

@@ -449,7 +449,7 @@ emdn_get_dimensions_info <- function(
   include_coeffs = FALSE
 ) {
   format <- match.arg(format)
-  dimensions <- summary$getDimensions()
+  dimensions <- suppressMessages(summary$getDimensions()) #https://github.com/eblondel/ows4R/discussions/149
 
   # internal format specific processing functions
   process_character <- function(x) {
@@ -530,13 +530,13 @@ emdn_get_dimensions_names <- function(summary) {
 emdn_get_dimensions_n <- function(summary) {
   # https://github.com/eblondel/ows4R/discussions/149
   # "No encoding supplied: defaulting to UTF-8."
-  suppressMessages(summary$getDimensions()) |> length()
+  suppressMessages(summary$getDimensions()) |> length() #https://github.com/eblondel/ows4R/discussions/149
 }
 
 #' @describeIn emdn_get_bbox Get dimensions types of a coverage.
 #' @export
 emdn_get_dimension_types <- function(summary) {
-  dimensions <- summary$getDimensions()
+  dimensions <- suppressMessages(summary$getDimensions()) #https://github.com/eblondel/ows4R/discussions/149
 
   purrr::map_chr(dimensions, "type")
 }
