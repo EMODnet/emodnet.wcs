@@ -71,10 +71,7 @@
 <span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"EMODnet/emodnet.wcs"</span><span class="op">)</span></span></code></pre></div>
 <p>Load the library</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/EMODnet/emodnet.wcs" class="external-link">emodnet.wcs</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; Loading ISO 19139 XML schemas...</span></span>
-<span><span class="co">#&gt; Loading ISO 19115-3 XML schemas...</span></span>
-<span><span class="co">#&gt; Loading ISO 19139 codelists...</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/EMODnet/emodnet.wcs" class="external-link">emodnet.wcs</a></span><span class="op">)</span></span></code></pre></div>
 <p>If you want to avoid reading messages from emodnet.wcs such as “WCS client created successfully”, set the <code>"emodnet.wcs.quiet"</code> option to <code>TRUE</code>.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span><span class="st">"emodnet.wcs.quiet"</span> <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
@@ -123,6 +120,9 @@
 <p>Create new WCS Client. Specify the service using the <code>service</code> argument.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wcs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/emdn_init_wcs_client.html">emdn_init_wcs_client</a></span><span class="op">(</span>service <span class="op">=</span> <span class="st">"biology"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading ISO 19139 XML schemas...</span></span>
+<span><span class="co">#&gt; Loading ISO 19115-3 XML schemas...</span></span>
+<span><span class="co">#&gt; Loading ISO 19139 codelists...</span></span>
 <span><span class="co">#&gt; ✔ WCS client created succesfully</span></span>
 <span><span class="co">#&gt; ℹ Service: &lt;https://geo.vliz.be/geoserver/Emodnetbio/wcs&gt;</span></span>
 <span><span class="co">#&gt; ℹ Service: "2.0.1"</span></span></code></pre></div>
@@ -297,7 +297,7 @@
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;   Krystalli A, Fernández-Bejarano S, Salmon M (2026). _emodnet.wcs:</span></span>
 <span><span class="co">#&gt;   Access EMODnet Web Coverage Service data through R_. R package</span></span>
-<span><span class="co">#&gt;   version 0.0.1.9000. Integrated data products created under the</span></span>
+<span><span class="co">#&gt;   version 0.0.2.9000. Integrated data products created under the</span></span>
 <span><span class="co">#&gt;   European Marine Observation Data Network (EMODnet) Biology project</span></span>
 <span><span class="co">#&gt;   (EASME/EMFF/2017/1.3.1.2/02/SI2.789013), funded by the European Union</span></span>
 <span><span class="co">#&gt;   under Regulation (EU) No 508/2014 of the European Parliament and of</span></span>
@@ -310,7 +310,7 @@
 <span><span class="co">#&gt;     title = {{emodnet.wcs}: Access EMODnet Web Coverage Service data through R},</span></span>
 <span><span class="co">#&gt;     author = {Anna Krystalli and Salvador Fernández-Bejarano and Maëlle Salmon},</span></span>
 <span><span class="co">#&gt;     year = {2026},</span></span>
-<span><span class="co">#&gt;     note = {R package version 0.0.1.9000. Integrated data products created under the European Marine Observation Data Network (EMODnet) Biology project (EASME/EMFF/2017/1.3.1.2/02/SI2.789013), funded by the European Union under Regulation (EU) No 508/2014 of the European Parliament and of the Council of 15 May 2014 on the European Maritime and Fisheries Fund},</span></span>
+<span><span class="co">#&gt;     note = {R package version 0.0.2.9000. Integrated data products created under the European Marine Observation Data Network (EMODnet) Biology project (EASME/EMFF/2017/1.3.1.2/02/SI2.789013), funded by the European Union under Regulation (EU) No 508/2014 of the European Parliament and of the Council of 15 May 2014 on the European Maritime and Fisheries Fund},</span></span>
 <span><span class="co">#&gt;     url = {https://github.com/EMODnet/emodnet.wcs},</span></span>
 <span><span class="co">#&gt;   }</span></span></code></pre></div>
 </div>
@@ -340,7 +340,7 @@
 <span></span>
 <span><span class="co"># Inspect all available datasets</span></span>
 <span><span class="fu">ed_datasets</span><span class="op">(</span>url <span class="op">=</span> <span class="va">erddap_url</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 7 × 16</span></span>
+<span><span class="co">#&gt; # A tibble: 8 × 16</span></span>
 <span><span class="co">#&gt;   griddap Subset tabledap Make.A.Graph wms   files Title Summary FGDC  ISO.19115</span></span>
 <span><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;    </span></span>
 <span><span class="co">#&gt; 1 ""      "/erd… /erddap… /erddap/tab… ""    ""    * Th… "This … ""    ""       </span></span>
@@ -350,6 +350,7 @@
 <span><span class="co">#&gt; 5 ""      ""     /erddap… /erddap/tab… ""    "/er… Pres… "The p… "/er… "/erddap…</span></span>
 <span><span class="co">#&gt; 6 ""      ""     /erddap… /erddap/tab… ""    ""    PSMS… "Perma… ""    ""       </span></span>
 <span><span class="co">#&gt; 7 ""      ""     /erddap… /erddap/tab… ""    "/er… PSMS… "Perma… ""    ""       </span></span>
+<span><span class="co">#&gt; 8 ""      "/erd… /erddap… /erddap/tab… ""    "/er… TAO/… "This … "/er… "/erddap…</span></span>
 <span><span class="co">#&gt; # ℹ 6 more variables: Info &lt;chr&gt;, Background.Info &lt;chr&gt;, RSS &lt;chr&gt;,</span></span>
 <span><span class="co">#&gt; #   Email &lt;chr&gt;, Institution &lt;chr&gt;, Dataset.ID &lt;chr&gt;</span></span>
 <span></span>
@@ -463,6 +464,7 @@
 <li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
 <li><a href="https://github.com/EMODnet/emodnet.wcs/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/EMODnet/emodnet.wcs/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://app.codecov.io/gh/EMODnet/emodnet.wcs" class="external-link"><img src="https://app.codecov.io/gh/EMODnet/emodnet.wcs/branch/main/graph/badge.svg" alt="codecov"></a></li>
+<li><a href="https://github.com/ropensci/software-review/issues/809" class="external-link"><img src="https://badges.ropensci.org/809_status.svg" alt="Status at rOpenSci Software Peer Review"></a></li>
 </ul>
 </div>
 
