@@ -34,7 +34,7 @@ emdn_get_coverage_dim_coefs(
 \item \code{emdn_get_coverage_summaries}: returns a list of objects of class
 \verb{<WCSCoverageSummary>} for each \code{coverage_id} provided.
 \item \code{emdn_get_coverage_summaries_all}: returns a list of objects of class
-\verb{<WCSCoverageSummary>} for each coverage avalable through the service.
+\verb{<WCSCoverageSummary>} for each coverage available through the service.
 \item \code{emdn_get_coverage_ids} returns a character vector of coverage ids.
 \item \code{emdn_get_coverage_dim_coefs} returns a list containing a vector of
 coefficients for each coverage requested.

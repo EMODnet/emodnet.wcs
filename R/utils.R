@@ -12,7 +12,7 @@
 #'  - `emdn_get_coverage_summaries`: returns a list of objects of class
 #'  `<WCSCoverageSummary>` for each `coverage_id` provided.
 #'  - `emdn_get_coverage_summaries_all`: returns a list of objects of class
-#'  `<WCSCoverageSummary>` for each coverage avalable through the service.
+#'  `<WCSCoverageSummary>` for each coverage available through the service.
 #'  - `emdn_get_coverage_ids` returns a character vector of coverage ids.
 #'  - `emdn_get_coverage_dim_coefs` returns a list containing a vector of
 #'  coefficients for each coverage requested.
