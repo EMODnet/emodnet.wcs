@@ -8,7 +8,7 @@
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/EMODnet/emodnet.wcs/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EMODnet/emodnet.wcs/actions/workflows/R-CMD-check.yaml)
-[![codecov](https://codecov.io/gh/EMODnet/emodnet.wcs/branch/main/graph/badge.svg)](https://codecov.io/gh/EMODnet/emodnet.wcs)
+[![codecov](https://app.codecov.io/gh/EMODnet/emodnet.wcs/branch/main/graph/badge.svg)](https://app.codecov.io/gh/EMODnet/emodnet.wcs)
 <!-- badges: end -->
 
 The goal of emodnet.wcs is to allow interrogation of and access to
@@ -21,7 +21,7 @@ environmental modeling. See below for available Services (data sources).
 This package was developed by Sheffield University as part of EMODnet
 Biology WP4.
 
-[Web Coverage services (WCS)](https://www.ogc.org/standards/wcs) is a
+[Web Coverage services (WCS)](https://www.ogc.org/standards/wcs/) is a
 standard created by the OGC that refers to the receiving of geospatial
 information as ‘coverages’: digital geospatial information representing
 space-varying phenomena. One can think of it as Web Feature Service
@@ -311,7 +311,7 @@ For more examples of use of EMODnet data in R, refer to the [EMODnet Biology Geo
 
 ### Access EMODnet’s Web Feature Service data through emodnet.wfs
 
-The goal of [emodnet.wfs](https://docs.ropensci.org/emodnet.wfs) is to
+The goal of [emodnet.wfs](https://docs.ropensci.org/emodnet.wfs/) is to
 allow interrogation of and access to [EMODnet’s, European Marine
 Observation and Data Network, geographic vector
 data](https://emodnet.ec.europa.eu/en/emodnet-web-service-documentation#inline-nav-3)
