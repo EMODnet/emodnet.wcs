@@ -39,7 +39,7 @@
       dim_n = purrr::map_int(
         summaries,
         # https://github.com/eblondel/ows4R/issues/148
-        ~ error_wrap(length(suppressMessages(.x$getDimensions())))
+        ~ error_wrap(length(suppressMessages(.x$getDimensions()))) #https://github.com/eblondel/ows4R/discussions/149
       ),
       dim_names = purrr::map_chr(
         summaries,
@@ -264,7 +264,7 @@ emdn_get_wcs_info_all <- memoise::memoise(.emdn_get_wcs_info_all)
     ),
     dim_n = purrr::map_int(
       summaries,
-      ~ error_wrap(length(.x$getDimensions()))
+      ~ error_wrap(length(suppressMessages(.x$getDimensions()))) # https://github.com/eblondel/ows4R/discussions/149
     ),
     dim_names = purrr::map_chr(
       summaries,
